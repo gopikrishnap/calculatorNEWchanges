@@ -1,1290 +1,1506 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<link rel="stylesheet" href="../../../system/libs/mowbly/themes/default/css/default.css" type="text/css"/>
-		<link rel="stylesheet" type="text/css" href="css/common.css"></link>
-		<link rel="stylesheet" type="text/css" href="css/rlifecss.css"></link>
-		<link rel="stylesheet" type="text/css" href="css/proposal.css"></link>
-		<link rel="stylesheet" type="text/css" href="css/select.css"></link>
-		<link rel="stylesheet" type="text/css" href="css/calculatorcommon.css"></link>
-     	<!--link rel="stylesheet" type="text/css" href="css/juci-switch2-color.css"></link>
+
+<head>
+	<link rel="stylesheet" href="../../../system/libs/mowbly/themes/default/css/default.css" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	</link>
+	<link rel="stylesheet" type="text/css" href="css/rlifecss.css">
+	</link>
+	<link rel="stylesheet" type="text/css" href="css/proposal.css">
+	</link>
+	<link rel="stylesheet" type="text/css" href="css/select.css">
+	</link>
+	<link rel="stylesheet" type="text/css" href="css/calculatorcommon.css">
+	</link>
+	<!--link rel="stylesheet" type="text/css" href="css/juci-switch2-color.css"></link>
       	<link rel="stylesheet" type="text/css" href="css/juci-switch2-layout.css"></link-->
-      	<link rel="stylesheet" type="text/css" href="css/source.css"></link>
-		<link rel="stylesheet" type="text/css" href="css/myDreamCalculator.css"></link>
-		<link rel="stylesheet" type="text/css" href="css/taxcalculator.css"></link>
-		<link rel="stylesheet" type="text/css" href="css/childcalculator.css"></link>	
-		<link rel="stylesheet" type="text/css" href="css/FhsCalculator.css"></link>	
-		<link rel="stylesheet" type="text/css" href="css/FhsSliderange.css"></link>
-		<link rel="stylesheet" type="text/css" href="css/hlvcalculator.css"></link>	
-		<script src="../../../system/libs/mowbly/js/mowbly.js"></script>
-		<script src="../../../system/libs/mowbly/js/juci-0.2.js"></script>
-		<script src="scripts/rlifeservices.js"></script>
-		<script src="scripts/dbHelper.js"></script>
-		<script src="scripts/x2js library.js"></script>
-		<script src="scripts/datasets.js"></script>
-		<script src="scripts/myDreamCalculator.js"></script>
-		<script src="scripts/calculation.js"></script>
-		<script src="scripts/Calculations.js"></script>
-		<script src="scripts/constants.js"></script>
-		<script src="scripts/bindingObject.js"></script>
-		<script src="scripts/HLVCalculator.js"></script>
-		<script src="scripts/RetirementCalculator.js"></script>	
-		<script src="scripts/childEducationCalculator.js"></script>
-		<script src="scripts/TaxCalculator.js"></script>
-        <script src="scripts/FhsCalculator.js"></script>
-        <script src="scripts/backtools.js"></script>
-		<script src="scripts/inputPojo.js"></script>
-		<script src="scripts/Utils.js"></script>
-		<script src="scripts/bihomepage.js"></script>
-		<script src="scripts/bimapping.js"></script>
-		<script src="scripts/messages.js"></script>
-   		<script src="scripts/juci-switch2.js"></script>
-	</head>
-	<body style="background:#ffffff;">
-		<div data-juci="panel" data-first-panel>
-		 	<div class="menu arrow_add_box" id="menulist" style="display: none;">
-                <ul class="items">
-                    <li class="item" onclick="openLead()">
-                        <span>New Lead</span>
-                    </li>
-                </ul>
-            </div>
-            <div class="menu arrow_box" id="profilelist" style="display:none;">
-	            <ul class="items">
-	            	<li class="item_list" onclick="openSyncContacts()">
-	                    <img src="images/Sync.png"></img>
-	                    <span>Super Sync</span>
-	                </li>
-	               <li class="item_list" onclick="openSync()">
-	                    <img src="images/Sync.png"></img>
-	                    <span>Sync</span>
-	                </li>   
-	                
-	                 <!--<li class="item_list" onclick="openCustomers()">
+	<link rel="stylesheet" type="text/css" href="css/source.css">
+	</link>
+	<link rel="stylesheet" type="text/css" href="css/myDreamCalculator.css">
+	</link>
+	<link rel="stylesheet" type="text/css" href="css/taxcalculator.css">
+	</link>
+	<link rel="stylesheet" type="text/css" href="css/childcalculator.css">
+	</link>
+	<link rel="stylesheet" type="text/css" href="css/FhsCalculator.css">
+	</link>
+	<link rel="stylesheet" type="text/css" href="css/FhsSliderange.css">
+	</link>
+	<link rel="stylesheet" type="text/css" href="css/hlvcalculator.css">
+	</link>
+	<script src="../../../system/libs/mowbly/js/mowbly.js"></script>
+	<script src="../../../system/libs/mowbly/js/juci-0.2.js"></script>
+	<script src="scripts/rlifeservices.js"></script>
+	<script src="scripts/dbHelper.js"></script>
+	<script src="scripts/x2js library.js"></script>
+	<script src="scripts/datasets.js"></script>
+	<script src="scripts/myDreamCalculator.js"></script>
+	<script src="scripts/calculation.js"></script>
+	<script src="scripts/Calculations.js"></script>
+	<script src="scripts/constants.js"></script>
+	<script src="scripts/bindingObject.js"></script>
+	<script src="scripts/HLVCalculator.js"></script>
+	<script src="scripts/RetirementCalculator.js"></script>
+	<script src="scripts/childEducationCalculator.js"></script>
+	<script src="scripts/TaxCalculator.js"></script>
+	<script src="scripts/FhsCalculator.js"></script>
+	<script src="scripts/backtools.js"></script>
+	<script src="scripts/inputPojo.js"></script>
+	<script src="scripts/Utils.js"></script>
+	<script src="scripts/bihomepage.js"></script>
+	<script src="scripts/bimapping.js"></script>
+	<script src="scripts/messages.js"></script>
+	<script src="scripts/juci-switch2.js"></script>
+</head>
+
+<body style="background:#ffffff;">
+	<div data-juci="panel" data-first-panel>
+		<div class="menu arrow_add_box" id="menulist" style="display: none;">
+			<ul class="items">
+				<li class="item" onclick="openLead()">
+					<span>New Lead</span>
+				</li>
+			</ul>
+		</div>
+		<div class="menu arrow_box" id="profilelist" style="display:none;">
+			<ul class="items">
+				<li class="item_list" onclick="openSyncContacts()">
+					<img src="images/Sync.png"></img>
+					<span>Super Sync</span>
+				</li>
+				<li class="item_list" onclick="openSync()">
+					<img src="images/Sync.png"></img>
+					<span>Sync</span>
+				</li>
+
+				<!--<li class="item_list" onclick="openCustomers()">
 	                    <img src="images/male.png"></img>
 	                    <span>New Lead</span>
 	                </li>  -->
-	          
-	                 <li class="item_list" onclick="openProposal()">
-	                    <img src="images/New-Proposal.png"></img>
-	                    <span>New Proposal</span>
-	                </li>  
-	                
-	                <!--<li class="item_list" onclick="openCustomers()">
+
+				<li class="item_list" onclick="openProposal()">
+					<img src="images/New-Proposal.png"></img>
+					<span>New Proposal</span>
+				</li>
+
+				<!--<li class="item_list" onclick="openCustomers()">
 	                    <img src="images/Profile.png"></img>
 	                    <span>Profile</span>
 	                </li-->
-					<li class="item_list" onclick="openLogs()">
-	                    <img src="images/logs.png"></img>
-	                    <span>Logs</span>
-	                </li>
-					<li class="item_list" onclick="openDataRetrieve()">
-	                    <img src="images/database.png"></img>
-	                    <span>Data Retrieve</span>
-	                </li>
-					<li class="item_list" onclick="openForceUpdate()">
-	                    <img src="images/app.png"></img>
-	                    <span>Force Update</span>
-	                </li>
-	                <div data-bind="visible:gettype()!=='TPADV' && gettype()!=='TPSM'">
-		               <li class="item_list" onclick="openCustomers()">
-		                    <img src="images/female.png"></img>
-		                    <span>My Customers</span>
-		                </li>
-	                </div>
-	                <li class="item_list" onclick="openDeviceCompatibility()">
-	                  <img src="images/tablet.png"></img>
-	                  <span>Device Compatibility check</span>
-	               </li>
-	                <!--<li class="item_list" onclick="openAdvisors()">
+				<li class="item_list" onclick="openLogs()">
+					<img src="images/logs.png"></img>
+					<span>Logs</span>
+				</li>
+				<li class="item_list" onclick="openDataRetrieve()">
+					<img src="images/database.png"></img>
+					<span>Data Retrieve</span>
+				</li>
+				<li class="item_list" onclick="openForceUpdate()">
+					<img src="images/app.png"></img>
+					<span>Force Update</span>
+				</li>
+				<div data-bind="visible:gettype()!=='TPADV' && gettype()!=='TPSM'">
+					<li class="item_list" onclick="openCustomers()">
+						<img src="images/female.png"></img>
+						<span>My Customers</span>
+					</li>
+				</div>
+				<li class="item_list" onclick="openDeviceCompatibility()">
+					<img src="images/tablet.png"></img>
+					<span>Device Compatibility check</span>
+				</li>
+				<!--<li class="item_list" onclick="openAdvisors()">
 	                    <img src="images/Folder_grey.png"></img>
 	                    <span class="my_advisors">My Advisors</span>
 	                </li-->
-					<li class="item_list" onclick="openVersion()">
-	                    <img src="images/Folder_grey.png"></img>
-	                    <span class="my_advisors">Version</span>
-	                </li>
-	                <li class="item_list" onclick="openSelfieVideoRetrieval()">
-		                <img src="images/Gallery_Grey.png"></img>
-		                <span class="help">Selfie PIVC Retrieval</span>
-	        		</li>
-	                 <!--<div data-bind="visible:gettype()!=='ADV'">
+				<li class="item_list" onclick="openVersion()">
+					<img src="images/Folder_grey.png"></img>
+					<span class="my_advisors">Version</span>
+				</li>
+				<li class="item_list" onclick="openSelfieVideoRetrieval()">
+					<img src="images/Gallery_Grey.png"></img>
+					<span class="help">Selfie PIVC Retrieval</span>
+				</li>
+				<!--<div data-bind="visible:gettype()!=='ADV'">
 	                 <li class="item_list" onclick="openTeamLogin()">
 	                    <img src="images/team.png"></img>
 	                    <span>Team Login</span>
 	                </li>
 	                </div>-->
-	                <li class="item_list" onclick="openHelpDesk()">
-	                    <img src="images/Gallery_Grey.png"></img>
-	                    <span class="help">Help Desk</span>
-	                </li>
-	                <li class="item_list" onclick="openConfirmUpdate()">
-	                    <img src="images/Gallery_Grey.png"></img>
-	                    <span class="help">Confirm Update</span>
-	                </li>
-	                <li class="item_list" onclick="openCalculator()">
-		                <img src="images/Gallery_Grey.png"></img>
-		                <span class="help">Calculator</span>
-	        		</li>
-	        		 <div>
-		               <li class="item_list" onclick="openVideoRetrieval()">
-		                    <img src="images/video.png"></img>
-		                    <span>Video Retrieval</span>
-		                </li>
-	                </div>
-	                <li class="item_list" onclick="doLogout()">
-	                    <img src="images/power-blackgold.png"></img>
-	                    <span class="log">Logout</span>
-	                </li>
-	                <li></li>
-	            </ul>
-	        </div>
-	        
-			<div class="juci_thinbar welcome_text" id="welcome-text" data-bind="visible:$root.thinbar1,html:thinbar">Welcome</div>
-			<div data-juci="radiogroup" class="calnew" data-label="Please select your calculator" id="calculator"  data-bind="visible:isCalculator,optionsList: calculatorOptions, ref:calculatorName" onafterchange="onCalculatorChange(event)"></div>
-			<!-- My Dream my income Calculator !-->
-			
-			<div class="first_section" id="first-section" style="display:none">
-				<div data-juci="radiogroup" id="select-role" class="role_names" data-label="Select Role" data-bind="optionsList: roles, ref:roleNames" onafterchange="onRolesChange(event)"></div>
-				<div class="lead_no" id="lead-no" data-juci="text" data-label data-bind="visible:roleNames() == 'Prospect Recruit',ref:$root.leadno" placeholder="Enter Your Lead No" onafterchange="fetchByLeadNumber(event)"></div>
-				
-				<div class="advisor_code" id="advisor-no" data-juci="tel" data-label data-bind="visible:(roleNames() == 'New Advisor' || roleNames() == 'Existing Advisor'),ref:$root.advisorCode" placeholder="Enter Your Advisor Code" onafterchange="fetchByAdvisorCode(event)"></div>
-				
-				<div class="juci_horizontal_bbar options" data-bind="visible:isLeadOrAdvisor">
-					<button data-juci="button" data-bind="click:onPreviousEntry">Previous Entry</button>
-					<div class="or">Or</div>
-					<button data-juci="button" data-bind="click:onNewEntry">New Entry</button>
+				<li class="item_list" onclick="openHelpDesk()">
+					<img src="images/Gallery_Grey.png"></img>
+					<span class="help">Help Desk</span>
+				</li>
+				<li class="item_list" onclick="openConfirmUpdate()">
+					<img src="images/Gallery_Grey.png"></img>
+					<span class="help">Confirm Update</span>
+				</li>
+				<li class="item_list" onclick="openCalculator()">
+					<img src="images/Gallery_Grey.png"></img>
+					<span class="help">Calculator</span>
+				</li>
+				<div>
+					<li class="item_list" onclick="openVideoRetrieval()">
+						<img src="images/video.png"></img>
+						<span>Video Retrieval</span>
+					</li>
 				</div>
-				
-				<!-- Previous Entry !-->
-				<div class="previous_entry" id = "previous-entry" data-bind="visible:isPreviousEntry,foreach:previousEntry">
-					<div class="Aadhar_section">
-						<div class="aadhar_detail">
-			                 <div class="aadhar_info_name"><strong>User Details</strong></div>
-			                 <div class="aadhar_data" data-bind=""></div>
-			            </div>
-						<div class="aadhar_detail">
-			                 <div class="aadhar_info_name">Name</div>
-			                 <div class="aadhar_data" data-bind="html:Name"></div>
-			            </div>
-			            <div class="aadhar_detail">
-			                 <div class="aadhar_info_name"><strong>Your goals</strong></div>
-			                 <div class="aadhar_data" data-bind=""></div>
-			            </div>
-			            <div class="aadhar_detail">
-			                 <div class="aadhar_info_name">Home Goal(in Lacs)</div>
-			                 <div class="aadhar_data" data-bind="html:Goal_Home"></div>
-			            </div>
-			            <div class="aadhar_detail">
-			                 <div class="aadhar_info_name">Car Goal(in Lacs)</div>
-			                 <div class="aadhar_data" data-bind="html:Goal_Car"></div>
-			            </div>
-			            <div class="aadhar_detail">
-			                 <div class="aadhar_info_name">Child Education'sGoal(in Lacs)</div>
-			                 <div class="aadhar_data" data-bind="html:Goal_Child_Education"></div>
-			            </div>
-			            <div class="aadhar_detail">
-			                 <div class="aadhar_info_name">Child Marriage's'Goal(in Lacs)</div>
-			                 <div class="aadhar_data" data-bind="html:Goal_Child_Marriage"></div>
-			            </div>
-			            <div class="aadhar_detail">
-			                 <div class="aadhar_info_name">Vacation Goal(in Lacs)</div>
-			                 <div class="aadhar_data" data-bind="html:Goal_Vacation"></div>
-			            </div>
-			            <div class="aadhar_detail">
-			                 <div class="aadhar_info_name">Others Goal(in Lacs)</div>
-			                 <div class="aadhar_data" data-bind="html:Goal_Others"></div>
-			            </div>
-			            <div class="aadhar_detail">
-			                 <div class="aadhar_info_name">Total Goal Amount(in Lacs)</div>
-			                 <div class="aadhar_data" data-bind="html:Total_Goal_Amount"></div>
-			            </div>
-			            <div class="aadhar_detail">
-			                 <div class="aadhar_info_name">Time To Reach Your Goals(in Years)</div>
-			                 <div class="aadhar_data" data-bind="html:Years_To_ReachGoals"></div>
-			            </div>
-			            <div class="aadhar_detail">
-			                 <div class="aadhar_info_name">Current Savings(in Lacs)</div>
-			                 <div class="aadhar_data" data-bind="html:Current_Savings_A"></div>
-			            </div>
-			            <div class="aadhar_detail_last">
-			                 <div class="aadhar_info_name">Annual Income(in Lacs)</div>
-			                 <div class="aadhar_data" data-bind="html:Income_Per_Annum"></div>
-			            </div>
-			            <div class="your_options">
-			            	<div class="aadhar_detail">
-				                 <div class="your_options_sum">Your Options</div>
-				                 <div class="your_options_sum" data-bind=""></div>
-				            </div>
-			            	<div class="aadhar_detail">
-				                 <div class="base_options_sum">Base Option</div>
-				                 <div class="base_options_sum" data-bind=""></div>
-				            </div>
-				            <div class="aadhar_detail">
-				                 <div class="aadhar_info_name">Years</div>
-				                 <div class="aadhar_data" data-bind="html:Base_Years"></div>
-				            </div>
-				            <div class="aadhar_detail">
-				                 <div class="aadhar_info_name">No of policies/month</div>
-				                 <div class="aadhar_data" data-bind="html:Base_No_of_policies_PerMonth"></div>
-				            </div>
-				            <div class="aadhar_detail">
-				                 <div class="aadhar_info_name">No of meetings/month</div>
-				                 <div class="aadhar_data" data-bind="html:Base_No_of_meetings_PerMonth"></div>
-				            </div>
-				            <div class="aadhar_detail">
-				                 <div class="aadhar_info_name">Avg no of meetings/day</div>
-				                 <div class="aadhar_data" data-bind="html:Base_Avg_No_of_meetings_Perday"></div>
-				            </div>
-				            <div class="aadhar_detail">
-				            	<div class="fisrt_content">Base Option: You need to sell <span class="meeting_content" data-bind="html:Base_No_of_policies_PerMonth"></span> policies every month for next <span class="meeting_content" data-bind="html:Base_Years"></span> years to achieve your goals.</div>		
-				            	<div class="second_content">Target to meet <span class="meeting_content" data-bind="html:Base_No_of_meetings_PerMonth"></span> prospect customers every month from today!</div>
-				            </div>
-			            </div>
-			            <div class="your_options">
-			            	<div class="aadhar_detail">
-				                 <div class="base_options_sum">Aggressive Option</div>
-				                 <div class="base_options_sum" data-bind=""></div>
-				            </div>
-				            <div class="aadhar_detail">
-				                 <div class="aadhar_info_name">Years</div>
-				                 <div class="aadhar_data" data-bind="html:Aggressive_Years"></div>
-				            </div>
-				            <div class="aadhar_detail">
-				                 <div class="aadhar_info_name">No of policies/month</div>
-				                 <div class="aadhar_data" data-bind="html:Aggressive_No_of_policies_PerMonth"></div>
-				            </div>
-				            <div class="aadhar_detail">
-				                 <div class="aadhar_info_name">No of meetings/month</div>
-				                 <div class="aadhar_data" data-bind="html:Aggressive_No_of_meetings_PerMonth"></div>
-				            </div>
-				            <div class="aadhar_detail">
-				                 <div class="aadhar_info_name">Avg no of meetings/day</div>
-				                 <div class="aadhar_data" data-bind="html:Aggressive_Avg_No_of_meetings_Perday"></div>
-				            </div>
-				            <div class="aadhar_detail">
-				            	<div class="fisrt_content">Aggressive Option: You need to sell <span class="meeting_content" data-bind="html:Aggressive_No_of_policies_PerMonth"></span> policies every month for next <span class="meeting_content" data-bind="html:Aggressive_Years"></span> years to achieve your goals.</div>		
-				            	<div class="second_content">Target to meet <span class="meeting_content" data-bind="html:Aggressive_No_of_meetings_PerMonth"></span> prospect customers every month from today!</div>
-				            </div>
-			            </div>
-			            <div class="your_options">
-			            	<div class="aadhar_detail">
-				                 <div class="base_options_sum">Conservative Option</div>
-				                 <div class="base_options_sum" data-bind=""></div>
-				            </div>
-				            <div class="aadhar_detail">
-				                 <div class="aadhar_info_name">Years</div>
-				                 <div class="aadhar_data" data-bind="html:Conservative_Years"></div>
-				            </div>
-				            <div class="aadhar_detail">
-				                 <div class="aadhar_info_name">No of policies/month</div>
-				                 <div class="aadhar_data" data-bind="html:Conservative_No_of_policies_PerMonth"></div>
-				            </div>
-				            <div class="aadhar_detail">
-				                 <div class="aadhar_info_name">No of meetings/month</div>
-				                 <div class="aadhar_data" data-bind="html:Conservative_No_of_meetings_PerMonth"></div>
-				            </div>
-				            <div class="aadhar_detail">
-				                 <div class="aadhar_info_name">Avg no of meetings/day</div>
-				                 <div class="aadhar_data" data-bind="html:Conservative_Avg_No_of_meetings_Perday"></div>
-				            </div>
-				            <div class="aadhar_detail">
-				            	<div class="fisrt_content">Aggressive Option: You need to sell <span class="meeting_content" data-bind="html:Conservative_No_of_policies_PerMonth"></span> policies every month for next <span class="meeting_content" data-bind="html:Conservative_Years"></span> years to achieve your goals.</div>		
-				            	<div class="second_content">Target to meet <span class="meeting_content" data-bind="html:Conservative_No_of_meetings_PerMonth"></span> prospect customers every month from today!</div>
-				            </div>
-			            </div>
-			            <button class="next" data-juci="button" data-bind="click:onBackClick">Back</button>
+				<li class="item_list" onclick="doLogout()">
+					<img src="images/power-blackgold.png"></img>
+					<span class="log">Logout</span>
+				</li>
+				<li></li>
+			</ul>
+		</div>
+
+		<div class="juci_thinbar welcome_text" id="welcome-text" data-bind="visible:$root.thinbar1,html:thinbar">Welcome</div>
+		<div data-juci="radiogroup" class="calnew" data-label="Please select your calculator" id="calculator" data-bind="visible:isCalculator,optionsList: calculatorOptions, ref:calculatorName"
+		 onafterchange="onCalculatorChange(event)"></div>
+		<!-- My Dream my income Calculator !-->
+
+		<div class="first_section" id="first-section" style="display:none">
+			<div data-juci="radiogroup" id="select-role" class="role_names" data-label="Select Role" data-bind="optionsList: roles, ref:roleNames"
+			 onafterchange="onRolesChange(event)"></div>
+			<div class="lead_no" id="lead-no" data-juci="text" data-label data-bind="visible:roleNames() == 'Prospect Recruit',ref:$root.leadno"
+			 placeholder="Enter Your Lead No" onafterchange="fetchByLeadNumber(event)"></div>
+
+			<div class="advisor_code" id="advisor-no" data-juci="tel" data-label data-bind="visible:(roleNames() == 'New Advisor' || roleNames() == 'Existing Advisor'),ref:$root.advisorCode"
+			 placeholder="Enter Your Advisor Code" onafterchange="fetchByAdvisorCode(event)"></div>
+
+			<div class="juci_horizontal_bbar options" data-bind="visible:isLeadOrAdvisor">
+				<button data-juci="button" data-bind="click:onPreviousEntry">Previous Entry</button>
+				<div class="or">Or</div>
+				<button data-juci="button" data-bind="click:onNewEntry">New Entry</button>
+			</div>
+
+			<!-- Previous Entry !-->
+			<div class="previous_entry" id="previous-entry" data-bind="visible:isPreviousEntry,foreach:previousEntry">
+				<div class="Aadhar_section">
+					<div class="aadhar_detail">
+						<div class="aadhar_info_name"><strong>User Details</strong></div>
+						<div class="aadhar_data" data-bind=""></div>
 					</div>
-				</div>
-				<!-- New Entry !-->
-				<div data-bind="visible:$root.userdetails_section">
-					<div class="user_details">User Details</div>
-					<div id="userdetails-section" class="Aadhar_section" data-bind="with:$root.fetchingUserDetails">
+					<div class="aadhar_detail">
+						<div class="aadhar_info_name">Name</div>
+						<div class="aadhar_data" data-bind="html:Name"></div>
+					</div>
+					<div class="aadhar_detail">
+						<div class="aadhar_info_name"><strong>Your goals</strong></div>
+						<div class="aadhar_data" data-bind=""></div>
+					</div>
+					<div class="aadhar_detail">
+						<div class="aadhar_info_name">Home Goal(in Lacs)</div>
+						<div class="aadhar_data" data-bind="html:Goal_Home"></div>
+					</div>
+					<div class="aadhar_detail">
+						<div class="aadhar_info_name">Car Goal(in Lacs)</div>
+						<div class="aadhar_data" data-bind="html:Goal_Car"></div>
+					</div>
+					<div class="aadhar_detail">
+						<div class="aadhar_info_name">Child Education'sGoal(in Lacs)</div>
+						<div class="aadhar_data" data-bind="html:Goal_Child_Education"></div>
+					</div>
+					<div class="aadhar_detail">
+						<div class="aadhar_info_name">Child Marriage's'Goal(in Lacs)</div>
+						<div class="aadhar_data" data-bind="html:Goal_Child_Marriage"></div>
+					</div>
+					<div class="aadhar_detail">
+						<div class="aadhar_info_name">Vacation Goal(in Lacs)</div>
+						<div class="aadhar_data" data-bind="html:Goal_Vacation"></div>
+					</div>
+					<div class="aadhar_detail">
+						<div class="aadhar_info_name">Others Goal(in Lacs)</div>
+						<div class="aadhar_data" data-bind="html:Goal_Others"></div>
+					</div>
+					<div class="aadhar_detail">
+						<div class="aadhar_info_name">Total Goal Amount(in Lacs)</div>
+						<div class="aadhar_data" data-bind="html:Total_Goal_Amount"></div>
+					</div>
+					<div class="aadhar_detail">
+						<div class="aadhar_info_name">Time To Reach Your Goals(in Years)</div>
+						<div class="aadhar_data" data-bind="html:Years_To_ReachGoals"></div>
+					</div>
+					<div class="aadhar_detail">
+						<div class="aadhar_info_name">Current Savings(in Lacs)</div>
+						<div class="aadhar_data" data-bind="html:Current_Savings_A"></div>
+					</div>
+					<div class="aadhar_detail_last">
+						<div class="aadhar_info_name">Annual Income(in Lacs)</div>
+						<div class="aadhar_data" data-bind="html:Income_Per_Annum"></div>
+					</div>
+					<div class="your_options">
 						<div class="aadhar_detail">
-			                 <div class="aadhar_info_name">Name</div>
-			                 <div class="aadhar_data" data-bind="html:Name"></div>
-			            </div>
-			            <div class="aadhar_detail">
-			                 <div class="aadhar_info_name">Age</div>
-			                 <div class="aadhar_data" data-bind="html:DOB"></div>
-			            </div>
-			            <div class="aadhar_detail">
-			                 <div class="aadhar_info_name">Mobile Number</div>
-			                 <div class="aadhar_data" data-bind="html:Mobile"></div>
-			            </div>
-			            <!--div class="aadhar_detail">
+							<div class="your_options_sum">Your Options</div>
+							<div class="your_options_sum" data-bind=""></div>
+						</div>
+						<div class="aadhar_detail">
+							<div class="base_options_sum">Base Option</div>
+							<div class="base_options_sum" data-bind=""></div>
+						</div>
+						<div class="aadhar_detail">
+							<div class="aadhar_info_name">Years</div>
+							<div class="aadhar_data" data-bind="html:Base_Years"></div>
+						</div>
+						<div class="aadhar_detail">
+							<div class="aadhar_info_name">No of policies/month</div>
+							<div class="aadhar_data" data-bind="html:Base_No_of_policies_PerMonth"></div>
+						</div>
+						<div class="aadhar_detail">
+							<div class="aadhar_info_name">No of meetings/month</div>
+							<div class="aadhar_data" data-bind="html:Base_No_of_meetings_PerMonth"></div>
+						</div>
+						<div class="aadhar_detail">
+							<div class="aadhar_info_name">Avg no of meetings/day</div>
+							<div class="aadhar_data" data-bind="html:Base_Avg_No_of_meetings_Perday"></div>
+						</div>
+						<div class="aadhar_detail">
+							<div class="fisrt_content">Base Option: You need to sell <span class="meeting_content" data-bind="html:Base_No_of_policies_PerMonth"></span>
+								policies every month for next <span class="meeting_content" data-bind="html:Base_Years"></span> years to
+								achieve your goals.</div>
+							<div class="second_content">Target to meet <span class="meeting_content" data-bind="html:Base_No_of_meetings_PerMonth"></span>
+								prospect customers every month from today!</div>
+						</div>
+					</div>
+					<div class="your_options">
+						<div class="aadhar_detail">
+							<div class="base_options_sum">Aggressive Option</div>
+							<div class="base_options_sum" data-bind=""></div>
+						</div>
+						<div class="aadhar_detail">
+							<div class="aadhar_info_name">Years</div>
+							<div class="aadhar_data" data-bind="html:Aggressive_Years"></div>
+						</div>
+						<div class="aadhar_detail">
+							<div class="aadhar_info_name">No of policies/month</div>
+							<div class="aadhar_data" data-bind="html:Aggressive_No_of_policies_PerMonth"></div>
+						</div>
+						<div class="aadhar_detail">
+							<div class="aadhar_info_name">No of meetings/month</div>
+							<div class="aadhar_data" data-bind="html:Aggressive_No_of_meetings_PerMonth"></div>
+						</div>
+						<div class="aadhar_detail">
+							<div class="aadhar_info_name">Avg no of meetings/day</div>
+							<div class="aadhar_data" data-bind="html:Aggressive_Avg_No_of_meetings_Perday"></div>
+						</div>
+						<div class="aadhar_detail">
+							<div class="fisrt_content">Aggressive Option: You need to sell <span class="meeting_content" data-bind="html:Aggressive_No_of_policies_PerMonth"></span>
+								policies every month for next <span class="meeting_content" data-bind="html:Aggressive_Years"></span> years to
+								achieve your goals.</div>
+							<div class="second_content">Target to meet <span class="meeting_content" data-bind="html:Aggressive_No_of_meetings_PerMonth"></span>
+								prospect customers every month from today!</div>
+						</div>
+					</div>
+					<div class="your_options">
+						<div class="aadhar_detail">
+							<div class="base_options_sum">Conservative Option</div>
+							<div class="base_options_sum" data-bind=""></div>
+						</div>
+						<div class="aadhar_detail">
+							<div class="aadhar_info_name">Years</div>
+							<div class="aadhar_data" data-bind="html:Conservative_Years"></div>
+						</div>
+						<div class="aadhar_detail">
+							<div class="aadhar_info_name">No of policies/month</div>
+							<div class="aadhar_data" data-bind="html:Conservative_No_of_policies_PerMonth"></div>
+						</div>
+						<div class="aadhar_detail">
+							<div class="aadhar_info_name">No of meetings/month</div>
+							<div class="aadhar_data" data-bind="html:Conservative_No_of_meetings_PerMonth"></div>
+						</div>
+						<div class="aadhar_detail">
+							<div class="aadhar_info_name">Avg no of meetings/day</div>
+							<div class="aadhar_data" data-bind="html:Conservative_Avg_No_of_meetings_Perday"></div>
+						</div>
+						<div class="aadhar_detail">
+							<div class="fisrt_content">Aggressive Option: You need to sell <span class="meeting_content" data-bind="html:Conservative_No_of_policies_PerMonth"></span>
+								policies every month for next <span class="meeting_content" data-bind="html:Conservative_Years"></span> years
+								to achieve your goals.</div>
+							<div class="second_content">Target to meet <span class="meeting_content" data-bind="html:Conservative_No_of_meetings_PerMonth"></span>
+								prospect customers every month from today!</div>
+						</div>
+					</div>
+					<button class="next" data-juci="button" data-bind="click:onBackClick">Back</button>
+				</div>
+			</div>
+			<!-- New Entry !-->
+			<div data-bind="visible:$root.userdetails_section">
+				<div class="user_details">User Details</div>
+				<div id="userdetails-section" class="Aadhar_section" data-bind="with:$root.fetchingUserDetails">
+					<div class="aadhar_detail">
+						<div class="aadhar_info_name">Name</div>
+						<div class="aadhar_data" data-bind="html:Name"></div>
+					</div>
+					<div class="aadhar_detail">
+						<div class="aadhar_info_name">Age</div>
+						<div class="aadhar_data" data-bind="html:DOB"></div>
+					</div>
+					<div class="aadhar_detail">
+						<div class="aadhar_info_name">Mobile Number</div>
+						<div class="aadhar_data" data-bind="html:Mobile"></div>
+					</div>
+					<!--div class="aadhar_detail">
 			                 <div class="aadhar_info_name">Aadhaar Number</div>
 			                 <div class="aadhar_data" data-bind="html:Aadhaar"></div>
 			            </div!-->
+				</div>
+				<button class="next" data-juci="button" data-bind="click:onFirstSectionClick">Next</button>
+			</div>
+		</div>
+		<div class="second_section" id="second-section" data-bind="visible:$root.secondSection">
+			<div data-juci="selectbox" id="time-goals" class="time_goal" data-label="Choose Your Goals" data-mode="popup"
+			 data-bind="optionsList:goalOptions,ref:goalName" placeholder onafterchange="onChangeGoals(event)"></div>
+			<div id="goals-section" data-bind="with:$root.goalsSection">
+				<div class="goals_Sec" data-juci="tel" data-bind="visible:$root.isHomeGoal,ref:homeGoal" data-label="Home Goal"
+				 placeholder="Enter your amount in lacs" onafterchange="sumGoalsAmount(event)" maxlength="3"></div>
+				<div class="goals_Sec" data-juci="tel" data-bind="visible:$root.isCarGoal,ref:carGoal" data-label="Car Goal"
+				 placeholder="Enter your amount in lacs" onafterchange="sumGoalsAmount(event)" maxlength="3"></div>
+				<div class="goals_Sec" data-juci="tel" data-bind="visible:$root.isEducationGoal,ref:childEducationGoal" data-label="Child's Education Goal"
+				 placeholder="Enter your amount in lacs" onafterchange="sumGoalsAmount(event)" maxlength="3"></div>
+				<div class="goals_Sec" data-juci="tel" data-bind="visible:$root.isMarriageGoal,ref:childMarriageGoal" data-label="Child's Marriage Goal"
+				 placeholder="Enter your amount in lacs" onafterchange="sumGoalsAmount(event)" maxlength="3"></div>
+				<div class="goals_Sec" data-juci="tel" data-bind="visible:$root.isVacationGoal,ref:vacatonGoals" data-label="Vacation Goal"
+				 placeholder="Enter your amount in lacs" onafterchange="sumGoalsAmount(event)" maxlength="3"></div>
+				<div class="goals_Sec" data-juci="tel" data-bind="visible:$root.isOtherGoal,ref:otherGoals" data-label="Other Goals"
+				 placeholder="Enter your amount in lacs" onafterchange="sumGoalsAmount(event)" maxlength="3"></div>
+			</div>
+			<div class="goals_section" id="pop">
+				<!--p class="dismiss" onclick="hide()">X</p!-->
+				<!--p class="goals">Goals - Home, Car, Child Education, Child Marriage, Vacation and Others.</p!-->
+				<div class="goal_amount_txt">
+					<p class="total_goal_amount">Total Goal Amount</p>
+					<div class="total_amount" data-bind="html:'Rs : '+ totalAmount() + ' Lacs'"></div>
+				</div>
+				<div data-juci="selectbox" id="reach-goal" class="time_goal" data-label="Time to reach your goal" data-mode="popup"
+				 data-bind="optionsList:goalTimeArr,ref:goalTime" onafterchange="sumGoalsAmount(event)" placeholder></div>
+			</div>
+			<div class="income_Sec" data-juci="tel" data-label="Current Savings<span class='income_class'>(in Lacs)</span>"
+			 data-bind="ref:currentSavings" placeholder="Enter your amount in lacs"></div>
+			<div class="income_Sec" data-juci="tel" data-label="Annual Income<span class='income_class'>(in Lacs)</span>"
+			 data-bind="ref:annualIncome" placeholder="Enter your amount in lacs"></div>
+			<button class="next" data-juci="button" data-bind="click:onSecondSectionClick">Next</button>
+		</div>
+		<div class="third_section" id="third-section" data-bind="visible:$root.thirdSection">
+			<div class="third_sec" data-bind="with:calculatedAmount">
+				<div class="cal_amount" data-juci="tel" data-label="How much more do you need to achieve your goals on time<span class='income_class'>(Rs. in Lacs)</span>?"
+				 data-bind="ref:amountToBeAchieved,disabled:$root.goalsText" placeholder="Amount in lacs"></div>
+				<div class="cal_amount" data-juci="tel" data-label="How much time will you actually take to reach your goal (years)?"
+				 data-bind="ref:amountToBeAchievedInTime,disabled:$root.goalsText" placeholder="In years"></div>
+				<div class="cal_amount" data-juci="tel" data-label="How much more do you need to save each year to achieve your goals on time<span class='income_class'>(Rs. in Lacs)</span>?"
+				 data-bind="ref:amountToBeSaved,disabled:$root.goalsText" placeholder="Amount in lacs"></div>
+			</div>
+			<button class="next" data-juci="button" data-bind="click:onThirdSectionClick">Next</button>
+		</div>
+		<div class="fourth_section" id="fourth-section" data-bind="visible:fourthSection">
+			<div class="inline">
+				<div id="base-section" class="table_section" data-bind="with:baseOption">
+					<div class="table_header">Base Option</div>
+					<div class="table_detail">
+						<div class="table_info_name">Years</div>
+						<div class="table_data" data-bind="html:years"></div>
 					</div>
-					<button class="next" data-juci="button" data-bind="click:onFirstSectionClick">Next</button>
+					<div class="table_detail">
+						<div class="table_info_name">No of policies/month</div>
+						<div class="table_data" data-bind="html:noOfPoliciesPerMonth"></div>
+					</div>
+					<div class="table_detail">
+						<div class="table_info_name">No of meetings/month</div>
+						<div class="table_data" data-bind="html:noOfMeetingsPerMonth"></div>
+					</div>
+					<div class="table_detail">
+						<div class="table_info_name">Avg no of meetings/day</div>
+						<div class="table_data" data-bind="html:avgMeetingsPerDay"></div>
+					</div>
+				</div>
+				<div class="base_option">
+					<div class="base_value" data-bind="html:'Base Option: You need to sell '+ baseOption().noOfPoliciesPerMonth() + ' policies every month for next ' + baseOption().years() + ' years to achieve your goals. '"></div>
+					<div class="base_value" data-bind="html:'Target to meet ' + baseOption().noOfMeetingsPerMonth() +  ' prospect customers every month from today!'"></div>
+				</div>
+				<div id="Aggressive-section" class="table_section" data-bind="with:aggressiveOption">
+					<div class="table_header">Aggressive Option</div>
+					<div class="table_detail">
+						<div class="table_info_name">Years</div>
+						<div class="table_data" data-bind="html:years"></div>
+					</div>
+					<div class="table_detail">
+						<div class="table_info_name">No of policies/month</div>
+						<div class="table_data" data-bind="html:noOfPoliciesPerMonth"></div>
+					</div>
+					<div class="table_detail">
+						<div class="table_info_name">No of meetings/month</div>
+						<div class="table_data" data-bind="html:noOfMeetingsPerMonth"></div>
+					</div>
+					<div class="table_detail">
+						<div class="table_info_name">Avg no of meetings/day</div>
+						<div class="table_data" data-bind="html:avgMeetingsPerDay"></div>
+					</div>
 				</div>
 			</div>
-			<div class="second_section" id="second-section" data-bind="visible:$root.secondSection">
-				<div data-juci="selectbox" id="time-goals" class="time_goal" data-label="Choose Your Goals" data-mode="popup"  data-bind="optionsList:goalOptions,ref:goalName" placeholder onafterchange="onChangeGoals(event)"></div>
-				<div id="goals-section" data-bind="with:$root.goalsSection">
-					<div class="goals_Sec" data-juci="tel" data-bind="visible:$root.isHomeGoal,ref:homeGoal" data-label="Home Goal" placeholder="Enter your amount in lacs" onafterchange="sumGoalsAmount(event)" maxlength="3"></div>
-					<div class="goals_Sec" data-juci="tel" data-bind="visible:$root.isCarGoal,ref:carGoal" data-label="Car Goal" placeholder="Enter your amount in lacs" onafterchange="sumGoalsAmount(event)" maxlength="3"></div>
-					<div class="goals_Sec" data-juci="tel" data-bind="visible:$root.isEducationGoal,ref:childEducationGoal" data-label="Child's Education Goal" placeholder="Enter your amount in lacs" onafterchange="sumGoalsAmount(event)" maxlength="3"></div>
-					<div class="goals_Sec" data-juci="tel" data-bind="visible:$root.isMarriageGoal,ref:childMarriageGoal" data-label="Child's Marriage Goal" placeholder="Enter your amount in lacs" onafterchange="sumGoalsAmount(event)" maxlength="3"></div>
-					<div class="goals_Sec" data-juci="tel" data-bind="visible:$root.isVacationGoal,ref:vacatonGoals" data-label="Vacation Goal" placeholder="Enter your amount in lacs" onafterchange="sumGoalsAmount(event)" maxlength="3"></div>
-					<div class="goals_Sec" data-juci="tel" data-bind="visible:$root.isOtherGoal,ref:otherGoals" data-label="Other Goals" placeholder="Enter your amount in lacs" onafterchange="sumGoalsAmount(event)" maxlength="3"></div>
+			<div class="base_option">
+				<div class="base_value" data-bind="html:'Aggressive Option: You need to sell '+ aggressiveOption().noOfPoliciesPerMonth() + ' policies every month for next ' + aggressiveOption().years() + ' years to achieve your goals. '"></div>
+				<div class="base_value" data-bind="html:'Target to meet ' + aggressiveOption().noOfMeetingsPerMonth() +  ' prospect customers every month from today!'"></div>
+			</div>
+			<div id="Conservative-section" class="table_section" data-bind="with:conservativeOption">
+				<div class="table_header">Conservative Option</div>
+				<div class="table_detail">
+					<div class="table_info_name">Years</div>
+					<div class="table_data" data-bind="html:years"></div>
 				</div>
-				<div class="goals_section" id="pop">
-					<!--p class="dismiss" onclick="hide()">X</p!-->
-	                <!--p class="goals">Goals - Home, Car, Child Education, Child Marriage, Vacation and Others.</p!-->
-	                <div class="goal_amount_txt">
-	                	<p class="total_goal_amount">Total Goal Amount</p>
-	                	<div class="total_amount" data-bind="html:'Rs : '+ totalAmount() + ' Lacs'"></div>
-	                </div>
-	                 <div data-juci="selectbox" id="reach-goal" class="time_goal" data-label="Time to reach your goal" data-mode="popup"  data-bind="optionsList:goalTimeArr,ref:goalTime" onafterchange="sumGoalsAmount(event)" placeholder></div>
-	            </div>
-	            <div class="income_Sec" data-juci="tel" data-label="Current Savings<span class='income_class'>(in Lacs)</span>" data-bind="ref:currentSavings" placeholder="Enter your amount in lacs" ></div>
-	            <div class="income_Sec" data-juci="tel" data-label="Annual Income<span class='income_class'>(in Lacs)</span>" data-bind="ref:annualIncome" placeholder="Enter your amount in lacs" ></div>
-	            <button class="next" data-juci="button" data-bind="click:onSecondSectionClick">Next</button>
-			</div>
-			<div class="third_section" id="third-section" data-bind="visible:$root.thirdSection">
-				<div class="third_sec" data-bind="with:calculatedAmount">
-					<div class="cal_amount" data-juci="tel" data-label="How much more do you need to achieve your goals on time<span class='income_class'>(Rs. in Lacs)</span>?" data-bind="ref:amountToBeAchieved,disabled:$root.goalsText" placeholder="Amount in lacs" ></div>
-					<div class="cal_amount" data-juci="tel" data-label="How much time will you actually take to reach your goal (years)?" data-bind="ref:amountToBeAchievedInTime,disabled:$root.goalsText" placeholder="In years" ></div>
-					<div class="cal_amount" data-juci="tel" data-label="How much more do you need to save each year to achieve your goals on time<span class='income_class'>(Rs. in Lacs)</span>?" data-bind="ref:amountToBeSaved,disabled:$root.goalsText" placeholder="Amount in lacs" ></div>
+				<div class="table_detail">
+					<div class="table_info_name">No of policies/month</div>
+					<div class="table_data" data-bind="html:noOfPoliciesPerMonth"></div>
 				</div>
-				<button class="next" data-juci="button" data-bind="click:onThirdSectionClick">Next</button>
+				<div class="table_detail">
+					<div class="table_info_name">No of meetings/month</div>
+					<div class="table_data" data-bind="html:noOfMeetingsPerMonth"></div>
+				</div>
+				<div class="table_detail">
+					<div class="table_info_name">Avg no of meetings/day</div>
+					<div class="table_data" data-bind="html:avgMeetingsPerDay"></div>
+				</div>
 			</div>
-			<div class="fourth_section" id="fourth-section" data-bind="visible:fourthSection">
-				<div class="inline">
-					<div id="base-section" class="table_section" data-bind="with:baseOption">
-	              		<div class="table_header">Base Option</div>
-			             <div class="table_detail">
-			                <div class="table_info_name">Years</div>
-			                <div class="table_data" data-bind="html:years"></div>
-			             </div>
-			             <div class="table_detail">
-			                <div class="table_info_name">No of policies/month</div>
-			                <div class="table_data" data-bind="html:noOfPoliciesPerMonth"></div>
-			             </div>
-			             <div class="table_detail">
-			                <div class="table_info_name">No of meetings/month</div>
-			                <div class="table_data" data-bind="html:noOfMeetingsPerMonth"></div>
-			             </div>
-			             <div class="table_detail">
-			                <div class="table_info_name">Avg no of meetings/day</div>
-			                <div class="table_data" data-bind="html:avgMeetingsPerDay"></div>
-			             </div>
-		           	</div>
-		           	<div class="base_option">
-		           		<div class="base_value" data-bind="html:'Base Option: You need to sell '+ baseOption().noOfPoliciesPerMonth() + ' policies every month for next ' + baseOption().years() + ' years to achieve your goals. '"></div>
-		           		<div class="base_value" data-bind="html:'Target to meet ' + baseOption().noOfMeetingsPerMonth() +  ' prospect customers every month from today!'"></div>
-	           		</div>
-		           	<div id="Aggressive-section" class="table_section" data-bind="with:aggressiveOption">
-	              		<div class="table_header">Aggressive Option</div>
-			             <div class="table_detail">
-			                <div class="table_info_name">Years</div>
-			                <div class="table_data" data-bind="html:years"></div>
-			             </div>
-			             <div class="table_detail">
-			                <div class="table_info_name">No of policies/month</div>
-			                <div class="table_data" data-bind="html:noOfPoliciesPerMonth"></div>
-			             </div>
-			             <div class="table_detail">
-			                <div class="table_info_name">No of meetings/month</div>
-			                <div class="table_data" data-bind="html:noOfMeetingsPerMonth"></div>
-			             </div>
-			             <div class="table_detail">
-			                <div class="table_info_name">Avg no of meetings/day</div>
-			                <div class="table_data" data-bind="html:avgMeetingsPerDay"></div>
-			             </div>
-		           	</div>
-		        </div>
-		        <div class="base_option">
-	           		<div class="base_value" data-bind="html:'Aggressive Option: You need to sell '+ aggressiveOption().noOfPoliciesPerMonth() + ' policies every month for next ' + aggressiveOption().years() + ' years to achieve your goals. '"></div>
-	           		<div class="base_value" data-bind="html:'Target to meet ' + aggressiveOption().noOfMeetingsPerMonth() +  ' prospect customers every month from today!'"></div>
-	           	</div>
-		        <div id="Conservative-section" class="table_section" data-bind="with:conservativeOption">
-              		<div class="table_header">Conservative Option</div>
-		             <div class="table_detail">
-		                <div class="table_info_name">Years</div>
-		                <div class="table_data" data-bind="html:years"></div>
-		             </div>
-		             <div class="table_detail">
-		                <div class="table_info_name">No of policies/month</div>
-		                <div class="table_data" data-bind="html:noOfPoliciesPerMonth"></div>
-		             </div>
-		             <div class="table_detail">
-		                <div class="table_info_name">No of meetings/month</div>
-		                <div class="table_data" data-bind="html:noOfMeetingsPerMonth"></div>
-		             </div>
-		             <div class="table_detail">
-		                <div class="table_info_name">Avg no of meetings/day</div>
-		                <div class="table_data" data-bind="html:avgMeetingsPerDay"></div>
-		             </div>
-	           	</div>
-	           	<div class="base_option">
-	           		<div class="base_value" data-bind="html:'Conservative Option: You need to sell '+ conservativeOption().noOfPoliciesPerMonth() + ' policies every month for next ' + conservativeOption().years() + ' years to achieve your goals. '"></div>
-	           		<div class="base_value" data-bind="html:'Target to meet ' + conservativeOption().noOfMeetingsPerMonth() +  ' prospect customers every month from today!'"></div>
-	           	</div>
-	           	<div class="finished">
-	           		<button class="finish" data-juci="button" onClick="onFinishedClick()">Finish..</button>
-	           	</div>
+			<div class="base_option">
+				<div class="base_value" data-bind="html:'Conservative Option: You need to sell '+ conservativeOption().noOfPoliciesPerMonth() + ' policies every month for next ' + conservativeOption().years() + ' years to achieve your goals. '"></div>
+				<div class="base_value" data-bind="html:'Target to meet ' + conservativeOption().noOfMeetingsPerMonth() +  ' prospect customers every month from today!'"></div>
 			</div>
-			<div class="Premium" style="display:none" id="fifth-section">
-				<div data-juci="selectbox" id="premium-value" class="time_goal" data-label="Choose the premium per policy" data-mode="popup"  data-bind="optionsList:PremiumOptions,ref:premiumValue" placeholder onafterchange="onPremiumChange(event)"></div>
+			<div class="finished">
+				<button class="finish" data-juci="button" onClick="onFinishedClick()">Finish..</button>
 			</div>
-				
-			<!-- Netowork Calculator !-->
-			<div class="network_calculator" id="network-calculator" style="display:none">
-				<div class="network-related-ques" data-bind="with:questionaries" style = "background: #dddddd;">
-					<div data-juci="selectbox" class="time_goal" data-label="How many relatives do you have in your family?" data-mode="popup"  data-bind="optionsList:relatives,ref:relativesCount" placeholder ></div>
-					<div data-juci="selectbox" class="time_goal" data-label="Do you have a spouse?" data-mode="popup"  data-bind="optionsList:spouseOptions,ref:spouse" placeholder onafterchange="onChangeClick(event)"></div>
-					<div data-juci="selectbox" class="time_goal" data-label="How many relatives do you have in your in-laws family?" data-mode="popup"  data-bind="visible:spouse() == 'Yes',optionsList:inLawsoptions,ref:inLawsValue" placeholder></div>
-					<div data-juci="selectbox" class="time_goal" data-label="How many friends/followers do you have on Facebook, Twitter, Instagram, WhatsApp?" data-mode="popup"  data-bind="optionsList:socialMediaoptions,ref:socialMediaValue" placeholder></div>
-					<div data-juci="selectbox" class="time_goal" data-label="Do you have any business?" data-mode="popup"  data-bind="optionsList:businessOptions,ref:businessValue" placeholder onafterchange="onChangeBusinessClick(event)"></div>
-					<div data-juci="selectbox" class="time_goal" data-label="How many customers does your business have?" data-mode="popup"  data-bind="visible:businessValue() == 'Yes',optionsList:businessCustomerOptions,ref:businessCustomerValue" placeholder></div>
-					<div data-juci="selectbox" id = "policy-sold" class="time_goal" data-label="How many policies will you sell in a month?" data-mode="popup"  data-bind="optionsList:policyOptions,ref:policyValue" placeholder></div>
+		</div>
+		<div class="Premium" style="display:none" id="fifth-section">
+			<div data-juci="selectbox" id="premium-value" class="time_goal" data-label="Choose the premium per policy" data-mode="popup"
+			 data-bind="optionsList:PremiumOptions,ref:premiumValue" placeholder onafterchange="onPremiumChange(event)"></div>
+		</div>
+
+		<!-- Netowork Calculator !-->
+		<div class="network_calculator" id="network-calculator" style="display:none">
+			<div class="network-related-ques" data-bind="with:questionaries" style="background: #dddddd;">
+				<div data-juci="selectbox" class="time_goal" data-label="How many relatives do you have in your family?" data-mode="popup"
+				 data-bind="optionsList:relatives,ref:relativesCount" placeholder></div>
+				<div data-juci="selectbox" class="time_goal" data-label="Do you have a spouse?" data-mode="popup" data-bind="optionsList:spouseOptions,ref:spouse"
+				 placeholder onafterchange="onChangeClick(event)"></div>
+				<div data-juci="selectbox" class="time_goal" data-label="How many relatives do you have in your in-laws family?"
+				 data-mode="popup" data-bind="visible:spouse() == 'Yes',optionsList:inLawsoptions,ref:inLawsValue" placeholder></div>
+				<div data-juci="selectbox" class="time_goal" data-label="How many friends/followers do you have on Facebook, Twitter, Instagram, WhatsApp?"
+				 data-mode="popup" data-bind="optionsList:socialMediaoptions,ref:socialMediaValue" placeholder></div>
+				<div data-juci="selectbox" class="time_goal" data-label="Do you have any business?" data-mode="popup" data-bind="optionsList:businessOptions,ref:businessValue"
+				 placeholder onafterchange="onChangeBusinessClick(event)"></div>
+				<div data-juci="selectbox" class="time_goal" data-label="How many customers does your business have?" data-mode="popup"
+				 data-bind="visible:businessValue() == 'Yes',optionsList:businessCustomerOptions,ref:businessCustomerValue"
+				 placeholder></div>
+				<div data-juci="selectbox" id="policy-sold" class="time_goal" data-label="How many policies will you sell in a month?"
+				 data-mode="popup" data-bind="optionsList:policyOptions,ref:policyValue" placeholder></div>
+				<div class="finished">
+					<button class="finish" data-juci="button" onClick="onSubmitClick()">Submit</button>
+				</div>
+			</div>
+			<div id="dialog-network-calculator" data-juci="dialog">
+				<div class="network_output">
+					<div class="network_calculation" data-bind="html:networkCalci"></div>
 					<div class="finished">
-						<button class="finish" data-juci="button" onClick="onSubmitClick()">Submit</button>
+						<button class="finish" data-juci="button" onClick="onClose('dialog-network-calculator')">Ok</button>
 					</div>
 				</div>
-				<div id="dialog-network-calculator" data-juci="dialog">
-		            <div class="network_output">
-		            	<div class="network_calculation" data-bind="html:networkCalci"></div>
-		            	<div class="finished">
-		            		<button class="finish" data-juci="button" onClick="onClose('dialog-network-calculator')">Ok</button>
-		            	</div>
-		            </div>
-            	</div>
 			</div>
-		
-	        <div >
+		</div>
+
+		<div>
 			<!-- HLV Calculator !-->
 			<div class="hlvCalculator" id="hlv_calculator">
-				<div data-juci="form" class="hlvcal"  id = "hlvfrm1" data-bind="ref:hlvcalculate"  onreset="hlvReset(event)">
-				<div data-bind = "visible:$root.hlv1">
-					<div class="spotlight-container">
-					<img src="images/personaldetail.png" class="img-responsive-h1" alt="" title="">
+				<div data-juci="form" class="hlvcal" id="hlvfrm1" data-bind="ref:hlvcalculate" onreset="hlvReset(event)">
+					<div data-bind="visible:$root.hlv1">
+						<div class="spotlight-container">
+							<img src="images/personaldetail.png" class="img-responsive-h1" alt="" title="">
+						</div>
+						<div data-juci="tel" style="margin-bottom: 3px;" id="hcage" data-label="<span class='line'>1 </span>What is your current age?<span class='star'>*</span>"
+						 data-bind="ref:age" pattern="^(?!0)[0-9]*$" placeholder="Enter your age" minlength="1" maxlength="2"
+						 onvalidationfail="Utils.GetValidationMessage(event,'Current Age')" required></div>
+						<div class="inline_control" id="gender_container">
+							<div data-juci="radiogroup" style="margin-bottom: -16px;" data-label="<span class='line'>2 </span>Are you Married?<span class='star'>*</span>"
+							 data-bind=" ref:married,optionsList: $root.Genderlist, optionsText:function(i){return i.type}" class="required radioopts radiofhs1 fname xyz"
+							 id="genderopt1" data-comparator="compareGender" required>
+								<div data-juci="optiontemplate" class="roptions">
+									<div class="optcontainer">
+										<div data-bind="html:type" class="oplabel" id="gender"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div data-juci="tel" data-label="<span class='line'>3 </span>When do you wish to retire?<span class='star'>*</span> "
+						 id="hrage" data-bind="ref:retireage" placeholder="Enter year" onvalidationfail="Utils.GetValidationMessage(event,'Retire Age')"
+						 pattern="^(?!0)[0-9]*$" minlength="1" maxlength="2" style="margin-top: -6px;" required></div>
+
+						<div class="btn">
+							<button class="savetax1" onclick="proceeda()" data-juci="button">PROCEED</button>
+						</div>
 					</div>
-					<div  data-juci="tel" style="margin-bottom: 3px;" id = "hcage" data-label="<span class='line'>1 </span>What is your current age?<span class='star'>*</span>" data-bind="ref:age" pattern="^(?!0)[0-9]*$" placeholder="Enter your age" minlength = "1" maxlength = "2" onvalidationfail="Utils.GetValidationMessage(event,'Current Age')" required></div>
-					<div class="inline_control" id="gender_container">
-					<div data-juci="radiogroup"  style="margin-bottom: -16px;" data-label="<span class='line'>2 </span>Are you Married?<span class='star'>*</span>"  data-bind=" ref:married,optionsList: $root.Genderlist, optionsText:function(i){return i.type}" class="required radioopts radiofhs1 fname xyz" id="genderopt1" data-comparator="compareGender"  required>
-					<div data-juci="optiontemplate" class="roptions" >
-						<div class="optcontainer">
-						<div data-bind="html:type" class="oplabel" id="gender" ></div>
-				             	</div>	
-				        	</div>
-					  </div>
+					<div data-bind="visible:$root.hlv2">
+						<div class="spotlight-container">
+							<img src="images/spoatlight2.png" class="img-responsive-h2" alt="" title="">
+						</div>
+						<div data-juci="tel" data-label="<span class='line'>4 </span>What is your monthly income?<span class='star'>*</span> "
+						 id="hmi" data-bind="ref:monthlyincome" placeholder="Enter Amount (₹)" pattern="[0-9\,?]{1}" data-formatter="formatValue1"
+						 onvalidationfail="Utils.GetValidationMessage(event,'savings')" required></div>
+						<div data-juci="tel" data-label="<span class='line'>5 </span><span class='lable11'>What is your monthly expense?</span> <p class='labelhlv''>(Inclusive of personal expenses, liabilities, & expenditure on <span>dependents)</p>"
+						 data-bind="ref:monthlyexpensive" placeholder="Enter Amount (₹)" id="hme" pattern="[0-9\,?]{1}" data-formatter="formatValue1"
+						 onvalidationfail="Utils.GetValidationMessage(event,'savings')"></div>
+						<div class="newhead">
+							<div class="newreschild"><span class='line5'>6 </span></div>
+							<div data-juci="tel" class="test43" style="width:93%" data-label="Total value of current savings & investments.<span class='star'>*</span> "
+							 data-bind="ref:valueofsvnginvstmnt" placeholder="Enter Amount (₹)" id="htsi" pattern="[0-9\,?]{1}"
+							 data-formatter="formatValue1" onvalidationfail="Utils.GetValidationMessage(event,'savings')"></div>
+						</div>
+						<div class="clear"></div>
+
+						<div class="btn">
+							<button class="savehback" onclick="backa()" data-juci="button">BACK</button>
+							<button class="savehpro" onclick="proceedb()" data-juci="button">PROCEED</button>
+						</div>
 					</div>
-					<div data-juci="tel" data-label="<span class='line'>3 </span>When do you wish to retire?<span class='star'>*</span> " id = "hrage" data-bind="ref:retireage" placeholder="Enter year" onvalidationfail="Utils.GetValidationMessage(event,'Retire Age')"  pattern="^(?!0)[0-9]*$" minlength = "1"  maxlength="2" style="margin-top: -6px;" required></div>
-					
-					<div class="btn">
-					<button class="savetax1" onclick = "proceeda()"  data-juci="button">PROCEED</button>
+					<div data-bind="visible:$root.hlv3">
+						<div class="spotlight-container">
+							<img src="images/insurance-detail.png" class="img-responsive-h3" alt="" title="">
+						</div>
+						<div data-juci="tel" data-label="<span class='line'>7 </span>Existing Insurance Cover<span class='star'>*</span> "
+						 id="hlvins" data-bind="ref:insurance" placeholder="Enter Amount (₹)" pattern="[0-9\,?]{1}" data-formatter="formatValue1"
+						 onvalidationfail="Utils.GetValidationMessage(event,'Insuranse')"></div>
+						<div data-juci="tel" data-label="<span class='line'>8 </span>Total outstanding of all loans<span class='star'>*</span> "
+						 id="hlvto" data-bind="ref:loans" placeholder="Enter Amount (₹)" pattern="[0-9\,?]{1}" data-formatter="formatValue1"
+						 onvalidationfail="Utils.GetValidationMessage(event,'savings')"></div>
+						<div class="Assumption">
+							<span data-bind="html:$root.assumption"></span>
+						</div>
+
+						<div class="btn">
+							<button class="savehback" onclick="backb()" data-bind="visible:$root.hlvbck1" data-juci="button">BACK</button>
+							<button class="savehpro" data-juci="button" data-bind="visible:$root.hlvbck1" onclick="hlvCalculate1()">PROCEED</button>
+						</div>
+						<div class="btn">
+							<button class="savetax1" data-juci="button" data-bind="visible:$root.hlvbck" onclick="hlvCalculate1()">PROCEED</button>
+						</div>
 					</div>
 				</div>
-				<div data-bind = "visible:$root.hlv2">
-					<div class="spotlight-container">
-					<img src="images/spoatlight2.png" class="img-responsive-h2" alt="" title="">
-					</div>
-					<div data-juci="tel" data-label="<span class='line'>4 </span>What is your monthly income?<span class='star'>*</span> " id = "hmi" data-bind="ref:monthlyincome" placeholder="Enter Amount (₹)" pattern="[0-9\,?]{1}"  data-formatter="formatValue1" onvalidationfail="Utils.GetValidationMessage(event,'savings')" required></div>
-					<div data-juci="tel" data-label="<span class='line'>5 </span><span class='lable11'>What is your monthly expense?</span> <p class='labelhlv''>(Inclusive of personal expenses, liabilities, & expenditure on <span>dependents)</p>" data-bind="ref:monthlyexpensive" placeholder="Enter Amount (₹)" id = "hme" pattern="[0-9\,?]{1}"  data-formatter="formatValue1" onvalidationfail="Utils.GetValidationMessage(event,'savings')" ></div>			
-					<div class = "newhead">
-					<div class = "newreschild" ><span class='line5'>6 </span></div>
-					<div data-juci="tel" class = "test43" style = "width:93%" data-label="Total value of current savings & investments.<span class='star'>*</span> " data-bind="ref:valueofsvnginvstmnt" placeholder="Enter Amount (₹)" id = "htsi" pattern="[0-9\,?]{1}"  data-formatter="formatValue1" onvalidationfail="Utils.GetValidationMessage(event,'savings')"></div>
-					</div>
-					<div class = "clear"></div>	
-					
-					<div class="btn">
-					<button class="savehback" onclick = "backa()"data-juci="button">BACK</button>
-					<button class="savehpro" onclick = "proceedb()"data-juci="button">PROCEED</button>
-					</div>
-				</div>
-				<div data-bind ="visible:$root.hlv3">
-					<div class="spotlight-container">
-					<img src="images/insurance-detail.png" class="img-responsive-h3" alt="" title="">
-					</div>
-					<div data-juci="tel" data-label="<span class='line'>7 </span>Existing Insurance Cover<span class='star'>*</span> " id = "hlvins" data-bind="ref:insurance" placeholder="Enter Amount (₹)" pattern="[0-9\,?]{1}"  data-formatter="formatValue1" onvalidationfail="Utils.GetValidationMessage(event,'Insuranse')"></div>	
-					<div data-juci="tel" data-label="<span class='line'>8 </span>Total outstanding of all loans<span class='star'>*</span> " id = "hlvto" data-bind="ref:loans" placeholder="Enter Amount (₹)" pattern="[0-9\,?]{1}"  data-formatter="formatValue1" onvalidationfail="Utils.GetValidationMessage(event,'savings')"></div>
-					<div class="Assumption">
-					<span data-bind="html:$root.assumption"></span>
-					</div>
-					
-					<div class="btn">
-					<button class="savehback" onclick = "backb()" data-bind = "visible:$root.hlvbck1" data-juci="button">BACK</button>
-					<button class="savehpro"  data-juci="button" data-bind = "visible:$root.hlvbck1"  onclick ="hlvCalculate1()">PROCEED</button>
-					</div>
-					<div class="btn">	
-					<button class="savetax1"  data-juci="button" data-bind = "visible:$root.hlvbck" onclick ="hlvCalculate1()">PROCEED</button>
-					</div>
-					</div>
-				</div>
-				<div class="container" data-bind = "visible:$root.result">		
-				<p class="form-headingh1 life">Result</p>
-				<div class="para-bottomth1">Your human life value:<span style = "color: #faa619;" data-bind="html:utils.PrependRs(hlvresult().HlvValus)"></span></div>
-				<p class="form-headingh1 life1">Recommended Plans</p>
-				<div class="product1-box1c1 nlist" id="prodh" data-juci="xlist" data-bind="ref:$root.productname1" >
-					<div class="product1-ac ntouch" data-juci="listitem" onclick="BuyNow(event)"  >
-						<div id="product1-name" class="products1_name" data-bind="html:title"><u></u></div>
-							<hr class = "prodhr">
-							<div id="product1_paragraph" class="products1_paragraph"  data-bind= "display:utils.PrependRs(subContent())"></div>
+				<div class="container" data-bind="visible:$root.result">
+					<p class="form-headingh1 life">Result</p>
+					<div class="para-bottomth1">Your human life value:<span style="color: #faa619;" data-bind="html:utils.PrependRs(hlvresult().HlvValus)"></span></div>
+					<p class="form-headingh1 life1">Recommended Plans</p>
+					<div class="product1-box1c1 nlist" id="prodh" data-juci="xlist" data-bind="ref:$root.productname1">
+						<div class="product1-ac ntouch" data-juci="listitem" onclick="BuyNow(event)">
+							<div id="product1-name" class="products1_name" data-bind="html:title"><u></u></div>
+							<hr class="prodhr">
+							<div id="product1_paragraph" class="products1_paragraph" data-bind="display:utils.PrependRs(subContent())"></div>
 							<br>
 							<div id="product1_paragraph" class="products1_paragraph">Secure your family future</div>
 							<div class="btns2-row btns2-row-sub">
-							<button class="showplan1" id="showme" data-juci="button">BUY NOW</button>
-						</div>
-					</div>
-				</div>
-				
-				<div style="margin:20px 0px;">
-				<div style="margin-bottom:10px; font-size: 19px;margin-left: 10px;">Input details provided</div>
-					<div class="table">
-						<div class="table_display">
-							<span class="display_label">Income</span>
-							<span class="display_value" data-bind="html:utils.PrependRs(hlvresult().Income)"></span>
-						</div>
-						<div class="table_display">
-							<span class="display_label">Expenses</span>
-							<span class="display_value" data-bind="html:utils.PrependRs(hlvresult().Expenses)"></span>
-						</div>
-						<div class="table_display">
-							<span class="display_label">Total Savings & Investments</span>
-							<span class="display_value" data-bind="html:utils.PrependRs(hlvresult().Saving)"></span>
-						</div>
-						<div class="table_display">
-							<span class="display_label">Total loans outstanding</span>
-							<span class="display_value" data-bind="html:utils.PrependRs(hlvresult().Loan)"></span>
-						</div>
-					</div>
-				</div>
-					
-				<div class="btn">
-				<button class="resultback" onclick = "backex()" data-bind = "visible:$root.hlvbck" data-juci="button">BACK</button>
-				<button class="resultxit" onclick = "exitHLV()"  data-bind = "visible:$root.hlvbck" data-juci="button">EXIT</button>
-				</div>
-					
-				<div class="para-leftmargin">*Arrived HLV is based on the information provided by you. This is an illustrative projection of your financial needs.</div>
-				</div>
-				</div>
-				
-		<!-- Retirement Calculator !-->
-			
-		   	<div class="Calculatorcaltop" id="retirement_calculator" >
-				<div data-juci="form" class="retirecal" data-bind="ref:retirementCalculator" id = "retfrm" onsubmit="retireCalculate(event)" onreset="retireReset(event)">
-					<div data-bind = "visible:$root.retire1">
-						<div id = "re1" class="spotlight-container">
-						<img src="images/spoatlight.png" class="img-responsive-r1" alt="" title="">
-						</div>
-						<div data-juci="tel" class="textborder" id="rcage" data-label="<span class='line'>1 </span>What is your current age?<span class='star'>*</span>" data-bind="ref:age" placeholder="Enter your age" onvalidationfail="Utils.GetValidationMessage(event,'Current Age')"  pattern="^(?!0)[0-9]*$" maxlength="2" required ></div>
-						<div class = "newhead">
-						<div class = "newreschild" ><span class='line5'>2 </span></div>
-						<div data-juci="tel" class="test43" style = "width:93%" id="rrage" data-label="What is your planned retirement age?<span class='star'>*</span>" data-bind="ref:retireage" placeholder="Enter age" onvalidationfail="Utils.GetValidationMessage(event,'Retire Age')" pattern="^[0-9]*$" maxlength="2" required ></div>
-						</div>
-						<div class = "clear"></div>	
-						<div data-juci="tel" class="textborder" id="ral" data-label="<span class='line'>3 </span>What is your annual income?<span class='star'>*</span>" data-bind="ref:annualincome" placeholder="Enter income(₹)" pattern="[0-9\,?]{1}"  data-formatter="formatValue1" onvalidationfail="Utils.GetValidationMessage(event,'savings')"  required ></div>
-					
-						<div class="btn">
-						<button class="savetax1" id = "proceedr" onclick = "proceedr1()"data-juci="button">PROCEED</button>
-						</div>	
-					</div>
-					<div data-bind = "visible:$root.retire2">
-						<div class="spotlight-container">
-						<img src="images/spoatlight2.png" class="img-responsive-r2" alt="" title="">
-						</div>
-						<div data-juci="tel" style="margin-bottom:0px"  class="textborder"data-label="<span class='line'>4 </span>Current savings for retirement<span class='star'>*</span>" data-bind="ref:currentsaving" placeholder="Enter Amount(₹)" data-trigger pattern="[0-9\,?]{1}"  data-formatter="formatValue1" onvalidationfail="Utils.GetValidationMessage(event,'savings')" required ></div>
-						<div class = "newhead">
-						<div class = "newreschild" ><span class='line5'>5 </span></div>
-						<div class = "desgn" style=" margin-bottom: 12px;width: 94%;" data-juci="selectbox" class = "retsel" id = "ret1" data-mode="popup" data-bind="optionsList:$root.investTypes,optionsText:function(item){return item.type},ref:investtype" required data-label="Please specify investment type<span class='star'>*</span>" data-formatter="formatInvestType" onafterchange = "investmenttype(event)" data-comparator="CompareInvestType" onvalidationfail></div>
-						</div>
-						<div class = "clear"></div>	
-						<div data-juci="tel"  class="textborder"data-label="<span class='line'>6 </span>What are your monthly expenses?<span class='star'>*</span>" data-bind="ref:monthlyexpensive" id = "monthexpo"placeholder="Enter Amount(₹)" pattern="[0-9\,?]{1}"  data-formatter="formatValue1" onvalidationfail="Utils.GetValidationMessage(event,'Expenses')" required></div>
-						<div class="Assumption">
-						<span data-bind="html:$root.retireassumption"></span>
-						</div>
-						
-						<div class="btn">
-						<button class="savehback" data-juci="button" data-bind = "visible:$root.taxbck1" onclick = "backr()">BACK</button>
-						<button class="savehpro" data-juci="button" data-bind = "visible:$root.taxbck1" type="submit">PROCEED</button>
-						</div>
-						
-						<div class="btn">
-						<button class="savetax123" data-juci="button" data-bind = "visible:$root.taxbck" type="submit">PROCEED</button>
-						</div>
-					</div>
-					</div>
-					<div class="result" data-bind = "visible:retirement_result">
-						<p class="form-headingre life">Result</p>
-						<div class="para-bottomretxt">The amount you would need every month after your retirement: <span style = "color: #faa619;" data-bind="html:utils.PrependRs(retirementResult().AmountreqEveMonth)"></span></div>
-						<div class="para-bottomretxt">To meet this monthly expense, you will need a retirement corpus of: <span style = "color: #faa619;" data-bind="html:utils.PrependRs(retirementResult().RetirementCorpus)"></span></div>
-						<div class="para-bottomretxt">Hence, a monthly saving of <span style = "color: #faa619;" data-bind="html:utils.PrependRs(retirementResult().MonthlySaving)"></span> is required.</div>
-						<p class="form-headingre1 life1">Recommended Plans</p>
-						<div class="product1-box1c1 nlist" id="prodr" data-juci="xlist" data-bind="ref:$root.productname_retirement1" >
-							<div class="product1-acr ntouch" data-juci="listitem" onclick="BuyNow(event)"  >
-								<div id="product1-name" class="products1_name" data-bind="html:title"><u></u></div>
-									<hr class = "prodhr">
-									<div id="product1_paragraph12" class="products1_paragraph" data-bind = "display:subContent"></div>
-									<div class="btns2-row btns2-row-sub">
-									<button class="showplan1" id="showme" data-juci="button">BUY NOW</button>
-								</div>
-							</div>
-						</div>
-
-					<div class="btn">
-					<button class="resulretiback" data-juci="button" data-bind = "visible:$root.taxbck" onclick = "backr()">BACK</button>
-					<button class="resultxit" onclick = "exitret()" data-bind = "visible:$root.taxbck"data-juci="button">EXIT</button>
-					</div>	
-				</div>
-				</div>	
-
-			<!-- Tax Calculator -->
-			   <div id="tax_calculator">
-					<div  class="TaxCalculator" data-juci="form" class="taxcal1" data-bind="ref:taxCalculator" id = "TAXForm" onsubmit="taxCalculate(event)" onreset="taxReset(event)">
-			    		<div data-bind = "visible:$root.taxi1">
-							<div class="spotlight-container">
-							<img src="images/spoatlight3.png" class="img-responsive-t1" alt="" title="">
-							</div>
-							<div data-juci="tel" class="textborder"  style="margin-bottom: 3px;"  data-label="<span class='line'>1 </span>How old are you?<span class='star'>*</span>"  data-bind="ref:age" placeholder ="Enter Your age" id = "tage"  onvalidationfail="Utils.GetValidationMessage(event,'Current Age')" pattern="^(?!0)[0-9]*$" maxlength="2" required></div>
-						<div class="inline_control"  id="employee_container">
-							<div  data-juci="radiogroup"  data-label="<span class='line'>2 </span>You are<span class='star'>*</span>" data-bind=" ref:employeetype,optionsList: $root.employeetype, optionsText:function(i){return i.type}" style="margin-bottom: -16px; margin-top:15px" class="required radioopts radiofhs3 fname xyz" id="employeeopt" onafterchange="employeeType(event)" data-comparator="CompareEmployeeType" required>
-							<div data-juci="optiontemplate" class="roptions">
-								<div class="optcontainer" >
-								<div data-bind="html:type" class="oplabel1" id="Youare"></div>
-								</div>
-							  </div>
-							</div>
-						</div>
-						<div class="salaried" data-bind="visible:$root.salaried">
-						<div data-juci="tel" class="textborder" data-label="<span class = 'labeltax'>What is your annual income?<span class='star'>*</span></span>" data-bind="ref:annualincome" placeholder="Enter Amount(₹)" id = "tal" pattern="[0-9\,?]{1}"  data-formatter="formatValue1" onvalidationfail="Utils.GetValidationMessage(event,'savings')"  ></div>
-						</div>
-						<div class="self" data-bind="visible:$root.self">
-							<div class = "newhead">
-								<div class = "newreschild12" ><span class='line5'>2.1 </span></div>
-								<div data-juci="tel" class="test431"  style = "width:90%" data-label="What is your annual salary income?<span class='star'>*</span>" data-bind="ref:selfannualsalary" placeholder="Enter Amount(₹)"  pattern="[0-9\,?]{1}"  data-formatter="formatValue1" onvalidationfail="Utils.GetValidationMessage(event,'savings')" id = "tasl" ></div>	
-							</div>
-							<div class = "clear"></div>	
-							<div class = "newhead">
-								<div class = "newreschild12" ><span class='line5'>2.2 </span></div>
-								<div data-juci="tel" class="test431"  style = "width:89%" data-label="Enter income from other sources<span class='star'>*</span>" data-bind="ref:incomeformothersource" placeholder="Enter Amount(₹)"  pattern="[0-9\,?]{1}"  data-formatter="formatValue1" onvalidationfail="Utils.GetValidationMessage(event,'savings')" id = "tosi"></div>
-								</div>
-							<div class = "clear"></div>	
-						</div>
-						
-						<div class="btn">
-						<button class="savetax1" onclick = "proceed1()"data-juci="button">PROCEED</button>
-						</div>
-					</div>		
-					
-					<div data-bind = "visible:$root.tax1">
-						<div class="spotlight-container">
-						<img src="images/spoatlight2.png" class="img-responsive-t2" alt="" title="">
-						</div>	
-						<div class = "newhead">
-							<div class = "newreschild" ><span class='line5'>3 </span></div>
-							<div data-juci="tel" class="test43" style = "width:93%" data-label="Investments u/s 80C & 80CCD(1B)<span class='star'>*</span>" data-bind="ref:investment" placeholder="Enter amount(₹)" id = "tinvs"  pattern="[0-9\,?]{1}"  data-formatter="formatValue1" onvalidationfail="Utils.GetValidationMessage(event,'savings')"  required> </div>
-					    	</div>
-						<div class = "clear"></div>		
-						<div data-juci="tel" class="textborder" data-label="<span class='line'>4 </span>Health Insurance Premium<span class='star'>*</span>" data-bind="ref:healthinsurancepremium" placeholder="Enter amount(₹)" id = "thip"  pattern="[0-9\,?]{1}"  data-formatter="formatValue1" onvalidationfail="Utils.GetValidationMessage(event,'savings')"  required> </div>		
-						<div data-juci="tel" class="textborder" data-label="<span class='line'>5 </span>What are your HRA Deductions?<span class='star'>*</span>" data-bind="ref:hiradebt" placeholder="Enter amount(₹)" id = "thra"  pattern="[0-9\,?]{1}"  data-formatter="formatValue1" onvalidationfail="Utils.GetValidationMessage(event,'savings')"  required> </div> 	
-						
-						<div class="btn">
-						<button class="savehback" onclick = "back2()"data-juci="button">BACK</button>
-						<button class="savehpro" onclick = "proceed2()"data-juci="button">PROCEED</button>
-						</div>
-						</div>
-						
-						<div data-bind = "visible:$root.tax2">
-							<div class="spotlight-container">
-							<img src="images/tax3.png" class="img-responsive-t3" alt="" title="">
-							</div>
-							<div class = "newhead">
-								<div class = "newreschild" ><span class='line5'>6 </span></div>
-								<div data-juci="tel" class="test43" style = "width:93%" data-label="Interest on Home Loan u/s 24 of Income Tax Act 1961<span class='star'>*</span>" id = "tintst" data-bind="ref:interesthomeloan" placeholder="Enter amount(₹)"  pattern="[0-9\,?]{1}"  data-formatter="formatValue1" onvalidationfail="Utils.GetValidationMessage(event,'savings')" required> </div>
-							    	</div>
-							<div class = "clear"></div>		
-							<div class = "newhead">
-								<div class = "newreschild" ><span class='line5'>7 </span></div>
-								<div data-juci="tel" class="test43"  style = "width:93%" data-label="Interest on Education Loan u/s 80E<span class='star'>*</span>" id = "tinstedu" data-bind="ref:interesteducation" placeholder="Enter amount(₹)"  pattern="[0-9\,?]{1}"  data-formatter="formatValue1" onvalidationfail="Utils.GetValidationMessage(event,'savings')"  required> </div>
-								   </div>
-							<div class = "clear"></div>	
-							<div data-juci="tel" class="textborder" data-label="<span class='line'>8 </span>Income from interest u/s 80TTA<span class='star'>*</span> " id = "tinstinc" data-bind="ref:interesttta" placeholder="Enter income(₹)"  pattern="[0-9\,?]{1}"  data-formatter="formatValue1" onvalidationfail="Utils.GetValidationMessage(event,'savings')"  required> </div>			
-							<div data-juci="tel" class="textborder" data-label="<span class='line'>9 </span>Other Deductions (if any)" id = "tinstod" data-bind="ref:otherdeduction" placeholder="Enter amount(₹)"  pattern="[0-9\,?]{1}"  data-formatter="formatValue1" onvalidationfail="Utils.GetValidationMessage(event,'savings')" required> </div>
-						
-						<div class="btn">
-						<button class="savehback" data-juci="button" data-bind = "visible:$root.retbck1" onclick = "back3()">BACK</button>
-						<button class="savehpro" data-juci="button" data-bind = "visible:$root.retbck1" type="submit">PROCEED</button>	
-						</div>
-						
-						<div class="btn">
-						<button class="savetax1" data-juci="button" data-bind = "visible:$root.retbck" type="submit">PROCEED</button>
-						</div>
-						
-						</div>
-		      		</div>
-					<div class="taxcalresult" data-bind="visible:tax_result">
-						<p class="form-headingt life">Result</p>
-						<div class="para-bottomttx1">Your Taxable Income: <span style = "color: #faa619" data-bind="html:utils.PrependRs(taxResult().TaxableIncome)"></span></div>
-						<div class="para-bottomttx1">Net Tax Payable: <span style = "color: #faa619" data-bind="html:utils.PrependRs(taxResult().NetTaxPayable)"></span></div>
-						<p class="form-headingh1 life1">Recommended Plans</p>
-						<div class="product1-box1c1 nlist" id="prodt" data-juci="xlist" data-bind="ref:$root.tax_productname1" >
-							<div class="product1-acr ntouch" data-juci="listitem" onclick="BuyNow(event)"  >
-								<div id="product1-name" class="products1_name" data-bind="html:title"><u></u></div>
-									<hr class = "prodhr">
-									<div id="product1_paragraph" class="products1_paragraph" data-bind = "display:subContent"> </div>
-									<div class="btns2-row btns2-row-sub">
-									<button class="showplan1" id="showme" data-juci="button">BUY NOW</button>
-								</div>
-							</div>
-						</div>
-						
-						<div class="btn">
-						<button class="resultaxback" data-juci="button" data-bind = "visible:$root.retbck" onclick = "back3()">BACK</button>
-						<button class="resultaxexit" onclick = "exittax()" data-bind = "visible:$root.retbck" data-juci="button">EXIT</button>
-						</div>
-					</div>		
-			  </div>	
-			  	<!-- close calculator   !-->
-			<!-- Child Calculator-->
-		     	<div class="childCalculator" id="child_calculator">
-				<div data-juci="form" data-bind="ref:childcalculate" id = "CHILDForm"onsubmit="childcalculate(event)" onreset="childReset(event)">
-				
-					<!-- Child One -->
-					<div class="childone">
-						<div class="spotlight-container">
-						<img src="images/noofchild.png" class="img-responsive-c1" style = "margin-top:10px;" alt="" title="">
-						</div>
-						<label class = "childcount">Number of Children</label>
-						<div class = "countless">   
-						<input class = "qtyplus1" type="button" onclick="decrementValue1()" value="-" />
-						<input class = "countie" type="text" id="number" value="1"/>
-						<input class = "qtyplus1" type="button" onclick="incrementValue1()" value="+" />
-						</div>
-						<p class="form-heading1 life">Child 1</p>
-						<div data-juci="text" data-label="<span class='line'>1 </span>What is the name of your child<span class='star'>*</span>" data-bind="ref:childone().name" placeholder="Enter the name" pattern = "^[a-zA-Z]*$" data-trigger onchange="labelChange(event,'childone','childone4');" onvalidationfail="Utils.GetValidationMessage(event,'Child Name')" ></div>
-						<div data-juci="tel" data-label="<span class='line'>2 </span>Age of your child<span class='star'>*</span>" data-bind="ref:childone().age" placeholder="Enter the age here" onvalidationfail="Utils.GetValidationMessage(event,'Current Age')" pattern="^(?!0)[0-9]*$" maxlength="2"></div>
-						<div class="spotlight-container">
-						<img src="images/incomedetail.png" class="img-responsive-c2" alt="" title="">
-						</div>
-						<div class = "newhead">
-							<div class = "newres1" ><span class='line5'>3 </span></div>
-								<div data-juci="tel" id="childone4" class = "test43" style = "width:93%" data-label="Your current savings for the child’s education<span class='star'>*</span> " data-bind="ref:childone().savings" placeholder="Enter Amount (₹)" pattern="[0-9\,?]{1}"  data-formatter="formatValue1" onvalidationfail="Utils.GetValidationMessage(event,'savings')" ></div>
-							</div>
-						<div class = "clear"></div>	
-						<div class = "newhead">
-							<div class = "newreschild" ><span class='line5'>4 </span></div>
-							<div class="desgn"  style=" margin-bottom: 12px;width: 94%;" id="childone" data-juci="selectbox" class = "childsel" data-mode="popup" data-bind="optionsList:$root.designation,optionsText:function(item){return item.value},ref:childone().designation" data-label="What would you like ____ to become?<span class='star'>*</span>" data-formatter="formatChildOne"  data-comparator="CompareChildOne" onafterchange="labelChange(event,'','','childone5')" onvalidationfail></div>	
-							</div>
-						<div class = "clear"></div>	
-						<div class = "newhead">
-							<div class = "newres1" ><span class='line5'>5 </span></div>
-							<div data-juci="tel" id="childone5" class = "test43" style = "width:93%" data-label="Current estimated cost of becoming a ____ <span class='star'>*</span>" data-bind="ref:childone().costestimation" placeholder="Enter Amount (₹)" pattern="[0-9\,?]{1}"  data-formatter="formatValue1" onvalidationfail="Utils.GetValidationMessage(event,'savings')"></div>
-							</div>
-						<div class = "newhead">
-							<div class = "newres1" ><span class='line5'>6 </span></div>
-							<div data-juci="tel" class = "test43" style = "width:93%" data-label="At what age will your child require this money?<span class='star'>*</span>" data-bind="ref:childone().ageEst" id = "cage1" placeholder="Enter age" onvalidationfail="Utils.GetValidationMessage(event,'Current Age')" pattern="^(?!0)[0-9]*$"  maxlength="2"></div>
-							</div>
-						<div class = "clear"></div>	
-					</div>
-	
-					<!-- Child Two -->
-				<div class="childtwo" data-bind="visible:childtwo().display">
-					<div class="spotlight-container">
-					<img src="images/no-of-child-2.png" class="img-responsive-c3" alt="" title="">
-					</div>
-					<p class="form-heading1 life">Child 2</p>
-					<div data-juci="text" data-label="<span class='line'>1 </span>What is the name of your child?<span class='star'>*</span>" data-bind="ref:childtwo().name" placeholder="Enter the name" data-trigger  pattern = "^[a-zA-Z]*$" onchange="labelChange(event,'childtwo','childtwo4');" onvalidationfail="Utils.GetValidationMessage(event,'Child Name')" ></div>
-					<div data-juci="tel" data-label="<span class='line'>2 </span>Age of your child<span class='star'>*</span>" data-bind="ref:childtwo().age" placeholder="Enter the age here" onvalidationfail="Utils.GetValidationMessage(event,'Current Age')" pattern="^(?!0)[0-9]*$" maxlength="2" ></div>
-					<div class="spotlight-container">
-					<img src="images/incomedetail.png" class="img-responsive-c4" alt="" title="">
-					</div>
-					<div class = "newhead">
-					<div class = "newres1" ><span class='line5'>3 </span></div>
-						<div data-juci="tel" id="childtwo4" class = "test43" style = "width:93%" data-label="Your current savings for the child’s education<span class='star'>*</span> " data-bind="ref:childtwo().savings" placeholder="Enter Amount (₹)" pattern="[0-9\,?]{1}"  data-formatter="formatValue1" onvalidationfail="Utils.GetValidationMessage(event,'savings')"></div>
-						</div>
-					<div class = "clear"></div>	
-					<div class = "newhead">
-						<div class = "newreschild" ><span class='line5'>4 </span></div>
-						<div class="desgn" id="childtwo" style=" margin-bottom: 12px;width: 94%;"  data-juci="selectbox" class = "childsel" data-mode="popup" data-bind="optionsList:$root.designation,optionsText:function(item){return item.value},ref:childtwo().designation"   data-label="What would you like ____ to become?<span class='star'>*</span>" data-formatter="formatChildTwo" onafterchange="labelChange(event,'','','childtwo5')" data-comparator="CompareChildTwo" onvalidationfail></div>
-					   </div>
-					<div class = "clear"></div>	
-					<div class = "newhead">
-						<div class = "newres1" ><span class='line5'>5 </span></div>
-						<div data-juci="tel" id="childtwo5" class = "test43" style = "width:93%" data-label="Current estimated cost of becoming a ____ <span class='star'>*</span> " data-bind="ref:childtwo().costestimation" placeholder="Enter Amount (₹)" pattern="[0-9\,?]{1}"  data-formatter="formatValue1" onvalidationfail="Utils.GetValidationMessage(event,'savings')"  ></div>
-					  </div>
-					<div class = "newhead">
-						<div class = "newres1" ><span class='line5'>6 </span></div>
-						<div data-juci="tel" class = "test43" style = "width:93%" data-label="At what age will your child  require this money?<span class='star'>*</span>" data-bind="ref:childtwo().ageEst" placeholder="Enter age" id = "cage2" onvalidationfail="Utils.GetValidationMessage(event,'Current Age')" pattern="^(?!0)[0-9]*$"    maxlength="2" ></div>
-					  </div>
-					<div class = "clear"></div>	
-				</div>
-					
-					<!-- Child Three -->
-				<div class="childthree" data-bind="visible:childthree().display">
-					<div class="spotlight-container">
-					<img src="images/no-of-child-2.png" class="img-responsive-c5" alt="" title="">
-					</div>
-					<p class="form-heading1 life">Child 3</p>
-					<div data-juci="text" data-label="<span class='line'>1 </span>What is the name of your child?<span class='star'>*</span>" data-bind="ref:childthree().name" placeholder="Enter the name" data-trigger  pattern = "^[a-zA-Z]*$" onchange="labelChange(event,'childthree','childthree4');" onvalidationfail="Utils.GetValidationMessage(event,'Child Name')"  ></div>
-					<div data-juci="tel" data-label="<span class='line'>2 </span>Age of your child<span class='star'>*</span>" data-bind="ref:childthree().age" placeholder="Enter the age here" onvalidationfail="Utils.GetValidationMessage(event,'Current Age')" pattern="^(?!0)[0-9]*$" maxlength="2"></div>
-					<div class="spotlight-container">
-					<img src="images/incomedetail.png" class="img-responsive-c6" alt="" title="">
-					</div>	
-					<div class = "newhead">
-						<div class = "newres1" ><span class='line5'>3 </span></div>
-						<div data-juci="tel" id="childthree4" class = "test43" style = "width:93%" data-label="Your current savings for the child’s education<span class='star'>*</span> " data-bind="ref:childthree().savings" placeholder="Enter Amount (₹)" pattern="[0-9\,?]{1}"  data-formatter="formatValue1" onvalidationfail="Utils.GetValidationMessage(event,'savings')" ></div>
-						</div>
-					<div class = "clear"></div>	
-					<div class = "newhead">
-						<div class = "newreschild" ><span class='line5'>4 </span></div>
-						<div class="desgn"  style=" margin-bottom: 12px;width: 94%;"  id="childthree" data-juci="selectbox" class = "childsel" data-mode="popup" data-bind="optionsList:$root.designation,optionsText:function(item){return item.value},ref:childthree().designation"   data-label="What would you like ____ to become?<span class='star'>*</span>" data-formatter="formatChildThree" onafterchange="labelChange(event,'','','childthree5')" data-comparator="CompareChildThree" onvalidationfail></div>
-						</div>
-					<div class = "clear"></div>		
-					<div class = "newhead">
-						<div class = "newres1" ><span class='line5'>5 </span></div>
-						<div data-juci="tel" id="childthree5" class = "test43" style = "width:93%" data-label="Current estimated cost of becoming a ____<span class='star'>*</span> " data-bind="ref:childthree().costestimation" placeholder="Enter Amount (₹)" pattern="[0-9\,?]{1}"  data-formatter="formatValue1" onvalidationfail="Utils.GetValidationMessage(event,'savings')"></div>
-						</div>
-					<div class = "clear"></div>	
-					<div class = "newhead">
-						<div class = "newres1" ><span class='line5'>6 </span></div>
-						<div data-juci="tel" class = "test43" style = "width:93%" data-label="At what age will your child  require this money?<span class='star'>*</span>" data-bind="ref:childthree().ageEst" id = "cage3" placeholder="Enter age" onvalidationfail="Utils.GetValidationMessage(event,'Current Age')" pattern="^(?!0)[0-9]*$"  maxlength="2" ></div>
-						</div>
-					<div class = "clear"></div>	
-				</div>
-					
-					<!-- Child Four -->
-				<div class="childfour" data-bind="visible:childfour().display">
-					<div class="spotlight-container">
-					<img src="images/no-of-child-2.png" class="img-responsive-c7" alt="" title="">
-					</div>
-					<p class="form-heading1 life">Child 4</p>
-					<div data-juci="text" data-label="<span class='line'>1 </span>What is the name of your child?<span class='star'>*</span>" data-bind="ref:childfour().name" placeholder="Enter the name" data-trigger  pattern = "^[a-zA-Z]*$" onchange="labelChange(event,'childfour','childfour4');" onvalidationfail="Utils.GetValidationMessage(event,'Child Name')"  ></div>
-					<div data-juci="tel" data-label="<span class='line'>2 </span>Age of your child<span class='star'>*</span>" data-bind="ref:childfour().age" placeholder="Enter the age here" onvalidationfail="Utils.GetValidationMessage(event,'Current Age')" pattern="^[0-9]*$" maxlength="2" ></div>
-					<div class="spotlight-container">
-					<img src="images/incomedetail.png" class="img-responsive-c8" alt="" title="">
-					</div>
-					<div class = "newhead">
-						<div class = "newres1" ><span class='line5'>3 </span></div>
-						<div data-juci="tel" id="childfour4" class = "test43" style = "width:93%" data-label="Your current savings for the  child’s education<span class='star'>*</span> " data-bind="ref:childfour().savings" placeholder="Enter Amount (₹)" pattern="[0-9\,?]{1}"  data-formatter="formatValue1" onvalidationfail="Utils.GetValidationMessage(event,'savings')"></div>
-						</div>
-					<div class = "clear"></div>	
-					<div class = "newhead">
-						<div class = "newreschild" ><span class='line5'>4 </span></div>
-						<div class="desgn" id="childfour"  style=" margin-bottom: 12px;width: 94%;"  data-juci="selectbox" class = "childsel" data-mode="popup" data-bind="optionsList:$root.designation,optionsText:function(item){return item.value},ref:childfour().designation"   data-label="What would you like ____ to become?<span class='star'>*</span>" data-formatter="formatChildFour" onafterchange="labelChange(event,'','','childfour5')" data-comparator="CompareChildFour" onvalidationfail="Utils.GetValidationMessage(event,'Marital Status')"></div>
-						</div>
-					<div class = "clear"></div>	
-					<div class = "newhead">
-						<div class = "newres1" ><span class='line5'>5 </span></div>
-						<div data-juci="tel" class = "test43" style = "width:93%" data-label="Current estimated cost of becoming a ____<span class='star'>*</span> " id="childfour5" data-bind="ref:childfour().costestimation" placeholder="Enter Amount (₹)" pattern="[0-9\,?]{1}"  data-formatter="formatValue1" onvalidationfail="Utils.GetValidationMessage(event,'savings')"></div>
-						</div>
-					<div class = "clear"></div>	
-					<div class = "newhead">
-						<div class = "newres1" ><span class='line5'>6 </span></div>
-						<div data-juci="tel" class = "test43" style = "width:93%" data-label="At what age will your child require this money?<span class='star'>*</span>" data-bind="ref:childfour().ageEst" placeholder="Enter age" id = "cage4" onvalidationfail="Utils.GetValidationMessage(event,'Current Age')" pattern="^(?!0)[0-9]*$"   maxlength="2" ></div>
-						</div>
-					<div class = "clear"></div>	
-					</div>
-					
-					<div class="btn">
-					<button class="savetax1" data-juci="button" type="submit">PROCEED</button>
-					</div>
-					</div>	
-					<div class="Assumption">
-					<span data-bind="html:$root.assumption"></span>
-					</div>
-			<div class="container" data-bind="visible:child_result">
-					<div data-juci="togglebar" id="toggle" data-toggled="0" ontoggle="toggleView(event)">
-					<button data-juci="button" data-toggle="0" data-bind="visible:childtabs().childone">Child 1</button>
-					<button data-juci="button" data-toggle="1" data-bind="visible:childtabs().childtwo">Child 2</button>
-					<button data-juci="button" data-toggle="2" data-bind="visible:childtabs().childthree">Child 3</button>
-					<button data-juci="button" data-toggle="3" data-bind="visible:childtabs().childfour">Child 4</button>
-					</div>
-					<div class="result_one" id="resultone">
-					<div class="para-bottom"><span data-bind="html:childResult().FristChildInfo"> </span> <span style = "color: #faa619;-webkit-font-smoothing: antialiased;font-family: sans-serif;" data-bind="html:utils.PrependRs(childResult().FristChildAmountvalue)"></span></div>
-					<div class="para-bottom">You will need to save an amount of <span style = "color: #faa619;-webkit-font-smoothing: antialiased;font-family: sans-serif;" data-bind="html:utils.PrependRs(childResult().FirstChildSaveAmount)"></span> per month</div>
-					</div>
-					
-					<div class="result_two" id="resulttwo">
-					<div class="para-bottom"><span data-bind="html:childResult().SecondChildInfo"> </span> <span style = "color: #faa619;-webkit-font-smoothing: antialiased;font-family: sans-serif;" data-bind="html:utils.PrependRs(childResult().SecondChildAmountvalue)"></span></div>
-					<div class="para-bottom">You will need to save an amount of <span style = "color: #faa619;-webkit-font-smoothing: antialiased;font-family: sans-serif;" data-bind="html:utils.PrependRs(childResult().SecondChildSaveAmount)"></span> per month</div>
-					</div>					
-					
-					<div class="result_one" id="resultthree">
-					<div class="para-bottom"><span data-bind="html:childResult().ThreeChildInfo"> </span> <span style = "color: #faa619;-webkit-font-smoothing: antialiased;font-family: sans-serif;" data-bind="html:utils.PrependRs(childResult().ThreeChildAmountvalue)"></span></div>
-					<div class="para-bottom">You will need to save an amount of <span style = "color: #faa619;-webkit-font-smoothing: antialiased;font-family: sans-serif;" data-bind="html:utils.PrependRs(childResult().ThreeChildSaveAmount)"></span> per month</div>
-					</div>
-					
-					<div class="result_one" id="resultfour">
-					<div class="para-bottom"><span data-bind="html:childResult().FourthChildInfo"> </span> <span style = "color: #faa619;-webkit-font-smoothing: antialiased;font-family: sans-serif;" data-bind="html:utils.PrependRs(childResult().FourthChildAmountvalue)"></span></div>
-					<div class="para-bottom">You will need to save an amount of <span style = "color: #faa619;-webkit-font-smoothing: antialiased;font-family: sans-serif;" data-bind="html:utils.PrependRs(childResult().FourthChildSaveAmount)"></span> per month</div>
-					</div>
-					<p class="form-heading1 life1">Recommended Plans</p>	
-					<div class="product1-box1c1 nlist" id="prodc1" data-juci="xlist" data-bind="ref:$root.child_productname1" >
-						<div class="product1-ac ntouch" data-juci="listitem" onclick="BuyNow(event)"  >
-							<div id="product1-name" class="products1_name" data-bind="html:title"><u></u></div>
-								<hr class = "prodhr">
-								<div id="product1_paragraph" class="products1_paragraph" data-bind = "display:subContent"></div>
-								<div class="btns2-row btns2-row-sub">
 								<button class="showplan1" id="showme" data-juci="button">BUY NOW</button>
 							</div>
 						</div>
 					</div>
-					<div class="para-leftmargin">*Computed based on the information provided by you. This is an illustrative projection of your financial needs.</div>
+
+					<div style="margin:20px 0px;">
+						<div style="margin-bottom:10px; font-size: 19px;margin-left: 10px;">Input details provided</div>
+						<div class="table">
+							<div class="table_display">
+								<span class="display_label">Income</span>
+								<span class="display_value" data-bind="html:utils.PrependRs(hlvresult().Income)"></span>
+							</div>
+							<div class="table_display">
+								<span class="display_label">Expenses</span>
+								<span class="display_value" data-bind="html:utils.PrependRs(hlvresult().Expenses)"></span>
+							</div>
+							<div class="table_display">
+								<span class="display_label">Total Savings & Investments</span>
+								<span class="display_value" data-bind="html:utils.PrependRs(hlvresult().Saving)"></span>
+							</div>
+							<div class="table_display">
+								<span class="display_label">Total loans outstanding</span>
+								<span class="display_value" data-bind="html:utils.PrependRs(hlvresult().Loan)"></span>
+							</div>
+						</div>
+					</div>
+
 					<div class="btn">
-					<button class="savetax1" onclick = "exitc()"data-juci="button">EXIT</button>
+						<button class="resultback" onclick="backex()" data-bind="visible:$root.hlvbck" data-juci="button">BACK</button>
+						<button class="resultxit" onclick="exitHLV()" data-bind="visible:$root.hlvbck" data-juci="button">EXIT</button>
 					</div>
-					</div>
+
+					<div class="para-leftmargin">*Arrived HLV is based on the information provided by you. This is an illustrative
+						projection of your financial needs.</div>
+				</div>
 			</div>
 
-			
-			<!-- FHS Calculator -->
-           <div  class = "fhscalculator"  id = "fhs_calculator">
-	                <div  data-juci="form" data-bind="ref:fhsform" id = "FHSForm" onsubmit="fhsCalculate(event)">
-						<div data-bind = "visible:$root.fhs1">
-							<div class="spotlight-container">
-							<img src="images/fhspersonaldetail.png" class="img-responsive-f1" alt="" title="">
+			<!-- Retirement Calculator !-->
+
+			<div class="Calculatorcaltop" id="retirement_calculator">
+				<div data-juci="form" class="retirecal" data-bind="ref:retirementCalculator" id="retfrm" onsubmit="retireCalculate(event)"
+				 onreset="retireReset(event)">
+					<div data-bind="visible:$root.retire1">
+						<div id="re1" class="spotlight-container">
+							<img src="images/spoatlight.png" class="img-responsive-r1" alt="" title="">
+						</div>
+						<div data-juci="tel" class="textborder" id="rcage" data-label="<span class='line'>1 </span>What is your current age?<span class='star'>*</span>"
+						 data-bind="ref:age" placeholder="Enter your age" onvalidationfail="Utils.GetValidationMessage(event,'Current Age')"
+						 pattern="^(?!0)[0-9]*$" maxlength="2" required></div>
+						<div class="newhead">
+							<div class="newreschild"><span class='line5'>2 </span></div>
+							<div data-juci="tel" class="test43" style="width:93%" id="rrage" data-label="What is your planned retirement age?<span class='star'>*</span>"
+							 data-bind="ref:retireage" placeholder="Enter age" onvalidationfail="Utils.GetValidationMessage(event,'Retire Age')"
+							 pattern="^[0-9]*$" maxlength="2" required></div>
+						</div>
+						<div class="clear"></div>
+						<div data-juci="tel" class="textborder" id="ral" data-label="<span class='line'>3 </span>What is your annual income?<span class='star'>*</span>"
+						 data-bind="ref:annualincome" placeholder="Enter income(₹)" pattern="[0-9\,?]{1}" data-formatter="formatValue1"
+						 onvalidationfail="Utils.GetValidationMessage(event,'savings')" required></div>
+
+						<div class="btn">
+							<button class="savetax1" id="proceedr" onclick="proceedr1()" data-juci="button">PROCEED</button>
+						</div>
+					</div>
+					<div data-bind="visible:$root.retire2">
+						<div class="spotlight-container">
+							<img src="images/spoatlight2.png" class="img-responsive-r2" alt="" title="">
+						</div>
+						<div data-juci="tel" style="margin-bottom:0px" class="textborder" data-label="<span class='line'>4 </span>Current savings for retirement<span class='star'>*</span>"
+						 data-bind="ref:currentsaving" placeholder="Enter Amount(₹)" data-trigger pattern="[0-9\,?]{1}" data-formatter="formatValue1"
+						 onvalidationfail="Utils.GetValidationMessage(event,'savings')" required></div>
+						<div class="newhead">
+							<div class="newreschild"><span class='line5'>5 </span></div>
+							<div class="desgn" style=" margin-bottom: 12px;width: 94%;" data-juci="selectbox" class="retsel" id="ret1"
+							 data-mode="popup" data-bind="optionsList:$root.investTypes,optionsText:function(item){return item.type},ref:investtype"
+							 required data-label="Please specify investment type<span class='star'>*</span>" data-formatter="formatInvestType"
+							 onafterchange="investmenttype(event)" data-comparator="CompareInvestType" onvalidationfail></div>
+						</div>
+						<div class="clear"></div>
+						<div data-juci="tel" class="textborder" data-label="<span class='line'>6 </span>What are your monthly expenses?<span class='star'>*</span>"
+						 data-bind="ref:monthlyexpensive" id="monthexpo" placeholder="Enter Amount(₹)" pattern="[0-9\,?]{1}"
+						 data-formatter="formatValue1" onvalidationfail="Utils.GetValidationMessage(event,'Expenses')" required></div>
+						<div class="Assumption">
+							<span data-bind="html:$root.retireassumption"></span>
+						</div>
+
+						<div class="btn">
+							<button class="savehback" data-juci="button" data-bind="visible:$root.taxbck1" onclick="backr()">BACK</button>
+							<button class="savehpro" data-juci="button" data-bind="visible:$root.taxbck1" type="submit">PROCEED</button>
+						</div>
+
+						<div class="btn">
+							<button class="savetax123" data-juci="button" data-bind="visible:$root.taxbck" type="submit">PROCEED</button>
+						</div>
+					</div>
+				</div>
+				<div class="result" data-bind="visible:retirement_result">
+					<p class="form-headingre life">Result</p>
+					<div class="para-bottomretxt">The amount you would need every month after your retirement: <span style="color: #faa619;"
+						 data-bind="html:utils.PrependRs(retirementResult().AmountreqEveMonth)"></span></div>
+					<div class="para-bottomretxt">To meet this monthly expense, you will need a retirement corpus of: <span style="color: #faa619;"
+						 data-bind="html:utils.PrependRs(retirementResult().RetirementCorpus)"></span></div>
+					<div class="para-bottomretxt">Hence, a monthly saving of <span style="color: #faa619;" data-bind="html:utils.PrependRs(retirementResult().MonthlySaving)"></span>
+						is required.</div>
+					<p class="form-headingre1 life1">Recommended Plans</p>
+					<div class="product1-box1c1 nlist" id="prodr" data-juci="xlist" data-bind="ref:$root.productname_retirement1">
+						<div class="product1-acr ntouch" data-juci="listitem" onclick="BuyNow(event)">
+							<div id="product1-name" class="products1_name" data-bind="html:title"><u></u></div>
+							<hr class="prodhr">
+							<div id="product1_paragraph12" class="products1_paragraph" data-bind="display:subContent"></div>
+							<div class="btns2-row btns2-row-sub">
+								<button class="showplan1" id="showme" data-juci="button">BUY NOW</button>
 							</div>
-							<div>
+						</div>
+					</div>
+
+					<div class="btn">
+						<button class="resulretiback" data-juci="button" data-bind="visible:$root.taxbck" onclick="backr()">BACK</button>
+						<button class="resultxit" onclick="exitret()" data-bind="visible:$root.taxbck" data-juci="button">EXIT</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- Tax Calculator -->
+			<div id="tax_calculator">
+				<div class="TaxCalculator" data-juci="form" class="taxcal1" data-bind="ref:taxCalculator" id="TAXForm" onsubmit="taxCalculate(event)"
+				 onreset="taxReset(event)">
+					<div data-bind="visible:$root.taxi1">
+						<div class="spotlight-container">
+							<img src="images/spoatlight3.png" class="img-responsive-t1" alt="" title="">
+						</div>
+						<div data-juci="tel" class="textborder" style="margin-bottom: 3px;" data-label="<span class='line'>1 </span>How old are you?<span class='star'>*</span>"
+						 data-bind="ref:age" placeholder="Enter Your age" id="tage" onvalidationfail="Utils.GetValidationMessage(event,'Current Age')"
+						 pattern="^(?!0)[0-9]*$" maxlength="2" required></div>
+						<div class="inline_control" id="employee_container">
+							<div data-juci="radiogroup" data-label="<span class='line'>2 </span>You are<span class='star'>*</span>"
+							 data-bind=" ref:employeetype,optionsList: $root.employeetype, optionsText:function(i){return i.type}" style="margin-bottom: -16px; margin-top:15px"
+							 class="required radioopts radiofhs3 fname xyz" id="employeeopt" onafterchange="employeeType(event)"
+							 data-comparator="CompareEmployeeType" required>
+								<div data-juci="optiontemplate" class="roptions">
+									<div class="optcontainer">
+										<div data-bind="html:type" class="oplabel1" id="Youare"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="salaried" data-bind="visible:$root.salaried">
+							<div data-juci="tel" class="textborder" data-label="<span class = 'labeltax'>What is your annual income?<span class='star'>*</span></span>"
+							 data-bind="ref:annualincome" placeholder="Enter Amount(₹)" id="tal" pattern="[0-9\,?]{1}" data-formatter="formatValue1"
+							 onvalidationfail="Utils.GetValidationMessage(event,'savings')"></div>
+						</div>
+						<div class="self" data-bind="visible:$root.self">
+							<div class="newhead">
+								<div class="newreschild12"><span class='line5'>2.1 </span></div>
+								<div data-juci="tel" class="test431" style="width:90%" data-label="What is your annual salary income?<span class='star'>*</span>"
+								 data-bind="ref:selfannualsalary" placeholder="Enter Amount(₹)" pattern="[0-9\,?]{1}" data-formatter="formatValue1"
+								 onvalidationfail="Utils.GetValidationMessage(event,'savings')" id="tasl"></div>
+							</div>
+							<div class="clear"></div>
+							<div class="newhead">
+								<div class="newreschild12"><span class='line5'>2.2 </span></div>
+								<div data-juci="tel" class="test431" style="width:89%" data-label="Enter income from other sources<span class='star'>*</span>"
+								 data-bind="ref:incomeformothersource" placeholder="Enter Amount(₹)" pattern="[0-9\,?]{1}" data-formatter="formatValue1"
+								 onvalidationfail="Utils.GetValidationMessage(event,'savings')" id="tosi"></div>
+							</div>
+							<div class="clear"></div>
+						</div>
+
+						<div class="btn">
+							<button class="savetax1" onclick="proceed1()" data-juci="button">PROCEED</button>
+						</div>
+					</div>
+
+					<div data-bind="visible:$root.tax1">
+						<div class="spotlight-container">
+							<img src="images/spoatlight2.png" class="img-responsive-t2" alt="" title="">
+						</div>
+						<div class="newhead">
+							<div class="newreschild"><span class='line5'>3 </span></div>
+							<div data-juci="tel" class="test43" style="width:93%" data-label="Investments u/s 80C & 80CCD(1B)<span class='star'>*</span>"
+							 data-bind="ref:investment" placeholder="Enter amount(₹)" id="tinvs" pattern="[0-9\,?]{1}" data-formatter="formatValue1"
+							 onvalidationfail="Utils.GetValidationMessage(event,'savings')" required> </div>
+						</div>
+						<div class="clear"></div>
+						<div data-juci="tel" class="textborder" data-label="<span class='line'>4 </span>Health Insurance Premium<span class='star'>*</span>"
+						 data-bind="ref:healthinsurancepremium" placeholder="Enter amount(₹)" id="thip" pattern="[0-9\,?]{1}"
+						 data-formatter="formatValue1" onvalidationfail="Utils.GetValidationMessage(event,'savings')" required> </div>
+						<div data-juci="tel" class="textborder" data-label="<span class='line'>5 </span>What are your HRA Deductions?<span class='star'>*</span>"
+						 data-bind="ref:hiradebt" placeholder="Enter amount(₹)" id="thra" pattern="[0-9\,?]{1}" data-formatter="formatValue1"
+						 onvalidationfail="Utils.GetValidationMessage(event,'savings')" required> </div>
+
+						<div class="btn">
+							<button class="savehback" onclick="back2()" data-juci="button">BACK</button>
+							<button class="savehpro" onclick="proceed2()" data-juci="button">PROCEED</button>
+						</div>
+					</div>
+
+					<div data-bind="visible:$root.tax2">
+						<div class="spotlight-container">
+							<img src="images/tax3.png" class="img-responsive-t3" alt="" title="">
+						</div>
+						<div class="newhead">
+							<div class="newreschild"><span class='line5'>6 </span></div>
+							<div data-juci="tel" class="test43" style="width:93%" data-label="Interest on Home Loan u/s 24 of Income Tax Act 1961<span class='star'>*</span>"
+							 id="tintst" data-bind="ref:interesthomeloan" placeholder="Enter amount(₹)" pattern="[0-9\,?]{1}" data-formatter="formatValue1"
+							 onvalidationfail="Utils.GetValidationMessage(event,'savings')" required> </div>
+						</div>
+						<div class="clear"></div>
+						<div class="newhead">
+							<div class="newreschild"><span class='line5'>7 </span></div>
+							<div data-juci="tel" class="test43" style="width:93%" data-label="Interest on Education Loan u/s 80E<span class='star'>*</span>"
+							 id="tinstedu" data-bind="ref:interesteducation" placeholder="Enter amount(₹)" pattern="[0-9\,?]{1}"
+							 data-formatter="formatValue1" onvalidationfail="Utils.GetValidationMessage(event,'savings')" required> </div>
+						</div>
+						<div class="clear"></div>
+						<div data-juci="tel" class="textborder" data-label="<span class='line'>8 </span>Income from interest u/s 80TTA<span class='star'>*</span> "
+						 id="tinstinc" data-bind="ref:interesttta" placeholder="Enter income(₹)" pattern="[0-9\,?]{1}" data-formatter="formatValue1"
+						 onvalidationfail="Utils.GetValidationMessage(event,'savings')" required> </div>
+						<div data-juci="tel" class="textborder" data-label="<span class='line'>9 </span>Other Deductions (if any)" id="tinstod"
+						 data-bind="ref:otherdeduction" placeholder="Enter amount(₹)" pattern="[0-9\,?]{1}" data-formatter="formatValue1"
+						 onvalidationfail="Utils.GetValidationMessage(event,'savings')" required> </div>
+
+						<div class="btn">
+							<button class="savehback" data-juci="button" data-bind="visible:$root.retbck1" onclick="back3()">BACK</button>
+							<button class="savehpro" data-juci="button" data-bind="visible:$root.retbck1" type="submit">PROCEED</button>
+						</div>
+
+						<div class="btn">
+							<button class="savetax1" data-juci="button" data-bind="visible:$root.retbck" type="submit">PROCEED</button>
+						</div>
+
+					</div>
+				</div>
+				<div class="taxcalresult" data-bind="visible:tax_result">
+					<p class="form-headingt life">Result</p>
+					<div class="para-bottomttx1">Your Taxable Income: <span style="color: #faa619" data-bind="html:utils.PrependRs(taxResult().TaxableIncome)"></span></div>
+					<div class="para-bottomttx1">Net Tax Payable: <span style="color: #faa619" data-bind="html:utils.PrependRs(taxResult().NetTaxPayable)"></span></div>
+					<p class="form-headingh1 life1">Recommended Plans</p>
+					<div class="product1-box1c1 nlist" id="prodt" data-juci="xlist" data-bind="ref:$root.tax_productname1">
+						<div class="product1-acr ntouch" data-juci="listitem" onclick="BuyNow(event)">
+							<div id="product1-name" class="products1_name" data-bind="html:title"><u></u></div>
+							<hr class="prodhr">
+							<div id="product1_paragraph" class="products1_paragraph" data-bind="display:subContent"> </div>
+							<div class="btns2-row btns2-row-sub">
+								<button class="showplan1" id="showme" data-juci="button">BUY NOW</button>
+							</div>
+						</div>
+					</div>
+
+					<div class="btn">
+						<button class="resultaxback" data-juci="button" data-bind="visible:$root.retbck" onclick="back3()">BACK</button>
+						<button class="resultaxexit" onclick="exittax()" data-bind="visible:$root.retbck" data-juci="button">EXIT</button>
+					</div>
+				</div>
+			</div>
+			<!-- close calculator   !-->
+			<!-- Child Calculator-->
+			<div class="childCalculator" id="child_calculator">
+				<div data-juci="form" data-bind="ref:childcalculate" id="CHILDForm" onsubmit="childcalculate(event)" onreset="childReset(event)">
+
+					<!-- Child One -->
+					<div class="childone">
+						<div class="spotlight-container">
+							<img src="images/noofchild.png" class="img-responsive-c1" style="margin-top:10px;" alt="" title="">
+						</div>
+						<label class="childcount">Number of Children</label>
+						<div class="countless">
+							<input class="qtyplus1" type="button" onclick="decrementValue1()" value="-" />
+							<input class="countie" type="text" id="number" value="1" />
+							<input class="qtyplus1" type="button" onclick="incrementValue1()" value="+" />
+						</div>
+						<p class="form-heading1 life">Child 1</p>
+						<div data-juci="text" data-label="<span class='line'>1 </span>What is the name of your child<span class='star'>*</span>"
+						 data-bind="ref:childone().name" placeholder="Enter the name" pattern="^[a-zA-Z]*$" data-trigger onchange="labelChange(event,'childone','childone4');"
+						 onvalidationfail="Utils.GetValidationMessage(event,'Child Name')"></div>
+						<div data-juci="tel" data-label="<span class='line'>2 </span>Age of your child<span class='star'>*</span>"
+						 data-bind="ref:childone().age" placeholder="Enter the age here" onvalidationfail="Utils.GetValidationMessage(event,'Current Age')"
+						 pattern="^(?!0)[0-9]*$" maxlength="2"></div>
+						<div class="spotlight-container">
+							<img src="images/incomedetail.png" class="img-responsive-c2" alt="" title="">
+						</div>
+						<div class="newhead">
+							<div class="newres1"><span class='line5'>3 </span></div>
+							<div data-juci="tel" id="childone4" class="test43" style="width:93%" data-label="Your current savings for the child’s education<span class='star'>*</span> "
+							 data-bind="ref:childone().savings" placeholder="Enter Amount (₹)" pattern="[0-9\,?]{1}" data-formatter="formatValue1"
+							 onvalidationfail="Utils.GetValidationMessage(event,'savings')"></div>
+						</div>
+						<div class="clear"></div>
+						<div class="newhead">
+							<div class="newreschild"><span class='line5'>4 </span></div>
+							<div class="desgn" style=" margin-bottom: 12px;width: 94%;" id="childone" data-juci="selectbox" class="childsel"
+							 data-mode="popup" data-bind="optionsList:$root.designation,optionsText:function(item){return item.value},ref:childone().designation"
+							 data-label="What would you like ____ to become?<span class='star'>*</span>" data-formatter="formatChildOne"
+							 data-comparator="CompareChildOne" onafterchange="labelChange(event,'','','childone5')" onvalidationfail></div>
+						</div>
+						<div class="clear"></div>
+						<div class="newhead">
+							<div class="newres1"><span class='line5'>5 </span></div>
+							<div data-juci="tel" id="childone5" class="test43" style="width:93%" data-label="Current estimated cost of becoming a ____ <span class='star'>*</span>"
+							 data-bind="ref:childone().costestimation" placeholder="Enter Amount (₹)" pattern="[0-9\,?]{1}" data-formatter="formatValue1"
+							 onvalidationfail="Utils.GetValidationMessage(event,'savings')"></div>
+						</div>
+						<div class="newhead">
+							<div class="newres1"><span class='line5'>6 </span></div>
+							<div data-juci="tel" class="test43" style="width:93%" data-label="At what age will your child require this money?<span class='star'>*</span>"
+							 data-bind="ref:childone().ageEst" id="cage1" placeholder="Enter age" onvalidationfail="Utils.GetValidationMessage(event,'Current Age')"
+							 pattern="^(?!0)[0-9]*$" maxlength="2"></div>
+						</div>
+						<div class="clear"></div>
+					</div>
+
+					<!-- Child Two -->
+					<div class="childtwo" data-bind="visible:childtwo().display">
+						<div class="spotlight-container">
+							<img src="images/no-of-child-2.png" class="img-responsive-c3" alt="" title="">
+						</div>
+						<p class="form-heading1 life">Child 2</p>
+						<div data-juci="text" data-label="<span class='line'>1 </span>What is the name of your child?<span class='star'>*</span>"
+						 data-bind="ref:childtwo().name" placeholder="Enter the name" data-trigger pattern="^[a-zA-Z]*$" onchange="labelChange(event,'childtwo','childtwo4');"
+						 onvalidationfail="Utils.GetValidationMessage(event,'Child Name')"></div>
+						<div data-juci="tel" data-label="<span class='line'>2 </span>Age of your child<span class='star'>*</span>"
+						 data-bind="ref:childtwo().age" placeholder="Enter the age here" onvalidationfail="Utils.GetValidationMessage(event,'Current Age')"
+						 pattern="^(?!0)[0-9]*$" maxlength="2"></div>
+						<div class="spotlight-container">
+							<img src="images/incomedetail.png" class="img-responsive-c4" alt="" title="">
+						</div>
+						<div class="newhead">
+							<div class="newres1"><span class='line5'>3 </span></div>
+							<div data-juci="tel" id="childtwo4" class="test43" style="width:93%" data-label="Your current savings for the child’s education<span class='star'>*</span> "
+							 data-bind="ref:childtwo().savings" placeholder="Enter Amount (₹)" pattern="[0-9\,?]{1}" data-formatter="formatValue1"
+							 onvalidationfail="Utils.GetValidationMessage(event,'savings')"></div>
+						</div>
+						<div class="clear"></div>
+						<div class="newhead">
+							<div class="newreschild"><span class='line5'>4 </span></div>
+							<div class="desgn" id="childtwo" style=" margin-bottom: 12px;width: 94%;" data-juci="selectbox" class="childsel"
+							 data-mode="popup" data-bind="optionsList:$root.designation,optionsText:function(item){return item.value},ref:childtwo().designation"
+							 data-label="What would you like ____ to become?<span class='star'>*</span>" data-formatter="formatChildTwo"
+							 onafterchange="labelChange(event,'','','childtwo5')" data-comparator="CompareChildTwo" onvalidationfail></div>
+						</div>
+						<div class="clear"></div>
+						<div class="newhead">
+							<div class="newres1"><span class='line5'>5 </span></div>
+							<div data-juci="tel" id="childtwo5" class="test43" style="width:93%" data-label="Current estimated cost of becoming a ____ <span class='star'>*</span> "
+							 data-bind="ref:childtwo().costestimation" placeholder="Enter Amount (₹)" pattern="[0-9\,?]{1}" data-formatter="formatValue1"
+							 onvalidationfail="Utils.GetValidationMessage(event,'savings')"></div>
+						</div>
+						<div class="newhead">
+							<div class="newres1"><span class='line5'>6 </span></div>
+							<div data-juci="tel" class="test43" style="width:93%" data-label="At what age will your child  require this money?<span class='star'>*</span>"
+							 data-bind="ref:childtwo().ageEst" placeholder="Enter age" id="cage2" onvalidationfail="Utils.GetValidationMessage(event,'Current Age')"
+							 pattern="^(?!0)[0-9]*$" maxlength="2"></div>
+						</div>
+						<div class="clear"></div>
+					</div>
+
+					<!-- Child Three -->
+					<div class="childthree" data-bind="visible:childthree().display">
+						<div class="spotlight-container">
+							<img src="images/no-of-child-2.png" class="img-responsive-c5" alt="" title="">
+						</div>
+						<p class="form-heading1 life">Child 3</p>
+						<div data-juci="text" data-label="<span class='line'>1 </span>What is the name of your child?<span class='star'>*</span>"
+						 data-bind="ref:childthree().name" placeholder="Enter the name" data-trigger pattern="^[a-zA-Z]*$" onchange="labelChange(event,'childthree','childthree4');"
+						 onvalidationfail="Utils.GetValidationMessage(event,'Child Name')"></div>
+						<div data-juci="tel" data-label="<span class='line'>2 </span>Age of your child<span class='star'>*</span>"
+						 data-bind="ref:childthree().age" placeholder="Enter the age here" onvalidationfail="Utils.GetValidationMessage(event,'Current Age')"
+						 pattern="^(?!0)[0-9]*$" maxlength="2"></div>
+						<div class="spotlight-container">
+							<img src="images/incomedetail.png" class="img-responsive-c6" alt="" title="">
+						</div>
+						<div class="newhead">
+							<div class="newres1"><span class='line5'>3 </span></div>
+							<div data-juci="tel" id="childthree4" class="test43" style="width:93%" data-label="Your current savings for the child’s education<span class='star'>*</span> "
+							 data-bind="ref:childthree().savings" placeholder="Enter Amount (₹)" pattern="[0-9\,?]{1}" data-formatter="formatValue1"
+							 onvalidationfail="Utils.GetValidationMessage(event,'savings')"></div>
+						</div>
+						<div class="clear"></div>
+						<div class="newhead">
+							<div class="newreschild"><span class='line5'>4 </span></div>
+							<div class="desgn" style=" margin-bottom: 12px;width: 94%;" id="childthree" data-juci="selectbox" class="childsel"
+							 data-mode="popup" data-bind="optionsList:$root.designation,optionsText:function(item){return item.value},ref:childthree().designation"
+							 data-label="What would you like ____ to become?<span class='star'>*</span>" data-formatter="formatChildThree"
+							 onafterchange="labelChange(event,'','','childthree5')" data-comparator="CompareChildThree" onvalidationfail></div>
+						</div>
+						<div class="clear"></div>
+						<div class="newhead">
+							<div class="newres1"><span class='line5'>5 </span></div>
+							<div data-juci="tel" id="childthree5" class="test43" style="width:93%" data-label="Current estimated cost of becoming a ____<span class='star'>*</span> "
+							 data-bind="ref:childthree().costestimation" placeholder="Enter Amount (₹)" pattern="[0-9\,?]{1}" data-formatter="formatValue1"
+							 onvalidationfail="Utils.GetValidationMessage(event,'savings')"></div>
+						</div>
+						<div class="clear"></div>
+						<div class="newhead">
+							<div class="newres1"><span class='line5'>6 </span></div>
+							<div data-juci="tel" class="test43" style="width:93%" data-label="At what age will your child  require this money?<span class='star'>*</span>"
+							 data-bind="ref:childthree().ageEst" id="cage3" placeholder="Enter age" onvalidationfail="Utils.GetValidationMessage(event,'Current Age')"
+							 pattern="^(?!0)[0-9]*$" maxlength="2"></div>
+						</div>
+						<div class="clear"></div>
+					</div>
+
+					<!-- Child Four -->
+					<div class="childfour" data-bind="visible:childfour().display">
+						<div class="spotlight-container">
+							<img src="images/no-of-child-2.png" class="img-responsive-c7" alt="" title="">
+						</div>
+						<p class="form-heading1 life">Child 4</p>
+						<div data-juci="text" data-label="<span class='line'>1 </span>What is the name of your child?<span class='star'>*</span>"
+						 data-bind="ref:childfour().name" placeholder="Enter the name" data-trigger pattern="^[a-zA-Z]*$" onchange="labelChange(event,'childfour','childfour4');"
+						 onvalidationfail="Utils.GetValidationMessage(event,'Child Name')"></div>
+						<div data-juci="tel" data-label="<span class='line'>2 </span>Age of your child<span class='star'>*</span>"
+						 data-bind="ref:childfour().age" placeholder="Enter the age here" onvalidationfail="Utils.GetValidationMessage(event,'Current Age')"
+						 pattern="^[0-9]*$" maxlength="2"></div>
+						<div class="spotlight-container">
+							<img src="images/incomedetail.png" class="img-responsive-c8" alt="" title="">
+						</div>
+						<div class="newhead">
+							<div class="newres1"><span class='line5'>3 </span></div>
+							<div data-juci="tel" id="childfour4" class="test43" style="width:93%" data-label="Your current savings for the  child’s education<span class='star'>*</span> "
+							 data-bind="ref:childfour().savings" placeholder="Enter Amount (₹)" pattern="[0-9\,?]{1}" data-formatter="formatValue1"
+							 onvalidationfail="Utils.GetValidationMessage(event,'savings')"></div>
+						</div>
+						<div class="clear"></div>
+						<div class="newhead">
+							<div class="newreschild"><span class='line5'>4 </span></div>
+							<div class="desgn" id="childfour" style=" margin-bottom: 12px;width: 94%;" data-juci="selectbox" class="childsel"
+							 data-mode="popup" data-bind="optionsList:$root.designation,optionsText:function(item){return item.value},ref:childfour().designation"
+							 data-label="What would you like ____ to become?<span class='star'>*</span>" data-formatter="formatChildFour"
+							 onafterchange="labelChange(event,'','','childfour5')" data-comparator="CompareChildFour" onvalidationfail="Utils.GetValidationMessage(event,'Marital Status')"></div>
+						</div>
+						<div class="clear"></div>
+						<div class="newhead">
+							<div class="newres1"><span class='line5'>5 </span></div>
+							<div data-juci="tel" class="test43" style="width:93%" data-label="Current estimated cost of becoming a ____<span class='star'>*</span> "
+							 id="childfour5" data-bind="ref:childfour().costestimation" placeholder="Enter Amount (₹)" pattern="[0-9\,?]{1}"
+							 data-formatter="formatValue1" onvalidationfail="Utils.GetValidationMessage(event,'savings')"></div>
+						</div>
+						<div class="clear"></div>
+						<div class="newhead">
+							<div class="newres1"><span class='line5'>6 </span></div>
+							<div data-juci="tel" class="test43" style="width:93%" data-label="At what age will your child require this money?<span class='star'>*</span>"
+							 data-bind="ref:childfour().ageEst" placeholder="Enter age" id="cage4" onvalidationfail="Utils.GetValidationMessage(event,'Current Age')"
+							 pattern="^(?!0)[0-9]*$" maxlength="2"></div>
+						</div>
+						<div class="clear"></div>
+					</div>
+
+					<div class="btn">
+						<button class="savetax1" data-juci="button" type="submit">PROCEED</button>
+					</div>
+				</div>
+				<div class="Assumption">
+					<span data-bind="html:$root.assumption"></span>
+				</div>
+				<div class="container" data-bind="visible:child_result">
+					<div data-juci="togglebar" id="toggle" data-toggled="0" ontoggle="toggleView(event)">
+						<button data-juci="button" data-toggle="0" data-bind="visible:childtabs().childone">Child 1</button>
+						<button data-juci="button" data-toggle="1" data-bind="visible:childtabs().childtwo">Child 2</button>
+						<button data-juci="button" data-toggle="2" data-bind="visible:childtabs().childthree">Child 3</button>
+						<button data-juci="button" data-toggle="3" data-bind="visible:childtabs().childfour">Child 4</button>
+					</div>
+					<div class="result_one" id="resultone">
+						<div class="para-bottom"><span data-bind="html:childResult().FristChildInfo"> </span> <span style="color: #faa619;-webkit-font-smoothing: antialiased;font-family: sans-serif;"
+							 data-bind="html:utils.PrependRs(childResult().FristChildAmountvalue)"></span></div>
+						<div class="para-bottom">You will need to save an amount of <span style="color: #faa619;-webkit-font-smoothing: antialiased;font-family: sans-serif;"
+							 data-bind="html:utils.PrependRs(childResult().FirstChildSaveAmount)"></span> per month</div>
+					</div>
+
+					<div class="result_two" id="resulttwo">
+						<div class="para-bottom"><span data-bind="html:childResult().SecondChildInfo"> </span> <span style="color: #faa619;-webkit-font-smoothing: antialiased;font-family: sans-serif;"
+							 data-bind="html:utils.PrependRs(childResult().SecondChildAmountvalue)"></span></div>
+						<div class="para-bottom">You will need to save an amount of <span style="color: #faa619;-webkit-font-smoothing: antialiased;font-family: sans-serif;"
+							 data-bind="html:utils.PrependRs(childResult().SecondChildSaveAmount)"></span> per month</div>
+					</div>
+
+					<div class="result_one" id="resultthree">
+						<div class="para-bottom"><span data-bind="html:childResult().ThreeChildInfo"> </span> <span style="color: #faa619;-webkit-font-smoothing: antialiased;font-family: sans-serif;"
+							 data-bind="html:utils.PrependRs(childResult().ThreeChildAmountvalue)"></span></div>
+						<div class="para-bottom">You will need to save an amount of <span style="color: #faa619;-webkit-font-smoothing: antialiased;font-family: sans-serif;"
+							 data-bind="html:utils.PrependRs(childResult().ThreeChildSaveAmount)"></span> per month</div>
+					</div>
+
+					<div class="result_one" id="resultfour">
+						<div class="para-bottom"><span data-bind="html:childResult().FourthChildInfo"> </span> <span style="color: #faa619;-webkit-font-smoothing: antialiased;font-family: sans-serif;"
+							 data-bind="html:utils.PrependRs(childResult().FourthChildAmountvalue)"></span></div>
+						<div class="para-bottom">You will need to save an amount of <span style="color: #faa619;-webkit-font-smoothing: antialiased;font-family: sans-serif;"
+							 data-bind="html:utils.PrependRs(childResult().FourthChildSaveAmount)"></span> per month</div>
+					</div>
+					<p class="form-heading1 life1">Recommended Plans</p>
+					<div class="product1-box1c1 nlist" id="prodc1" data-juci="xlist" data-bind="ref:$root.child_productname1">
+						<div class="product1-ac ntouch" data-juci="listitem" onclick="BuyNow(event)">
+							<div id="product1-name" class="products1_name" data-bind="html:title"><u></u></div>
+							<hr class="prodhr">
+							<div id="product1_paragraph" class="products1_paragraph" data-bind="display:subContent"></div>
+							<div class="btns2-row btns2-row-sub">
+								<button class="showplan1" id="showme" data-juci="button">BUY NOW</button>
+							</div>
+						</div>
+					</div>
+					<div class="para-leftmargin">*Computed based on the information provided by you. This is an illustrative
+						projection of your financial needs.</div>
+					<div class="btn">
+						<button class="savetax1" onclick="exitc()" data-juci="button">EXIT</button>
+					</div>
+				</div>
+			</div>
+
+
+			<!-- FHS Calculator -->
+			<div class="fhscalculator" id="fhs_calculator">
+				<div data-juci="form" data-bind="ref:fhsform" id="FHSForm" onsubmit="fhsCalculate(event)">
+					<div data-bind="visible:$root.fhs1">
+						<div class="spotlight-container">
+							<img src="images/fhspersonaldetail.png" class="img-responsive-f1" alt="" title="">
+						</div>
+						<div>
 							<div class="inline_control" id="gender_container">
-								<div data-juci="radiogroup" data-label="" data-bind=" ref:gender,optionsList: $root.genderoptions, optionsText:function(i){return i.type}" class="required radioopts fname radiofhs radiotext xyzradio " id="genderopt" data-comparator="compareGender" required>
+								<div data-juci="radiogroup" data-label="" data-bind=" ref:gender,optionsList: $root.genderoptions, optionsText:function(i){return i.type}"
+								 class="required radioopts fname radiofhs radiotext xyzradio " id="genderopt" data-comparator="compareGender"
+								 required>
 									<div data-juci="optiontemplate" class="roptions">
 										<div class="optcontainer">
-										<div data-bind="html:type" class="oplabel" id="gender"></div>
-									  </div>
-									</div>
-								</div>
-							</div>	
-							<div data-juci="text" style=" margin-top: -19px" data-label="<span class ='labeltax1'>Name<span class='star'>*</span>" data-bind="ref:name" id = "firstmid" class="tex" placeholder="First Middle Last" pattern = "^([a-zA-Z]+?|[a-zA-Z]+?'?[a-zA-Z]+?|[a-zA-Z]+\s+[a-zA-Z]+?'?[a-zA-Z]+?|[a-zA-Z]+?'?[a-zA-Z]+\s+[a-zA-Z]+?|[a-zA-Z]+?'?[a-zA-Z]+\s+[a-zA-Z]+\s+[a-zA-Z]+?|[a-zA-Z]+\s+[a-zA-Z]+?'?[a-zA-Z]+\s+[a-zA-Z]+?|[a-zA-Z]+\s+[a-zA-Z]+\s+[a-zA-Z]+?'?[a-zA-Z]+?)$" required data-trigger   class="textborder" onvalidationfail="Utils.GetValidationMessage(event,'First Middle')"></div>
-							<div data-juci="tel" data-label="<span class ='labeltax1'>Mobile Number<span class='star'>*</span>" id = "fmobile" data-bind="ref:mobile" placeholder="Enter Your Number" maxlength="10" minlength="10" pattern="^[1-9]{1}[0-9]{9}$" required  data-trigger  onvalidationfail="Utils.GetValidationMessage(event,'Mobile No.')"></div>
-							<div data-juci="datepicker" data-picker="dob" class = "picker1" id = "dobc" data-label="<span class='line'>1 </span>Enter Date of Birth<span class='star'>*</span>"  data-bind="ref:dob" placeholder = "dd/mm/yyyy" style = "margin: 15px auto;" onafterchange = "testing1(event)"></div>	
-						<div class="inline_control" id="spouse_container">
-							<div data-juci="radiogroup"  data-label="<span class ='labeltax2'>Spouse<span class='star'>*</span>" data-bind=" ref:spousefhs,optionsList: $root.spouseptions, optionsText:function(i){return i.type}" onafterchange="onvalidatesp(event)" class="required radioopts fname spousfhs radiotext xyz3" id="spouseopt" data-comparator="compareSpouse" required>
-								<div data-juci="optiontemplate" class="roptions">
-									<div class="optcontainer">
-									<div data-bind="html:type" class="oplabel" id="spouse"></div>
+											<div data-bind="html:type" class="oplabel" id="gender"></div>
+										</div>
 									</div>
 								</div>
 							</div>
+							<div data-juci="text" style=" margin-top: -19px" data-label="<span class ='labeltax1'>Name<span class='star'>*</span>"
+							 data-bind="ref:name" id="firstmid" class="tex" placeholder="First Middle Last" pattern="^([a-zA-Z]+?|[a-zA-Z]+?'?[a-zA-Z]+?|[a-zA-Z]+\s+[a-zA-Z]+?'?[a-zA-Z]+?|[a-zA-Z]+?'?[a-zA-Z]+\s+[a-zA-Z]+?|[a-zA-Z]+?'?[a-zA-Z]+\s+[a-zA-Z]+\s+[a-zA-Z]+?|[a-zA-Z]+\s+[a-zA-Z]+?'?[a-zA-Z]+\s+[a-zA-Z]+?|[a-zA-Z]+\s+[a-zA-Z]+\s+[a-zA-Z]+?'?[a-zA-Z]+?)$"
+							 required data-trigger class="textborder" onvalidationfail="Utils.GetValidationMessage(event,'First Middle')"></div>
+							<div data-juci="tel" data-label="<span class ='labeltax1'>Mobile Number<span class='star'>*</span>" id="fmobile"
+							 data-bind="ref:mobile" placeholder="Enter Your Number" maxlength="10" minlength="10" pattern="^[1-9]{1}[0-9]{9}$"
+							 required data-trigger onvalidationfail="Utils.GetValidationMessage(event,'Mobile No.')"></div>
+							<div data-juci="datepicker" data-picker="dob" class="picker1" id="dobc" data-label="<span class='line'>1 </span>Enter Date of Birth<span class='star'>*</span>"
+							 data-bind="ref:dob" placeholder="dd/mm/yyyy" style="margin: 15px auto;" onafterchange="testing1(event)"></div>
+							<div class="inline_control" id="spouse_container">
+								<div data-juci="radiogroup" data-label="<span class ='labeltax2'>Spouse<span class='star'>*</span>" data-bind=" ref:spousefhs,optionsList: $root.spouseptions, optionsText:function(i){return i.type}"
+								 onafterchange="onvalidatesp(event)" class="required radioopts fname spousfhs radiotext xyz3" id="spouseopt"
+								 data-comparator="compareSpouse" required>
+									<div data-juci="optiontemplate" class="roptions">
+										<div class="optcontainer">
+											<div data-bind="html:type" class="oplabel" id="spouse"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div data-juci="datepicker" data-picker="dob" id="spousedate" class="picker1" data-label data-bind="visible:$root.spousedb,ref:spouseDob"
+							 placeholder="dd/mm/yyyy" style="margin: 15px auto ; margin-top: -37px;" data-trigger onafterchange="testingdate(event)"></div>
+							<div data-juci="tel" style="margin-top: -3px;;" data-label="<span class='line'>2 </span>Your gross annual income <p class = 'childtext1'>(from all sources)<span class='star'>*</span></p>"
+							 data-bind="ref:annualIncome" id="fhsal" placeholder="Enter Amount" pattern="[0-9\,?]{1}" data-formatter="formatValue1"
+							 required data-trigger onvalidationfail="Utils.GetValidationMessage(event,'savings')"></div>
+							<div data-juci="tel" data-label="<span class = 'labeltax1'>Your spouse’s annual income" data-bind="visible:$root.spousedb,ref:spouseAL"
+							 pattern="[0-9\,?]{1}" data-formatter="formatValue1" placeholder="Enter Amount" id="fhsalsp" data-trigger
+							 onvalidationfail="Utils.GetValidationMessage(event,'savings')"></div>
 						</div>
-						
-						<div data-juci="datepicker" data-picker="dob" id = "spousedate" class = "picker1" data-label data-bind="visible:$root.spousedb,ref:spouseDob" placeholder = "dd/mm/yyyy" style = "margin: 15px auto ; margin-top: -37px;"  data-trigger onafterchange = "testingdate(event)"  ></div>
-						<div data-juci="tel" style="margin-top: -3px;;" data-label="<span class='line'>2 </span>Your gross annual income <p class = 'childtext1'>(from all sources)<span class='star'>*</span></p>" data-bind="ref:annualIncome" id = "fhsal" placeholder="Enter Amount" pattern="[0-9\,?]{1}"  data-formatter="formatValue1" required  data-trigger onvalidationfail="Utils.GetValidationMessage(event,'savings')"></div>
-						<div data-juci="tel" data-label="<span class = 'labeltax1'>Your spouse’s annual income" data-bind="visible:$root.spousedb,ref:spouseAL" pattern="[0-9\,?]{1}"  data-formatter="formatValue1" placeholder="Enter Amount" id = "fhsalsp" data-trigger   onvalidationfail="Utils.GetValidationMessage(event,'savings')"></div>
-						</div>
-						
+
 						<div class="btn">
-						<button class="savetax1" data-juci="button" onclick = "proceedf1()">PROCEED</button>
-						</div>	
+							<button class="savetax1" data-juci="button" onclick="proceedf1()">PROCEED</button>
 						</div>
-					<div class="Calculatorfhs FHSCalculator1" data-bind = "visible:$root.fhs2">
-						<div class="spotlight-container">
-						<img src="images/fhs-saving.png" class="img-responsive-f2" alt="" title="">
-						</div>
-						<div class = "newtitle">
-						<div class = "newhead">
-							<div class = "newres" ><span class='line5'>3 </span></div>
-							<div data-juci="tel" class = "test43" style = "width:93%" data-label="Saving/Investment every month<span class='star'>*</span>" id = "fsavings" data-bind="ref:savingInves" pattern="[0-9\,?]{1}"  data-formatter="formatValue1" placeholder="Enter Amount"id = "fsavings"  data-trigger
-							onvalidationfail="Utils.GetValidationMessage(event,'savings')"></div>
-							</div>
-						<div class = "clear"></div>	
-						<div class = "newhead">
-							<div class = "newres" ><span class='line5'>4 </span></div>
-							<div data-juci="tel" class = "test43" style = "width:93%" data-label="Monthly Household expenses<p>(excluding EMI)<span class='star'>*</span>" id = "fmonthly"   data-bind="ref:monthlyexpense" pattern="[0-9\,?]{1}"  data-formatter="formatValue1" placeholder="Enter Amount"   data-trigger onvalidationfail="Utils.GetValidationMessage(event,'savings')"></div>
-							</div>
-						<div class = "clear"></div>	
-						<div class = "newhead">
-							<div class = "newres" ><span class='line5'>5 </span></div>
-							<div data-juci="tel" class = "test43" style = "width:93%" data-label="Total savings and investments<span class='star'>*</span>" id = "ftotal" data-bind="ref:totalsavings" placeholder="Enter Amount" data-trigger  pattern="[0-9\,?]{1}"  data-formatter="formatValue1"  onvalidationfail="Utils.GetValidationMessage(event,'savings')"></div>
-							</div>
-						<div class = "clear"></div>	
-						<div class = "newhead">
-							<div class = "newres" ><span class='line5'>6 </span></div>
-							<div data-juci="tel" class = "test43" style = "width:93%" data-label="Total outstanding loan amount<span class='star'>*</span><p class = 'fhsptext'>(Car, Home, Personal Loans, etc.)</p>" data-bind="ref:totaloutstandingloan" pattern="[0-9\,?]{1}"  data-formatter="formatValue1" placeholder="Enter Amount" id = "ftotalloan" data-trigger onvalidationfail="Utils.GetValidationMessage(event,'savings')"></div>
-							</div>
-						<div class = "clear"></div>	
-						</div>
-						
-						<div class="btn">
-						<button class="savehback" data-juci="button" onclick = "backfh1()">BACK</button>
-						<button class="savehpro" data-juci="button" onclick = "proceedf2()" >PROCEED</button>
-						</div> 	
 					</div>
-					<div class="Calculatorfhs FHSCalculator2" data-bind = "visible:$root.fhs3">
+					<div class="Calculatorfhs FHSCalculator1" data-bind="visible:$root.fhs2">
 						<div class="spotlight-container">
-						<img src="images/fhs-insurance.png" class="img-responsive-f3" alt="" title="">
-						</div>	
-						<div class = "newtitle">
-						<div class = "newhead">
-							<div class = "newres" ><span class='line5'>7 </span></div>
-							<div data-juci="tel" class = "test43" style = "width:93%" data-label="Insurance cover(sum assured)<span class='star'>*</span>" data-bind="ref:insuranceCover" pattern="[0-9\,?]{1}"  data-formatter="formatValue1" placeholder="Enter Amount" id = "fsumAssure"  data-trigger
-							onvalidationfail="Utils.GetValidationMessage(event,'savings')"></div>
-							</div>
-						<div class = "clear"></div>	
-						<div class = "newhead">
-							<div class = "newres" ></div>
-							<div data-juci="tel" class = "test43" style = "width:93%" data-label="Spouse's Insurance sum assured cover is" data-bind="visible:$root.spousedb,ref:spouseInsuranceCover" pattern="[0-9\,?]{1}"  data-formatter="formatValue1" placeholder="Enter Amount" data-trigger  onvalidationfail="Utils.GetValidationMessage(event,'savings')"></div>
-							</div>
-						<div class = "clear"></div>	
+							<img src="images/fhs-saving.png" class="img-responsive-f2" alt="" title="">
 						</div>
-	
+						<div class="newtitle">
+							<div class="newhead">
+								<div class="newres"><span class='line5'>3 </span></div>
+								<div data-juci="tel" class="test43" style="width:93%" data-label="Saving/Investment every month<span class='star'>*</span>"
+								 id="fsavings" data-bind="ref:savingInves" pattern="[0-9\,?]{1}" data-formatter="formatValue1" placeholder="Enter Amount"
+								 id="fsavings" data-trigger onvalidationfail="Utils.GetValidationMessage(event,'savings')"></div>
+							</div>
+							<div class="clear"></div>
+							<div class="newhead">
+								<div class="newres"><span class='line5'>4 </span></div>
+								<div data-juci="tel" class="test43" style="width:93%" data-label="Monthly Household expenses<p>(excluding EMI)<span class='star'>*</span>"
+								 id="fmonthly" data-bind="ref:monthlyexpense" pattern="[0-9\,?]{1}" data-formatter="formatValue1" placeholder="Enter Amount"
+								 data-trigger onvalidationfail="Utils.GetValidationMessage(event,'savings')"></div>
+							</div>
+							<div class="clear"></div>
+							<div class="newhead">
+								<div class="newres"><span class='line5'>5 </span></div>
+								<div data-juci="tel" class="test43" style="width:93%" data-label="Total savings and investments<span class='star'>*</span>"
+								 id="ftotal" data-bind="ref:totalsavings" placeholder="Enter Amount" data-trigger pattern="[0-9\,?]{1}"
+								 data-formatter="formatValue1" onvalidationfail="Utils.GetValidationMessage(event,'savings')"></div>
+							</div>
+							<div class="clear"></div>
+							<div class="newhead">
+								<div class="newres"><span class='line5'>6 </span></div>
+								<div data-juci="tel" class="test43" style="width:93%" data-label="Total outstanding loan amount<span class='star'>*</span><p class = 'fhsptext'>(Car, Home, Personal Loans, etc.)</p>"
+								 data-bind="ref:totaloutstandingloan" pattern="[0-9\,?]{1}" data-formatter="formatValue1" placeholder="Enter Amount"
+								 id="ftotalloan" data-trigger onvalidationfail="Utils.GetValidationMessage(event,'savings')"></div>
+							</div>
+							<div class="clear"></div>
+						</div>
+
 						<div class="btn">
-						<button class="savehback" data-juci="button" onclick = "backfh2()">BACK</button>
-						<button class="savehpro" data-juci="button" onclick = "proceedf3()" >PROCEED</button>
-						</div> 		
+							<button class="savehback" data-juci="button" onclick="backfh1()">BACK</button>
+							<button class="savehpro" data-juci="button" onclick="proceedf2()">PROCEED</button>
+						</div>
 					</div>
-					<div class="Calculatorfhs FHSCalculator3"data-bind = "visible:$root.fhs4">
+					<div class="Calculatorfhs FHSCalculator2" data-bind="visible:$root.fhs3">
 						<div class="spotlight-container">
-						<img src="images/fhs-child-detail.png" class="img-responsive-f4" alt="" title="">
-						</div>	
+							<img src="images/fhs-insurance.png" class="img-responsive-f3" alt="" title="">
+						</div>
+						<div class="newtitle">
+							<div class="newhead">
+								<div class="newres"><span class='line5'>7 </span></div>
+								<div data-juci="tel" class="test43" style="width:93%" data-label="Insurance cover(sum assured)<span class='star'>*</span>"
+								 data-bind="ref:insuranceCover" pattern="[0-9\,?]{1}" data-formatter="formatValue1" placeholder="Enter Amount"
+								 id="fsumAssure" data-trigger onvalidationfail="Utils.GetValidationMessage(event,'savings')"></div>
+							</div>
+							<div class="clear"></div>
+							<div class="newhead">
+								<div class="newres"></div>
+								<div data-juci="tel" class="test43" style="width:93%" data-label="Spouse's Insurance sum assured cover is"
+								 data-bind="visible:$root.spousedb,ref:spouseInsuranceCover" pattern="[0-9\,?]{1}" data-formatter="formatValue1"
+								 placeholder="Enter Amount" data-trigger onvalidationfail="Utils.GetValidationMessage(event,'savings')"></div>
+							</div>
+							<div class="clear"></div>
+						</div>
+
+						<div class="btn">
+							<button class="savehback" data-juci="button" onclick="backfh2()">BACK</button>
+							<button class="savehpro" data-juci="button" onclick="proceedf3()">PROCEED</button>
+						</div>
+					</div>
+					<div class="Calculatorfhs FHSCalculator3" data-bind="visible:$root.fhs4">
+						<div class="spotlight-container">
+							<img src="images/fhs-child-detail.png" class="img-responsive-f4" alt="" title="">
+						</div>
 						<div class="inline_control" id="children">
-							<div data-juci="radiogroup" data-label="<span class='line'>8 </span>Number of Children<span class='star'>*</span>" data-bind=" ref:children,optionsList: $root.options3, optionsText:function(i){return i.type}" class="required radioopts parent fname" id="childrenopt" data-comparator="Comparefhschildren" onafterchange = "noofchild(event)" required>
+							<div data-juci="radiogroup" data-label="<span class='line'>8 </span>Number of Children<span class='star'>*</span>"
+							 data-bind=" ref:children,optionsList: $root.options3, optionsText:function(i){return i.type}" class="required radioopts parent fname"
+							 id="childrenopt" data-comparator="Comparefhschildren" onafterchange="noofchild(event)" required>
 								<div data-juci="optiontemplate" class="roptions">
 									<div class="optcontainer">
-									<div data-bind="html:type" class="oplabel" id="children"></div>
-									</div>
-								</div>
-						   </div>
-						</div>
-						<div data-bind = "visible:$root.numchildren" class = "childlabelnew">
-						<label class = "childlabelnew1">Child</label>
-							<div class = "countless1">   
-							<input class = "qtyplus" type="button" onclick="decrementValue()" value="-" />
-							<input class = "countie" type="text" id="number1"  value="1"/>
-							<input class = "qtyplus" type="button" onclick="incrementValue()" value="+" />
-							</div>
-						</div>
-						<div  data-bind = "visible:$root.numchildren"  class="fhschild">
-						<div data-juci="tel" data-label="Child" id = "fhsone" data-bind="visible:$root.child1,ref:childName" pattern="^(?!0)[0-9]*$"
-						placeholder="Child Age" data-trigger onafterchange = "childage()" minlength = "1" maxlength = "2" onvalidationfail="Utils.GetValidationMessage(event,'Child Age')"></div>
-						<div data-juci="tel" data-label="Child" id = "fhstwo" data-bind="visible:$root.child2,ref:childName2" pattern="^(?!0)[0-9]*$"
-						placeholder="Child Age" data-trigger onafterchange = "childage()" minlength = "1" maxlength = "2" onvalidationfail="Utils.GetValidationMessage(event,'Child Age')"></div>
-						<div data-juci="tel" data-label="Child" id = "fhsthree" data-bind="visible:$root.child3,ref:childName3" pattern="^(?!0)[0-9]*$"
-						placeholder="Child Age" data-trigger  onafterchange = "childage()" minlength = "1" maxlength = "2"onvalidationfail="Utils.GetValidationMessage(event,'Child Age')"></div>
-						<div data-juci="tel" data-label="Child" id = "fhsfour" data-bind="visible:$root.child4,ref:childName4" pattern="^(?!0)[0-9]*$"
-						placeholder="Child Age" data-trigger onafterchange = "childage()" minlength = "1" maxlength = "2" onvalidationfail="Utils.GetValidationMessage(event,'Child Age')"></div>
-						<div data-juci="tel" data-label="Child" id = "fhsfive" data-bind="visible:$root.child5,ref:childName5" pattern="^(?!0)[0-9]*$"
-						placeholder="Child Age" data-trigger onafterchange = "childage()" minlength = "1" maxlength = "2" onvalidationfail="Utils.GetValidationMessage(event,'Child Age')"></div>
-						</div>
-						<div class = "newhead">
-						<div class = "newreschild" ><span class='line5'>9 </span></div>
-						<div class="inline_control" id="parents">
-							<div data-juci="radiogroup" data-label="Do you have any dependent parents?<span class='star'>*</span>"
-							data-bind=" ref:parents,optionsList: $root.options2, optionsText:function(i){return i.type}" class="required radioopts12 parent12 fname" id="parentsopt" data-comparator="Comparefhsparents" required>
-								<div data-juci="optiontemplate" class="roptions">
-									<div class="optcontainer">
-									<div data-bind="html:type" class="oplabelnew" id="parents"></div>
-									 </div>
+										<div data-bind="html:type" class="oplabel" id="children"></div>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class = "clear"></div>	
-				
+						<div data-bind="visible:$root.numchildren" class="childlabelnew">
+							<label class="childlabelnew1">Child</label>
+							<div class="countless1">
+								<input class="qtyplus" type="button" onclick="decrementValue()" value="-" />
+								<input class="countie" type="text" id="number1" value="1" />
+								<input class="qtyplus" type="button" onclick="incrementValue()" value="+" />
+							</div>
+						</div>
+						<div data-bind="visible:$root.numchildren" class="fhschild">
+							<div data-juci="tel" data-label="Child" id="fhsone" data-bind="visible:$root.child1,ref:childName" pattern="^(?!0)[0-9]*$"
+							 placeholder="Child Age" data-trigger onafterchange="childage()" minlength="1" maxlength="2" onvalidationfail="Utils.GetValidationMessage(event,'Child Age')"></div>
+							<div data-juci="tel" data-label="Child" id="fhstwo" data-bind="visible:$root.child2,ref:childName2" pattern="^(?!0)[0-9]*$"
+							 placeholder="Child Age" data-trigger onafterchange="childage()" minlength="1" maxlength="2" onvalidationfail="Utils.GetValidationMessage(event,'Child Age')"></div>
+							<div data-juci="tel" data-label="Child" id="fhsthree" data-bind="visible:$root.child3,ref:childName3" pattern="^(?!0)[0-9]*$"
+							 placeholder="Child Age" data-trigger onafterchange="childage()" minlength="1" maxlength="2" onvalidationfail="Utils.GetValidationMessage(event,'Child Age')"></div>
+							<div data-juci="tel" data-label="Child" id="fhsfour" data-bind="visible:$root.child4,ref:childName4" pattern="^(?!0)[0-9]*$"
+							 placeholder="Child Age" data-trigger onafterchange="childage()" minlength="1" maxlength="2" onvalidationfail="Utils.GetValidationMessage(event,'Child Age')"></div>
+							<div data-juci="tel" data-label="Child" id="fhsfive" data-bind="visible:$root.child5,ref:childName5" pattern="^(?!0)[0-9]*$"
+							 placeholder="Child Age" data-trigger onafterchange="childage()" minlength="1" maxlength="2" onvalidationfail="Utils.GetValidationMessage(event,'Child Age')"></div>
+						</div>
+						<div class="newhead">
+							<div class="newreschild"><span class='line5'>9 </span></div>
+							<div class="inline_control" id="parents">
+								<div data-juci="radiogroup" data-label="Do you have any dependent parents?<span class='star'>*</span>"
+								 data-bind=" ref:parents,optionsList: $root.options2, optionsText:function(i){return i.type}" class="required radioopts12 parent12 fname"
+								 id="parentsopt" data-comparator="Comparefhsparents" required>
+									<div data-juci="optiontemplate" class="roptions">
+										<div class="optcontainer">
+											<div data-bind="html:type" class="oplabelnew" id="parents"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="clear"></div>
+
 						<div class="btn">
-						<button class="savehfhsback" data-juci="button" onclick = "backfh3()">BACK</button>
-						<button class="savehpro" data-juci="button" onclick = "proceed4(event)">PROCEED</button>
-						</div>
-					</div>	
-					<div class="FHSCalculator4" data-bind ="visible:$root.fhs5">
-						<div class="spotlight-container">
-						<img src="images/fhs-investment.png" class="img-responsive-f5" alt="" title="">
-						</div>
-						<div class = "newhead">
-						<div class = "newresSavings1" ><span class='line6'>10 </span></div>
-						<div class="inline_control" id="savingrechild_container">
-							<div data-juci="radiogroup" data-label="Saving/investing (₹) for child goals every month?<span class='star'>*</span>" data-bind=" ref:savingChild,optionsList: $root.options, optionsText:function(i){return i.type}" class="required radioopts123 fname xyz xyzsavings" id="savechildopt" data-comparator="Comparefhssavings" required>
-								<div data-juci="optiontemplate" class="roptions">
-									<div class="optcontainersavings">
-									<div data-bind="html:type" class="oplabel" id="savechild"></div><p class = "questext" data-bind = "html:$root.Ques12"></p>
-									</div>
-								</div>
-								</div>
-							</div>
-						</div>	
-						<div class = "clear"></div>	
-						<div class = "newhead">
-						<div class = "newresSavings1" ><span class='line6'>11 </span></div>
-						<div class="inline_control" id="savingretirement_container">
-							<div data-juci="radiogroup" data-label="Saving/investing (₹) for retirement goals every month?<span class='star'>*</span>" data-bind=" ref:savingRetire,optionsList: $root.options1, optionsText:function(i){return i.type}" class="required radioopts123 fname xyz xyzsavings" id="saveretireopt" data-comparator="Comparefhssavings" required>
-								<div data-juci="optiontemplate" class="roptions">
-								<div class="optcontainersavings">
-								<div data-bind="html:type" class="oplabel" id="saveretire"></div><p class = "questext" data-bind = "html:$root.Ques11"></p>
-									</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class = "clear"></div>	
-						
-						<div class="btn">
-						<button class="savehback" data-juci="button" data-bind = "visible:$root.fhsbck1" onclick = "backfh4()" >BACK</button>
-						<button class="savehpro" data-juci="button" data-bind = "visible:$root.fhsbck1"  type="submit">PROCEED</button>
-						</div>
-						
-						<div class="btn">
-						<button class="savetax1" data-juci="button" type="submit" data-bind = "visible:$root.fhsbck" >PROCEED</button>
+							<button class="savehfhsback" data-juci="button" onclick="backfh3()">BACK</button>
+							<button class="savehpro" data-juci="button" onclick="proceed4(event)">PROCEED</button>
 						</div>
 					</div>
-                </div>
-				<div class="fhsslider" data-bind = "visible:fhsresult">
+					<div class="FHSCalculator4" data-bind="visible:$root.fhs5">
+						<div class="spotlight-container">
+							<img src="images/fhs-investment.png" class="img-responsive-f5" alt="" title="">
+						</div>
+						<div class="newhead">
+							<div class="newresSavings1"><span class='line6'>10 </span></div>
+							<div class="inline_control" id="savingrechild_container">
+								<div data-juci="radiogroup" data-label="Saving/investing (₹) for child goals every month?<span class='star'>*</span>"
+								 data-bind=" ref:savingChild,optionsList: $root.options, optionsText:function(i){return i.type}" class="required radioopts123 fname xyz xyzsavings"
+								 id="savechildopt" data-comparator="Comparefhssavings" required>
+									<div data-juci="optiontemplate" class="roptions">
+										<div class="optcontainersavings">
+											<div data-bind="html:type" class="oplabel" id="savechild"></div>
+											<p class="questext" data-bind="html:$root.Ques12"></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="clear"></div>
+						<div class="newhead">
+							<div class="newresSavings1"><span class='line6'>11 </span></div>
+							<div class="inline_control" id="savingretirement_container">
+								<div data-juci="radiogroup" data-label="Saving/investing (₹) for retirement goals every month?<span class='star'>*</span>"
+								 data-bind=" ref:savingRetire,optionsList: $root.options1, optionsText:function(i){return i.type}" class="required radioopts123 fname xyz xyzsavings"
+								 id="saveretireopt" data-comparator="Comparefhssavings" required>
+									<div data-juci="optiontemplate" class="roptions">
+										<div class="optcontainersavings">
+											<div data-bind="html:type" class="oplabel" id="saveretire"></div>
+											<p class="questext" data-bind="html:$root.Ques11"></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="clear"></div>
+
+						<div class="btn">
+							<button class="savehback" data-juci="button" data-bind="visible:$root.fhsbck1" onclick="backfh4()">BACK</button>
+							<button class="savehpro" data-juci="button" data-bind="visible:$root.fhsbck1" type="submit">PROCEED</button>
+						</div>
+
+						<div class="btn">
+							<button class="savetax1" data-juci="button" type="submit" data-bind="visible:$root.fhsbck">PROCEED</button>
+						</div>
+					</div>
+				</div>
+				<div class="fhsslider" data-bind="visible:fhsresult">
 					<div class="mainslider">
 						<h1 class="score"> Overall Score </h1>
 						<div class="slidescore">
-						<input type="range" class="slider" id="myRange" style=" width: 100%;  margin-left: 0;  margin-right: 0px;margin-bottom: -4px;" data-bind="attr: {min: $root.minScore, max: $root.maxScore}, value: $root.overallscore,valueUpdate:'input'">
-						<img src="images/sliderimg.png" style=" width: 97%; margin-left: 8px; margin-top: 3px;"></img>
+							<input type="range" class="slider" id="myRange" style=" width: 100%;  margin-left: 0;  margin-right: 0px;margin-bottom: -4px;"
+							 data-bind="attr: {min: $root.minScore, max: $root.maxScore}, value: $root.overallscore,valueUpdate:'input'">
+							<img src="images/sliderimg.png" style=" width: 97%; margin-left: 8px; margin-top: 3px;"></img>
 						</div>
 						<ul class="range-lab">
-						<li class="active1">0%</li>
-						<li class="active2">25%</li>
-						<li class="active3">50%</li>
-						<li class="active4">75%</li>
-						<li class="active5">100%</li>
-						</ul>	
-						<div class="ptext ">Overall score is<p class="ptext12"data-bind = "html:overalltext"><span style="color:#faa61b;font-size:24px;"></span></p></div>	
-				  </div>
-	    	      <div class="mainslider1">
+							<li class="active1">0%</li>
+							<li class="active2">25%</li>
+							<li class="active3">50%</li>
+							<li class="active4">75%</li>
+							<li class="active5">100%</li>
+						</ul>
+						<div class="ptext ">Overall score is<p class="ptext12" data-bind="html:overalltext"><span style="color:#faa61b;font-size:24px;"></span></p>
+						</div>
+					</div>
+					<div class="mainslider1">
 						<h1 class="score"> Insurance</h1>
 						<div class="slidescore">
-						<input type="range"  class="slider" id="myRange1" style=" width: 100%;  margin-left: 0;  margin-right: 0px;margin-bottom: -4px;" data-bind="attr: {min: $root.minScore, max: $root.maxScore}, value: $root.Insscore,valueUpdate:'input'">
-						<img src="images/sliderimg.png" style=" width: 97%; margin-left: 8px; margin-top: 3px;"></img>
+							<input type="range" class="slider" id="myRange1" style=" width: 100%;  margin-left: 0;  margin-right: 0px;margin-bottom: -4px;"
+							 data-bind="attr: {min: $root.minScore, max: $root.maxScore}, value: $root.Insscore,valueUpdate:'input'">
+							<img src="images/sliderimg.png" style=" width: 97%; margin-left: 8px; margin-top: 3px;"></img>
 						</div>
 						<!--   <input id="working-slider" type="range" data-bind="attr: {min: $root.minScore, max: $root.maxScore}, value: $root.Insscore,valueUpdate:'input'">
 						</div> --->
 						<ul class="range-lab">
-						<li class="active1">0%</li>
-						<li class="active2">25%</li>
-						<li class="active3">50%</li>
-						<li class="active4">75%</li>
-						<li class="active5">100%</li>
+							<li class="active1">0%</li>
+							<li class="active2">25%</li>
+							<li class="active3">50%</li>
+							<li class="active4">75%</li>
+							<li class="active5">100%</li>
 						</ul>
-						<div class="ptext ">Insurance score is<p  class="ptext13" data-bind = "html:Instext"><span style="color:#faa61b;font-size:24px;"></span></p></div>
+						<div class="ptext ">Insurance score is<p class="ptext13" data-bind="html:Instext"><span style="color:#faa61b;font-size:24px;"></span></p>
+						</div>
 						<div class="text1">
-						Insurance provides financial protection and coverage against unforeseen incidents and other risks in
-						life. How much insurance you need will depend on your circumstances. Basis assessment, it appears you
-						have adequate insurance cover. However, you should assess your needs and family dependency on a regular
-						basis and ensure that you have optimum insurance cover for a secured future
+							Insurance provides financial protection and coverage against unforeseen incidents and other risks in
+							life. How much insurance you need will depend on your circumstances. Basis assessment, it appears you
+							have adequate insurance cover. However, you should assess your needs and family dependency on a regular
+							basis and ensure that you have optimum insurance cover for a secured future
 						</div>
 						<!-- <div class="btn">
 						<button class="cta" data-juci="button" >CTA</button>
 						<button class="cta1" data-juci="button" >CTA</button>
-						</div>--> 	
-						</div>
-				 <div class="mainslider2">
+						</div>-->
+					</div>
+					<div class="mainslider2">
 						<h1 class="score"> Child Goal</h1>
 						<div class="slidescore">
-						<!--    <input id="working-slider" type="range" data-bind="attr: {min: $root.minScore, max: $root.maxScore}, value: $root.childscore,valueUpdate:'input'">
+							<!--    <input id="working-slider" type="range" data-bind="attr: {min: $root.minScore, max: $root.maxScore}, value: $root.childscore,valueUpdate:'input'">
 						</div>--->
-						<input type="range" class="slider" id="myRange2" style=" width: 100%;  margin-left: 0;  margin-right: 0px;margin-bottom: -4px;" data-bind="attr: {min: $root.minScore, max: $root.maxScore}, value: $root.childscore,valueUpdate:'input'">
-						<img src="images/sliderimg.png" style=" width: 97%; margin-left: 8px; margin-top: 3px;"></img>
+							<input type="range" class="slider" id="myRange2" style=" width: 100%;  margin-left: 0;  margin-right: 0px;margin-bottom: -4px;"
+							 data-bind="attr: {min: $root.minScore, max: $root.maxScore}, value: $root.childscore,valueUpdate:'input'">
+							<img src="images/sliderimg.png" style=" width: 97%; margin-left: 8px; margin-top: 3px;"></img>
 						</div>
 						<ul class="range-lab">
-						<li class="active1">0%</li>
-						<li class="active2">25%</li>
-						<li class="active3">50%</li>
-						<li class="active4">75%</li>
-						<li class="active5">100%</li>
+							<li class="active1">0%</li>
+							<li class="active2">25%</li>
+							<li class="active3">50%</li>
+							<li class="active4">75%</li>
+							<li class="active5">100%</li>
 						</ul>
-						<div class="ptext">Children score is<p  class="ptext14" data-bind = "html:childtext"><span style="color:#faa61b;font-size:24px;"></span></p></div>
+						<div class="ptext">Children score is<p class="ptext14" data-bind="html:childtext"><span style="color:#faa61b;font-size:24px;"></span></p>
+						</div>
 						<div class="text1">
-						Have you thought enough for your child? Successful parenting starts from financial planning for your
-						child's future needs at the right age! Child education is a costly affair and you should start saving
-						from today. Secure your child's future and gift him/her a better life. Basis your inputs, we understand
-						that at this point of time, you have not saved adequate for your child's future.
+							Have you thought enough for your child? Successful parenting starts from financial planning for your
+							child's future needs at the right age! Child education is a costly affair and you should start saving
+							from today. Secure your child's future and gift him/her a better life. Basis your inputs, we understand
+							that at this point of time, you have not saved adequate for your child's future.
 						</div>
 						<!--<div class="btn">
 						<button class="cta" data-juci="button" >CTA</button>
 						<button class="cta1" data-juci="button" >CTA</button>
-						</div>--> 	
-		        </div>
-				<div class="mainslider3">
+						</div>-->
+					</div>
+					<div class="mainslider3">
 						<h1 class="score"> Retirement Goal</h1>
 						<div class="slidescore">
-						<!-- <input id="working-slider" type="range" data-bind="attr: {min: $root.minScore, max: $root.maxScore}, value: $root.retirescore,valueUpdate:'input'">
+							<!-- <input id="working-slider" type="range" data-bind="attr: {min: $root.minScore, max: $root.maxScore}, value: $root.retirescore,valueUpdate:'input'">
 						</div>-->
-						<input type="range"  class="slider" id="myRange3" style=" width: 100%;  margin-left: 0;  margin-right: 0px;margin-bottom: -4px;" data-bind="attr: {min: $root.minScore, max: $root.maxScore}, value: $root.retirescore,valueUpdate:'input'">
-						<img src="images/sliderimg.png" style=" width: 97%; margin-left: 8px; margin-top: 3px;"></img>
+							<input type="range" class="slider" id="myRange3" style=" width: 100%;  margin-left: 0;  margin-right: 0px;margin-bottom: -4px;"
+							 data-bind="attr: {min: $root.minScore, max: $root.maxScore}, value: $root.retirescore,valueUpdate:'input'">
+							<img src="images/sliderimg.png" style=" width: 97%; margin-left: 8px; margin-top: 3px;"></img>
 						</div>
 						<ul class="range-lab">
-						<li class="active1">0%</li>
-						<li class="active2">25%</li>
-						<li class="active3">50%</li>
-						<li class="active4">75%</li>
-						<li class="active5">100%</li>
+							<li class="active1">0%</li>
+							<li class="active2">25%</li>
+							<li class="active3">50%</li>
+							<li class="active4">75%</li>
+							<li class="active5">100%</li>
 						</ul>
-						<div class="ptext">Retirement score is<p class="ptext15" data-bind = "html:retiretext"><span style="color:#faa61b;font-size:24px;"></span></p></div>
+						<div class="ptext">Retirement score is<p class="ptext15" data-bind="html:retiretext"><span style="color:#faa61b;font-size:24px;"></span></p>
+						</div>
 						<div class="text1">
-						You are lagging behind in saving for your retirement. With the increase in life expectancy and higher
-						cost of living, you should be aware of the importance to plan for retirement. It is critical to start
-						planning for your retirement and building your retirement fund as early as possible. By starting
-						earlier, you'll have a longer time horizon to grow your savings before you retire.
+							You are lagging behind in saving for your retirement. With the increase in life expectancy and higher
+							cost of living, you should be aware of the importance to plan for retirement. It is critical to start
+							planning for your retirement and building your retirement fund as early as possible. By starting
+							earlier, you'll have a longer time horizon to grow your savings before you retire.
 						</div>
 						<!--<div class="btn">
 						<button class="cta" data-juci="button" >CTA</button>
 						<button class="cta1" data-juci="button"  >CTA</button>
-						</div>--> 	
-				</div>
-				<div class="mainslider4">
+						</div>-->
+					</div>
+					<div class="mainslider4">
 						<h1 class="score"> Loan Outstanding</h1>
 						<div class="slidescore">
-						<!--    <input id="working-slider" type="range" data-bind="attr: {min: $root.minScore, max: $root.maxScore}, value: $root.loanscore,valueUpdate:'input'">
-						</div>---->	
-						<input type="range"  class="slider" id="myRange4" style=" width: 100%;  margin-left: 0;  margin-right: 0px;margin-bottom: -4px;" data-bind="attr: {min: $root.minScore, max: $root.maxScore}, value: $root.loanscore,valueUpdate:'input'">
-						<img src="images/sliderimg.png" style=" width: 97%; margin-left: 8px; margin-top: 3px;"></img>
-						</div>	
-						<ul class="range-lab">
-						<li class="active1">0%</li>
-						<li class="active2">25%</li>
-						<li class="active3">50%</li>
-						<li class="active4">75%</li>
-						<li class="active5">100%</li>
-						</ul>	
-						<div class="ptext">Debt score is<p class="ptext16" data-bind = "html:loantext"><span style="color:#faa61b;font-size:24px;"></span></p></div>	
-						<div class="text">
-						Your income may not be adequate to support high debt. Debt can be a growing problem if not managed
-						properly. Taking swift action to address the problem is the key. Debt pose high risk to your future
-						goals as it limits your ability to save. You need to have adequate insurance so that your family does
-						not have to bear the burden of debt in case of any unforeseen incident.
-						</div>	
-				</div>
-				<div class="mainslider5">
-						<h1 class="score">Savings</h1>
-						<div class="slidescore">	
-						<!-- <input id="working-slider" type="range" data-bind="attr: {min: $root.minScore, max: $root.maxScore}, value: $root.savingsscore,valueUpdate:'input'">
+							<!--    <input id="working-slider" type="range" data-bind="attr: {min: $root.minScore, max: $root.maxScore}, value: $root.loanscore,valueUpdate:'input'">
 						</div>---->
-						<input type="range" class="slider" id="myRange5" style=" width: 100%;  margin-left: 0;  margin-right: 0px;margin-bottom: -4px;" data-bind="attr: {min: $root.minScore, max: $root.maxScore}, value: $root.savingsscore,valueUpdate:'input'">
-						<img src="images/sliderimg.png" style=" width: 97%; margin-left: 8px; margin-top: 3px;"></img>
+							<input type="range" class="slider" id="myRange4" style=" width: 100%;  margin-left: 0;  margin-right: 0px;margin-bottom: -4px;"
+							 data-bind="attr: {min: $root.minScore, max: $root.maxScore}, value: $root.loanscore,valueUpdate:'input'">
+							<img src="images/sliderimg.png" style=" width: 97%; margin-left: 8px; margin-top: 3px;"></img>
 						</div>
 						<ul class="range-lab">
-						<li class="active1">0%</li>
-						<li class="active2">25%</li>
-						<li class="active3">50%</li>
-						<li class="active4">75%</li>
-						<li class="active5">100%</li>
+							<li class="active1">0%</li>
+							<li class="active2">25%</li>
+							<li class="active3">50%</li>
+							<li class="active4">75%</li>
+							<li class="active5">100%</li>
 						</ul>
-						<div class="ptext">Savings score is<p class="ptext17" data-bind = "html:savingstext"><span style="color:#faa61b;font-size:24px;"></span></p></div>
+						<div class="ptext">Debt score is<p class="ptext16" data-bind="html:loantext"><span style="color:#faa61b;font-size:24px;"></span></p>
+						</div>
 						<div class="text">
-						You understand the importance of saving for future. Insurance helps you to plan and save for your
-						future
-						goals such as children's education and marriage, retirement and others.
+							Your income may not be adequate to support high debt. Debt can be a growing problem if not managed
+							properly. Taking swift action to address the problem is the key. Debt pose high risk to your future
+							goals as it limits your ability to save. You need to have adequate insurance so that your family does
+							not have to bear the burden of debt in case of any unforeseen incident.
 						</div>
+					</div>
+					<div class="mainslider5">
+						<h1 class="score">Savings</h1>
+						<div class="slidescore">
+							<!-- <input id="working-slider" type="range" data-bind="attr: {min: $root.minScore, max: $root.maxScore}, value: $root.savingsscore,valueUpdate:'input'">
+						</div>---->
+							<input type="range" class="slider" id="myRange5" style=" width: 100%;  margin-left: 0;  margin-right: 0px;margin-bottom: -4px;"
+							 data-bind="attr: {min: $root.minScore, max: $root.maxScore}, value: $root.savingsscore,valueUpdate:'input'">
+							<img src="images/sliderimg.png" style=" width: 97%; margin-left: 8px; margin-top: 3px;"></img>
 						</div>
-						<div class="mainslider6" data-bind = "visible:$root.spouseEarning">
+						<ul class="range-lab">
+							<li class="active1">0%</li>
+							<li class="active2">25%</li>
+							<li class="active3">50%</li>
+							<li class="active4">75%</li>
+							<li class="active5">100%</li>
+						</ul>
+						<div class="ptext">Savings score is<p class="ptext17" data-bind="html:savingstext"><span style="color:#faa61b;font-size:24px;"></span></p>
+						</div>
+						<div class="text">
+							You understand the importance of saving for future. Insurance helps you to plan and save for your
+							future
+							goals such as children's education and marriage, retirement and others.
+						</div>
+					</div>
+					<div class="mainslider6" data-bind="visible:$root.spouseEarning">
 						<h1 class="score"> Double Income</h1>
 						<p class="ptext">Has spouse but not earning.</p>
 						<br>
 						<div class="text">
-						Being the only earner for your family, it is critical for you to have adequate insurance cover and save
-						for
-						future goals such as child education and retirement. (This will be added for single income cases).
-						</div>
-						</div>
-						
-						<div class="btn">
-						<button class="resultback1" onclick = "backfh4()" data-bind = "visible:$root.fhsbck" data-juci="button">BACK</button>
-						<button class="resultxit" onclick = "exitfhs()"  data-bind = "visible:$root.fhsbck"  data-juci="button">EXIT</button>
+							Being the only earner for your family, it is critical for you to have adequate insurance cover and save
+							for
+							future goals such as child education and retirement. (This will be added for single income cases).
 						</div>
 					</div>
+
+					<div class="btn">
+						<button class="resultback1" onclick="backfh4()" data-bind="visible:$root.fhsbck" data-juci="button">BACK</button>
+						<button class="resultxit" onclick="exitfhs()" data-bind="visible:$root.fhsbck" data-juci="button">EXIT</button>
+					</div>
 				</div>
-        </div>
-		</div>
-			
-			<div class="footerbar">
-				<div class="disclaimer" id="disclaimer" data-bind="html:footerText">Select your calculator..</div> 
 			</div>
 		</div>
-	</body>
+	</div>
+
+	<div class="footerbar">
+		<div class="disclaimer" id="disclaimer" data-bind="html:footerText">Select your calculator..</div>
+	</div>
+	</div>
+</body>
+
 </html>

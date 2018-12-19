@@ -5,46 +5,46 @@ var totalSavings;
 var userDataArr = [];
 $m.juci.dataset("previousEntry", []);
 $m.juci.addDataset("goalsText", true);
-$m.juci.addDataset("thinbar1",true);
+$m.juci.addDataset("thinbar1", true);
 var current_id = "";
 
 
-$m.juci.addDataset("hlvpref",false);
-$m.juci.addDataset("taxpref",false);
-$m.juci.addDataset("retpref",false);
-$m.juci.addDataset("childpref",false);
-$m.juci.addDataset("fhspref",false);
+$m.juci.addDataset("hlvpref", false);
+$m.juci.addDataset("taxpref", false);
+$m.juci.addDataset("retpref", false);
+$m.juci.addDataset("childpref", false);
+$m.juci.addDataset("fhspref", false);
 
-$m.juci.addDataset("fhs1",true);
-$m.juci.addDataset("fhs2",false);
-$m.juci.addDataset("fhs3",false);
-$m.juci.addDataset("fhs4",false);
-$m.juci.addDataset("fhs5",false);
+$m.juci.addDataset("fhs1", true);
+$m.juci.addDataset("fhs2", false);
+$m.juci.addDataset("fhs3", false);
+$m.juci.addDataset("fhs4", false);
+$m.juci.addDataset("fhs5", false);
 
-$m.juci.addDataset("hlv1",true);
-$m.juci.addDataset("hlv2",false);
-$m.juci.addDataset("hlv3",false);
+$m.juci.addDataset("hlv1", true);
+$m.juci.addDataset("hlv2", false);
+$m.juci.addDataset("hlv3", false);
 
-$m.juci.addDataset("taxi1",true);
+$m.juci.addDataset("taxi1", true);
 $m.juci.addDataset("tax1", false);
 $m.juci.addDataset("tax2", false);
 
-$m.juci.addDataset("retire1",true);
-$m.juci.addDataset("retire2",false);
+$m.juci.addDataset("retire1", true);
+$m.juci.addDataset("retire2", false);
 $m.juci.addDataset("self", false);
-$m.juci.addDataset("numchildren",false);
-$m.juci.addDataset("child1",false);
-$m.juci.addDataset("child2",false);
-$m.juci.addDataset("child3",false);
-$m.juci.addDataset("child4",false);
-$m.juci.addDataset("child5",false);
+$m.juci.addDataset("numchildren", false);
+$m.juci.addDataset("child1", false);
+$m.juci.addDataset("child2", false);
+$m.juci.addDataset("child3", false);
+$m.juci.addDataset("child4", false);
+$m.juci.addDataset("child5", false);
 $m.juci.addDataset("child_result", false);
 
 
-var successCallback = function(res) {
+var successCallback = function (res) {
     utils.HideProgress();
     if (!res.length) {
-        $m.alert("No data found..", "Alert", function() {
+        $m.alert("No data found..", "Alert", function () {
             $m.juci.dataset("leadno", "");
             $m.juci.dataset("advisorCode", "");
             $m.juci.dataset("userdetails_section", false);
@@ -61,18 +61,18 @@ var successCallback = function(res) {
 };
 
 
-$m.onReady(function(){
-	// Code to execute when the page is ready
-		    resethlv();
-			resetretire();
-			resettax();
-			resetfhs();
-			reset();
+$m.onReady(function () {
+    // Code to execute when the page is ready
+    resethlv();
+    resetretire();
+    resettax();
+    resetfhs();
+    reset();
 });
 
 
 
-$m.onResume(function() {
+$m.onResume(function () {
     var hName = $m.juci.dataset('headerName');
     //	var alertCount = $m.juci.dataset('alertcount');
     $m.pageTitle('<div class="page_title"><div style="text-align:center" class="title_image"><img src="images/relaince-logo.png"></img></div></div>');
@@ -98,72 +98,72 @@ $m.onResume(function() {
 });
 
 function onCalculatorChange(event) {
-	juci.setGhostBusters();
-    var eventValue = event.value; 
+    juci.setGhostBusters();
+    var eventValue = event.value;
     if (eventValue == "My Dream My Income Calculator") {
         $m.juci.dataset("isCalculator", false);
         initMyDreamIncomeCalulator();
     } else
-    if (eventValue == "My Network Calculator") {
-        initNetworkCalculator();
-        $m.juci.findById("hlv_calculator").hide();
-        $m.juci.findById("tax_calculator").hide();
-        $m.juci.findById("retirement_calculator").hide();
-        $m.juci.findById("child_calculator").hide();
-        $m.juci.findById("fhs_calculator").hide();
-    } else
-    if (eventValue == "Human Life Value Calculator") {
-        initHLVCalculator();
-        $m.juci.dataset("isCalculator", false);
-        $m.juci.findById("hlv_calculator").show();
-        $m.juci.findById("tax_calculator").hide();
-        $m.juci.findById("retirement_calculator").hide();
-        $m.juci.findById("child_calculator").hide();
-        $m.juci.findById("fhs_calculator").hide();
-    } else
-    if (eventValue == "Retirement Calculator") {
-        initRetirementCalculator();
-       $m.juci.dataset("isCalculator", false);
-        $m.juci.findById("hlv_calculator").hide();
-        $m.juci.findById("tax_calculator").hide();
-        $m.juci.findById("child_calculator").hide();
-        $m.juci.findById("retirement_calculator").show();
-        $m.juci.findById("fhs_calculator").hide();
-    } else
-    if (eventValue == "Tax Calculator") {
-    
-        initTaxCalculator();
-        $m.juci.dataset("isCalculator", false);
-        $m.juci.findById("hlv_calculator").hide();
-        $m.juci.findById("tax_calculator").show();
-        $m.juci.findById("child_calculator").hide();
-        $m.juci.findById("retirement_calculator").hide();
-        $m.juci.findById("fhs_calculator").hide();
-    } else
-    if (eventValue == "Children Education Calculator") {
-       
-        initChildEducationCalculator();
-        $m.juci.dataset("isCalculator", false);
-        $m.juci.findById("hlv_calculator").hide();
-        $m.juci.findById("tax_calculator").hide();
-        $m.juci.findById("child_calculator").show();
-        $m.juci.findById("retirement_calculator").hide();
-        $m.juci.findById("fhs_calculator").hide();
-    }else
-    if (eventValue == "FHS Calculator") {
-        initFHSCalculator();
-        $m.juci.dataset("isCalculator", false);
-        $m.juci.findById("hlv_calculator").hide();
-        $m.juci.findById("tax_calculator").hide();
-        $m.juci.findById("child_calculator").hide();
-        $m.juci.findById("retirement_calculator").hide();
-        $m.juci.findById("fhs_calculator").show();
-        
-    }
-    setTimeout(function(){
-    juci.removeGhostBusters();
+        if (eventValue == "My Network Calculator") {
+            initNetworkCalculator();
+            $m.juci.findById("hlv_calculator").hide();
+            $m.juci.findById("tax_calculator").hide();
+            $m.juci.findById("retirement_calculator").hide();
+            $m.juci.findById("child_calculator").hide();
+            $m.juci.findById("fhs_calculator").hide();
+        } else
+            if (eventValue == "Human Life Value Calculator") {
+                initHLVCalculator();
+                $m.juci.dataset("isCalculator", false);
+                $m.juci.findById("hlv_calculator").show();
+                $m.juci.findById("tax_calculator").hide();
+                $m.juci.findById("retirement_calculator").hide();
+                $m.juci.findById("child_calculator").hide();
+                $m.juci.findById("fhs_calculator").hide();
+            } else
+                if (eventValue == "Retirement Calculator") {
+                    initRetirementCalculator();
+                    $m.juci.dataset("isCalculator", false);
+                    $m.juci.findById("hlv_calculator").hide();
+                    $m.juci.findById("tax_calculator").hide();
+                    $m.juci.findById("child_calculator").hide();
+                    $m.juci.findById("retirement_calculator").show();
+                    $m.juci.findById("fhs_calculator").hide();
+                } else
+                    if (eventValue == "Tax Calculator") {
 
-      }, 300); 
+                        initTaxCalculator();
+                        $m.juci.dataset("isCalculator", false);
+                        $m.juci.findById("hlv_calculator").hide();
+                        $m.juci.findById("tax_calculator").show();
+                        $m.juci.findById("child_calculator").hide();
+                        $m.juci.findById("retirement_calculator").hide();
+                        $m.juci.findById("fhs_calculator").hide();
+                    } else
+                        if (eventValue == "Children Education Calculator") {
+
+                            initChildEducationCalculator();
+                            $m.juci.dataset("isCalculator", false);
+                            $m.juci.findById("hlv_calculator").hide();
+                            $m.juci.findById("tax_calculator").hide();
+                            $m.juci.findById("child_calculator").show();
+                            $m.juci.findById("retirement_calculator").hide();
+                            $m.juci.findById("fhs_calculator").hide();
+                        } else
+                            if (eventValue == "FHS Calculator") {
+                                initFHSCalculator();
+                                $m.juci.dataset("isCalculator", false);
+                                $m.juci.findById("hlv_calculator").hide();
+                                $m.juci.findById("tax_calculator").hide();
+                                $m.juci.findById("child_calculator").hide();
+                                $m.juci.findById("retirement_calculator").hide();
+                                $m.juci.findById("fhs_calculator").show();
+
+                            }
+    setTimeout(function () {
+        juci.removeGhostBusters();
+
+    }, 300);
 }
 
 
@@ -196,7 +196,7 @@ function initMyDreamIncomeCalulator() {
     service.GetinputCountDefault(successCallback);
 }
 
-var failureCallback = function(res) {
+var failureCallback = function (res) {
     utils.HideProgress();
     $m.logError("fetching data failed due to " + res);
 };
@@ -227,7 +227,7 @@ function onPreviousEntry(event) {
         "name": eventname,
         "value": eventValue
     };
-    var getIncomeCalculatorCallback = function(res) {
+    var getIncomeCalculatorCallback = function (res) {
         if (res.Status == "Y") {
             utils.HideProgress();
             $m.juci.dataset("isPreviousEntry", true);
@@ -479,11 +479,11 @@ function onThirdSectionClick(e) {
     var totalAmount = eventData.calculatedAmount.amountToBeAchieved;
     //	totalAmount = parseInt(totalAmount);
     //	totalAmount = totalAmount/100000;
-    var getPoliciesCallback = function(r) {
+    var getPoliciesCallback = function (r) {
         var baseOption = $m.juci.dataset("baseOption");
         baseOption.years = goalSpecifiedTime;
         if (r == "N/A") {
-            $m.alert("Improper input values,Please give the proper value", "Alert", function() {
+            $m.alert("Improper input values,Please give the proper value", "Alert", function () {
                 $m.juci.findById("second-section").hide();
                 $m.juci.findById("first-section").show();
                 $m.juci.findById("third-section").hide();
@@ -512,9 +512,9 @@ function onThirdSectionClick(e) {
         $m.juci.dataset("baseOption", baseOption);
         var aggressiveOption = $m.juci.dataset("aggressiveOption");
         aggressiveOption.years = goalSpecifiedTime - 1;
-        var getAggressivePoliciesCallback = function(res) {
+        var getAggressivePoliciesCallback = function (res) {
             if (res == "N/A") {
-                $m.alert("Improper input values,Please give the proper value", "Alert", function() {
+                $m.alert("Improper input values,Please give the proper value", "Alert", function () {
                     $m.juci.findById("second-section").hide();
                     $m.juci.findById("first-section").show();
                     $m.juci.findById("third-section").hide();
@@ -545,9 +545,9 @@ function onThirdSectionClick(e) {
         myDreamMyIncomeCalculator.calculateNumberOfPolicies(aggressiveOption.years, totalAmount, getAggressivePoliciesCallback);
         var conservativeOption = $m.juci.dataset("conservativeOption");
         conservativeOption.years = goalSpecifiedTime + 1;
-        var getConservativePoliciesCallback = function(r) {
+        var getConservativePoliciesCallback = function (r) {
             if (r == "N/A") {
-                $m.alert("Improper input values,Please give the proper value", "Alert", function() {
+                $m.alert("Improper input values,Please give the proper value", "Alert", function () {
                     $m.juci.findById("second-section").hide();
                     $m.juci.findById("first-section").show();
                     $m.juci.findById("third-section").hide();
@@ -637,7 +637,7 @@ function saveIncomeCalculatorData() {
 
     utils.ShowProgress("Saving Income Calculator Data..");
     var service = new ServiceLibrary();
-    var saveIncomeCalculatorCallback = function(res) {
+    var saveIncomeCalculatorCallback = function (res) {
         utils.HideProgress();
         if (res.Status == "Y") {
             $m.toast(res.Message);
@@ -686,7 +686,7 @@ function onFinishedClick() {
 }
 
 function initNetworkCalculator() {
-	 
+
     $m.juci.dataset("thinbar", "Welcome to Newtork Calculator...");
     $m.juci.dataset("footerText", "Please answer for the above questions");
     showMenu("network-calculator");
@@ -712,67 +712,67 @@ function initNetworkCalculator() {
 function initHLVCalculator() {
     current_id = "cal_page";
     $m.juci.findById("calculator").hide();
-   
-    $m.juci.dataset("thinbar1",false);
-     var hlvf = utils.GetControl("hlvfrm1");
-   	hlvf.clearValidation();
+
+    $m.juci.dataset("thinbar1", false);
+    var hlvf = utils.GetControl("hlvfrm1");
+    hlvf.clearValidation();
     resethlv();
-   // $m.juci.dataset("thinbar", "Welcome to HLV Calculator...");
-     $m.juci.findById("disclaimer").el.innerText = "Please enter the following details to find the score.";
+    // $m.juci.dataset("thinbar", "Welcome to HLV Calculator...");
+    $m.juci.findById("disclaimer").el.innerText = "Please enter the following details to find the score.";
     $m.juci.dataset("footerText", "Please enter the following details to find the score.");
     showMenu("hlv_calculator");
     $m.juci.dataset("isCalculator", false);
-	$m.juci.dataset("hlv1",true);
-	$m.juci.dataset("hlv2",false);
-	$m.juci.dataset("hlv3",false);
-	 $m.juci.dataset("result", false);
+    $m.juci.dataset("hlv1", true);
+    $m.juci.dataset("hlv2", false);
+    $m.juci.dataset("hlv3", false);
+    $m.juci.dataset("result", false);
 }
 
 function initRetirementCalculator() {
     current_id = "cal_page";
     $m.juci.findById("calculator").hide();
-	var retf = utils.GetControl("retfrm");
-  	retf.clearValidation();
+    var retf = utils.GetControl("retfrm");
+    retf.clearValidation();
     resetretire();
-    $m.juci.dataset("thinbar1",false); 
-  //  $m.juci.dataset("thinbar", "Welcome to Retirement Calculator...");
-   $m.juci.dataset("footerText", "Please enter the following details to find the score.");
+    $m.juci.dataset("thinbar1", false);
+    //  $m.juci.dataset("thinbar", "Welcome to Retirement Calculator...");
+    $m.juci.dataset("footerText", "Please enter the following details to find the score.");
     $m.juci.findById("disclaimer").el.innerText = "Please enter the following details to find the score.";
     showMenu("hlv_calculator");
-	$m.juci.dataset("isCalculator", false);
-	$m.juci.dataset("retire1",true);
-	$m.juci.dataset("retire2",false);
-	$m.juci.dataset("retirement_result", false);
+    $m.juci.dataset("isCalculator", false);
+    $m.juci.dataset("retire1", true);
+    $m.juci.dataset("retire2", false);
+    $m.juci.dataset("retirement_result", false);
 }
 
 function initTaxCalculator() {
     current_id = "cal_page";
     $m.juci.findById("calculator").hide();
-	var taxf = utils.GetControl("TAXForm");
-  	taxf.clearValidation();
+    var taxf = utils.GetControl("TAXForm");
+    taxf.clearValidation();
     resettax();
-    $m.juci.dataset("thinbar1",false);
- //   $m.juci.dataset("thinbar", "Welcome to Tax Calculator...");
+    $m.juci.dataset("thinbar1", false);
+    //   $m.juci.dataset("thinbar", "Welcome to Tax Calculator...");
     $m.juci.dataset("footerText", "Please enter the following details to find the score.");
-   $m.juci.findById("disclaimer").el.innerText = "Please enter the following details to find the score.";
-   showMenu("tax_calculator");
-	$m.juci.dataset("isCalculator",false);
-	$m.juci.dataset("taxi1",true);
-	$m.juci.dataset("tax1", false);
-	$m.juci.dataset("tax2", false);
-	$m.juci.dataset("tax_result", false);
+    $m.juci.findById("disclaimer").el.innerText = "Please enter the following details to find the score.";
+    showMenu("tax_calculator");
+    $m.juci.dataset("isCalculator", false);
+    $m.juci.dataset("taxi1", true);
+    $m.juci.dataset("tax1", false);
+    $m.juci.dataset("tax2", false);
+    $m.juci.dataset("tax_result", false);
 }
 
 function initChildEducationCalculator() {
     current_id = "cal_page";
     $m.juci.findById("calculator").hide();
-    $m.juci.dataset("thinbar1",false);
-	var childf = utils.GetControl("CHILDForm");
-  	childf.clearValidation();
+    $m.juci.dataset("thinbar1", false);
+    var childf = utils.GetControl("CHILDForm");
+    childf.clearValidation();
     resetchild();
     //$m.juci.dataset("thinbar", "Welcome to Children Education Calculator...");
     $m.juci.dataset("footerText", "Please enter the following details to find the score.");
-      $m.juci.findById("disclaimer").el.innerText = "Please enter the following details to find the score.";
+    $m.juci.findById("disclaimer").el.innerText = "Please enter the following details to find the score.";
     showMenu("child_calculator");
     $m.juci.dataset("isCalculator", false);
 }
@@ -780,30 +780,30 @@ function initChildEducationCalculator() {
 function initFHSCalculator() {
     current_id = "cal_page";
     $m.juci.findById("calculator").hide();
-	var fhsf = utils.GetControl("FHSForm");
-	fhsf.clearValidation();
-	document.getElementById('number1').value = "1";
-	$m.juci.dataset("numchildren",false);
+    var fhsf = utils.GetControl("FHSForm");
+    fhsf.clearValidation();
+    document.getElementById('number1').value = "1";
+    $m.juci.dataset("numchildren", false);
     resetfhs();
-	$m.juci.dataset("child1",true);
-	$m.juci.dataset("child2",false);
-	$m.juci.dataset("child3",false);
-	$m.juci.dataset("child4",false);
-	$m.juci.dataset("child5",false);
-    $m.juci.dataset("thinbar1",false);
-   // $m.juci.dataset("thinbar", "Welcome to HLV Calculator...");
-     $m.juci.findById("disclaimer").el.innerText = "Please enter the following details to find the score.";
+    $m.juci.dataset("child1", true);
+    $m.juci.dataset("child2", false);
+    $m.juci.dataset("child3", false);
+    $m.juci.dataset("child4", false);
+    $m.juci.dataset("child5", false);
+    $m.juci.dataset("thinbar1", false);
+    // $m.juci.dataset("thinbar", "Welcome to HLV Calculator...");
+    $m.juci.findById("disclaimer").el.innerText = "Please enter the following details to find the score.";
     $m.juci.dataset("footerText", "Please enter the following details to find the score.");
     showMenu("hlv_calculator");
-  
-//    $m.juci.dataset("spousedb",false);
-	$m.juci.dataset("isCalculator",false);
-	$m.juci.dataset("fhs1",true);
-	$m.juci.dataset("fhs2",false);
-	$m.juci.dataset("fhs3",false);
-	$m.juci.dataset("fhs4",false);
-	$m.juci.dataset("fhs5",false);
-	$m.juci.dataset("fhsresult",false);
+
+    //    $m.juci.dataset("spousedb",false);
+    $m.juci.dataset("isCalculator", false);
+    $m.juci.dataset("fhs1", true);
+    $m.juci.dataset("fhs2", false);
+    $m.juci.dataset("fhs3", false);
+    $m.juci.dataset("fhs4", false);
+    $m.juci.dataset("fhs5", false);
+    $m.juci.dataset("fhsresult", false);
 }
 
 
@@ -832,7 +832,7 @@ function onSubmitClick() {
         "fourthQuestionAns": datasetData.businessCustomerValue,
         "noOfPolicies": datasetData.policyValue
     };
-    var networkCalculatorCallback = function(res) {
+    var networkCalculatorCallback = function (res) {
         console.log(res);
         var networkDataset = $m.juci.dataset("networkCalci");
         $m.putPref("networkCalDetails", res);
@@ -866,7 +866,7 @@ function onBackClick(e) {
     $m.juci.findById("lead-no").show();
 }
 
-$m.onClose(function() {
+$m.onClose(function () {
     //	$m.juci.findById("second-section").hide();
     //	$m.juci.findById("first-section").hide();
     //	$m.juci.findById("third-section").hide();
@@ -889,29 +889,29 @@ function onRolesChange(e) {
 function onBackPress() {
     switch (current_id) {
         case "home_page":
-        	$m.juci.dataset("calculatorName", "");
-			resethlv();
-			resetretire();
-			resettax();
-			resetfhs();
-			reset();
-		var retf = utils.GetControl("retfrm");
-      	retf.clearValidation();
-      	var taxf = utils.GetControl("TAXForm");
-      	taxf.clearValidation();
-      	var childf = utils.GetControl("CHILDForm");
-      	childf.clearValidation();
-      	var fhsf = utils.GetControl("FHSForm");
-      	fhsf.clearValidation();
-      	var hlvf = utils.GetControl("hlvfrm1");
-      	hlvf.clearValidation();
-    	document.getElementById('number1').value = "1";
-    	$m.juci.dataset("numchildren",false);
-		$m.juci.dataset("child1",true);
-		$m.juci.dataset("child2",false);
-		$m.juci.dataset("child3",false);
-		$m.juci.dataset("child4",false);
-		$m.juci.dataset("child5",false);
+            $m.juci.dataset("calculatorName", "");
+            resethlv();
+            resetretire();
+            resettax();
+            resetfhs();
+            reset();
+            var retf = utils.GetControl("retfrm");
+            retf.clearValidation();
+            var taxf = utils.GetControl("TAXForm");
+            taxf.clearValidation();
+            var childf = utils.GetControl("CHILDForm");
+            childf.clearValidation();
+            var fhsf = utils.GetControl("FHSForm");
+            fhsf.clearValidation();
+            var hlvf = utils.GetControl("hlvfrm1");
+            hlvf.clearValidation();
+            document.getElementById('number1').value = "1";
+            $m.juci.dataset("numchildren", false);
+            $m.juci.dataset("child1", true);
+            $m.juci.dataset("child2", false);
+            $m.juci.dataset("child3", false);
+            $m.juci.dataset("child4", false);
+            $m.juci.dataset("child5", false);
 
             $m.open("com.cloudpact.mowbly.home", "/system/resourceHome.html", null);
             break;
@@ -931,7 +931,7 @@ function onBackPress() {
             $m.juci.findById("fhs_calculator").hide();
             current_id = "home_page";
             break;
-       case "cal_page":
+        case "cal_page":
             $m.juci.findById("calculator").show();
             $m.juci.findById("first-section").hide();
             $m.juci.findById("second-section").hide();
@@ -1018,7 +1018,7 @@ function onPremiumChange(event) {
     $m.juci.findById("welcome-text").el.innerText = "Your Options...";
     $m.juci.findById("disclaimer").el.innerText = "Finish..";
     if (eventValue == 50000) {
-        var revisedFirstCalculatorCallback = function(r) {
+        var revisedFirstCalculatorCallback = function (r) {
             var baseOption = $m.juci.dataset("baseOption");
             baseOption.years = goalSpecifiedTime;
             if (!r || r == undefined) {
@@ -1033,7 +1033,7 @@ function onPremiumChange(event) {
 
             var aggressiveOption = $m.juci.dataset("aggressiveOption");
             aggressiveOption.years = goalSpecifiedTime - 1;
-            var revisedFirstAggresiveCalculatorCallback = function(res) {
+            var revisedFirstAggresiveCalculatorCallback = function (res) {
                 if (!res) {
                     aggressiveOption.noOfPoliciesPerMonth = 20;
                     aggressiveOption.noOfMeetingsPerMonth = aggressiveOption.years > 5 ? 20 * 3 : 20 * 4;
@@ -1046,7 +1046,7 @@ function onPremiumChange(event) {
                 var conservativeOption = $m.juci.dataset("conservativeOption");
                 conservativeOption.years = goalSpecifiedTime + 1;
 
-                var getConservativePoliciesCallback = function(r) {
+                var getConservativePoliciesCallback = function (r) {
                     if (!r || r == undefined) {
                         conservativeOption.noOfPoliciesPerMonth = 20;
                         conservativeOption.noOfMeetingsPerMonth = conservativeOption.years > 5 ? 20 * 3 : 20 * 4;
@@ -1065,7 +1065,7 @@ function onPremiumChange(event) {
         revisedMyDreamMyIncomeCalculator.RevisedFirstCaluclator(goalSpecifiedTime, goal_Amount, eventValue, revisedFirstCalculatorCallback);
 
     } else if (eventValue == 60000) {
-        var revisedSecondCalculatorCallback = function(r) {
+        var revisedSecondCalculatorCallback = function (r) {
             var baseOption = $m.juci.dataset("baseOption");
             baseOption.years = goalSpecifiedTime;
             if (r == undefined) {
@@ -1079,7 +1079,7 @@ function onPremiumChange(event) {
             $m.juci.dataset("baseOption", baseOption);
             var aggressiveOption = $m.juci.dataset("aggressiveOption");
             aggressiveOption.years = goalSpecifiedTime - 1;
-            var revisedFirstAggresiveCalculatorCallback = function(res) {
+            var revisedFirstAggresiveCalculatorCallback = function (res) {
                 if (!res) {
                     aggressiveOption.noOfPoliciesPerMonth = 20;
                     aggressiveOption.noOfMeetingsPerMonth = aggressiveOption.years > 5 ? 20 * 3 : 20 * 4;
@@ -1094,7 +1094,7 @@ function onPremiumChange(event) {
             var conservativeOption = $m.juci.dataset("conservativeOption");
             conservativeOption.years = goalSpecifiedTime + 1;
 
-            var getConservativePoliciesCallback = function(r) {
+            var getConservativePoliciesCallback = function (r) {
                 if (!r) {
                     conservativeOption.noOfPoliciesPerMonth = 20;
                     conservativeOption.noOfMeetingsPerMonth = conservativeOption.years > 5 ? 20 * 3 : 20 * 4;
@@ -1112,7 +1112,7 @@ function onPremiumChange(event) {
         revisedMyDreamMyIncomeCalculator.RevisedSecondCalculator(goalSpecifiedTime, goal_Amount, eventValue, revisedSecondCalculatorCallback);
 
     } else if (eventValue == 70000) {
-        var revisedSecondCalculatorCallback = function(r) {
+        var revisedSecondCalculatorCallback = function (r) {
             var baseOption = $m.juci.dataset("baseOption");
             baseOption.years = goalSpecifiedTime;
             if (r == undefined) {
@@ -1127,7 +1127,7 @@ function onPremiumChange(event) {
 
             var aggressiveOption = $m.juci.dataset("aggressiveOption");
             aggressiveOption.years = goalSpecifiedTime - 1;
-            var revisedFirstAggresiveCalculatorCallback = function(res) {
+            var revisedFirstAggresiveCalculatorCallback = function (res) {
                 if (!res) {
                     aggressiveOption.noOfPoliciesPerMonth = 20;
                     aggressiveOption.noOfMeetingsPerMonth = aggressiveOption.years > 5 ? 20 * 3 : 20 * 4;
@@ -1137,7 +1137,7 @@ function onPremiumChange(event) {
                 }
                 aggressiveOption.avgMeetingsPerDay = aggressiveOption.noOfMeetingsPerMonth / 25;
                 $m.juci.dataset("aggressiveOption", aggressiveOption);
-                var getConservativePoliciesCallback = function(r) {
+                var getConservativePoliciesCallback = function (r) {
                     if (!r) {
                         conservativeOption.noOfPoliciesPerMonth = 20;
                         conservativeOption.noOfMeetingsPerMonth = conservativeOption.years > 5 ? 20 * 3 : 20 * 4;
@@ -1159,7 +1159,7 @@ function onPremiumChange(event) {
         };
         revisedMyDreamMyIncomeCalculator.RevisedThirdCalculator(goalSpecifiedTime, goal_Amount, eventValue, revisedSecondCalculatorCallback);
     } else if (eventValue == 80000) {
-        var revisedSecondCalculatorCallback = function(r) {
+        var revisedSecondCalculatorCallback = function (r) {
             var baseOption = $m.juci.dataset("baseOption");
             baseOption.years = goalSpecifiedTime;
             if (r == undefined) {
@@ -1174,7 +1174,7 @@ function onPremiumChange(event) {
 
             var aggressiveOption = $m.juci.dataset("aggressiveOption");
             aggressiveOption.years = goalSpecifiedTime - 1;
-            var revisedFirstAggresiveCalculatorCallback = function(res) {
+            var revisedFirstAggresiveCalculatorCallback = function (res) {
                 if (!res) {
                     aggressiveOption.noOfPoliciesPerMonth = 20;
                     aggressiveOption.noOfMeetingsPerMonth = aggressiveOption.years > 5 ? 20 * 3 : 20 * 4;
@@ -1184,7 +1184,7 @@ function onPremiumChange(event) {
                 }
                 aggressiveOption.avgMeetingsPerDay = aggressiveOption.noOfMeetingsPerMonth / 25;
                 $m.juci.dataset("aggressiveOption", aggressiveOption);
-                var getConservativePoliciesCallback = function(r) {
+                var getConservativePoliciesCallback = function (r) {
                     if (!r) {
                         conservativeOption.noOfPoliciesPerMonth = 20;
                         conservativeOption.noOfMeetingsPerMonth = conservativeOption.years > 5 ? 20 * 3 : 20 * 4;
@@ -1205,7 +1205,7 @@ function onPremiumChange(event) {
         };
         revisedMyDreamMyIncomeCalculator.RevisedEightyThousandCalculator(goalSpecifiedTime, goal_Amount, eventValue, revisedSecondCalculatorCallback);
     } else if (eventValue == 90000) {
-        var revisedSecondCalculatorCallback = function(r) {
+        var revisedSecondCalculatorCallback = function (r) {
             var baseOption = $m.juci.dataset("baseOption");
             baseOption.years = goalSpecifiedTime;
             if (r == undefined) {
@@ -1220,7 +1220,7 @@ function onPremiumChange(event) {
 
             var aggressiveOption = $m.juci.dataset("aggressiveOption");
             aggressiveOption.years = goalSpecifiedTime - 1;
-            var revisedFirstAggresiveCalculatorCallback = function(res) {
+            var revisedFirstAggresiveCalculatorCallback = function (res) {
                 if (!res) {
                     aggressiveOption.noOfPoliciesPerMonth = 20;
                     aggressiveOption.noOfMeetingsPerMonth = aggressiveOption.years > 5 ? 20 * 3 : 20 * 4;
@@ -1230,7 +1230,7 @@ function onPremiumChange(event) {
                 }
                 aggressiveOption.avgMeetingsPerDay = aggressiveOption.noOfMeetingsPerMonth / 25;
                 $m.juci.dataset("aggressiveOption", aggressiveOption);
-                var getConservativePoliciesCallback = function(r) {
+                var getConservativePoliciesCallback = function (r) {
                     if (!r) {
                         conservativeOption.noOfPoliciesPerMonth = 20;
                         conservativeOption.noOfMeetingsPerMonth = conservativeOption.years > 5 ? 20 * 3 : 20 * 4;
@@ -1251,7 +1251,7 @@ function onPremiumChange(event) {
         };
         revisedMyDreamMyIncomeCalculator.RevisedNintyThousandCalculator(goalSpecifiedTime, goal_Amount, eventValue, revisedSecondCalculatorCallback);
     } else if (eventValue == 100000) {
-        var revisedSecondCalculatorCallback = function(r) {
+        var revisedSecondCalculatorCallback = function (r) {
             var baseOption = $m.juci.dataset("baseOption");
             baseOption.years = goalSpecifiedTime;
             if (r == undefined) {
@@ -1266,7 +1266,7 @@ function onPremiumChange(event) {
 
             var aggressiveOption = $m.juci.dataset("aggressiveOption");
             aggressiveOption.years = goalSpecifiedTime - 1;
-            var revisedFirstAggresiveCalculatorCallback = function(res) {
+            var revisedFirstAggresiveCalculatorCallback = function (res) {
                 if (!res) {
                     aggressiveOption.noOfPoliciesPerMonth = 20;
                     aggressiveOption.noOfMeetingsPerMonth = aggressiveOption.years > 5 ? 20 * 3 : 20 * 4;
@@ -1276,7 +1276,7 @@ function onPremiumChange(event) {
                 }
                 aggressiveOption.avgMeetingsPerDay = aggressiveOption.noOfMeetingsPerMonth / 25;
                 $m.juci.dataset("aggressiveOption", aggressiveOption);
-                var getConservativePoliciesCallback = function(r) {
+                var getConservativePoliciesCallback = function (r) {
                     if (!r) {
                         conservativeOption.noOfPoliciesPerMonth = 20;
                         conservativeOption.noOfMeetingsPerMonth = conservativeOption.years > 5 ? 20 * 3 : 20 * 4;
@@ -1339,7 +1339,7 @@ function saveNetworkDetails() {
     obj.Q5 = ques.businessValue
     obj.Q6 = ques.businessCustomerValue
     var service = new ServiceLibrary();
-    var saveNetworkCalculatorCallback = function(res) {
+    var saveNetworkCalculatorCallback = function (res) {
         if (res.Status == "Y") {
             $m.juci.dataset("questionaries", {
                 "relativesCount": "",
@@ -1370,141 +1370,141 @@ function saveNetworkDetails() {
 
 
 
-function resetretire(){
-	var k = $m.juci.dataset("retirementCalculator");
-	var p = {
-			"age" : "",
-		"retireage" : "",
-		"annualincome":"",
-		"monthlyexpensive":"",
-		"investtype":"",
-		"currentsaving":""
-	}
-	k = p;
-	$m.juci.dataset("retirementCalculator",k);
-	$m.juci.dataset("retirement_result",false);
-	$m.juci.dataset("retire1",true);
-	$m.juci.dataset("retire2",false);
-	
+function resetretire() {
+    var k = $m.juci.dataset("retirementCalculator");
+    var p = {
+        "age": "",
+        "retireage": "",
+        "annualincome": "",
+        "monthlyexpensive": "",
+        "investtype": "",
+        "currentsaving": ""
+    }
+    k = p;
+    $m.juci.dataset("retirementCalculator", k);
+    $m.juci.dataset("retirement_result", false);
+    $m.juci.dataset("retire1", true);
+    $m.juci.dataset("retire2", false);
+
 }
 
 
-function resettax(){
-	var m = $m.juci.dataset("taxCalculator");
-	$m.juci.dataset("salaried",true);
-	$m.juci.dataset("self",false);
-	var n = {
-		"age" : "",
-		"annualincome":"",
-		"employeetype":"",
-		"selfannualsalary":"",
-		"incomeformothersource":"",
-		"investment":"",
-		"healthinsurancepremium":"",
-		"hiradebt":"",
-		"interesthomeloan":"",
-		"interesteducation":"",
-		"interesttta":"",
-		"otherdeduction":""
-	}
-	m = n;
-	$m.juci.dataset("taxCalculator",m);
-	$m.juci.dataset("tax_result",false);
-	$m.juci.dataset("taxi1",true);
-	$m.juci.dataset("tax1", false);
-	$m.juci.dataset("tax2", false);
-	
+function resettax() {
+    var m = $m.juci.dataset("taxCalculator");
+    $m.juci.dataset("salaried", true);
+    $m.juci.dataset("self", false);
+    var n = {
+        "age": "",
+        "annualincome": "",
+        "employeetype": "",
+        "selfannualsalary": "",
+        "incomeformothersource": "",
+        "investment": "",
+        "healthinsurancepremium": "",
+        "hiradebt": "",
+        "interesthomeloan": "",
+        "interesteducation": "",
+        "interesttta": "",
+        "otherdeduction": ""
+    }
+    m = n;
+    $m.juci.dataset("taxCalculator", m);
+    $m.juci.dataset("tax_result", false);
+    $m.juci.dataset("taxi1", true);
+    $m.juci.dataset("tax1", false);
+    $m.juci.dataset("tax2", false);
+
 }
 
 
-function resethlv(){
-	var l = $m.juci.dataset("hlvcalculate");
-	var o = {
-		"age" : "",
-		"married" : "",
-		"retireage" : "",
-		"monthlyincome":"",
-		"monthlyexpensive":"",
-		"valueofsvnginvstmnt":"",
-		"insurance":"",
-		"loans":""
-	}
-	l = o;
-	l.married.type = "";
-	$m.juci.dataset("hlvcalculate",l);
-	$m.juci.dataset("result",false);
-	$m.juci.dataset("hlv1",true);
-	$m.juci.dataset("hlv2",false);
-	$m.juci.dataset("hlv3",false);
-	
+function resethlv() {
+    var l = $m.juci.dataset("hlvcalculate");
+    var o = {
+        "age": "",
+        "married": "",
+        "retireage": "",
+        "monthlyincome": "",
+        "monthlyexpensive": "",
+        "valueofsvnginvstmnt": "",
+        "insurance": "",
+        "loans": ""
+    }
+    l = o;
+    l.married.type = "";
+    $m.juci.dataset("hlvcalculate", l);
+    $m.juci.dataset("result", false);
+    $m.juci.dataset("hlv1", true);
+    $m.juci.dataset("hlv2", false);
+    $m.juci.dataset("hlv3", false);
+
 }
 
 
 
 
-function resetfhs(){
-	var x = $m.juci.dataset("fhsform");
-	var y = {
-	"gender":"",	
-	"name":"",
-	"mobile":"",
-	"dob":"",
-	"spousefhs":"",
-	"spouseDob":"",
-	"annualIncome":"",
-	"spouseAL":"",
-	"savingInves":"",
-	"monthlyexpense":"",
-	"totalsavings":"",
-	"totaloutstandingloan":"",
-	"insuranceCover":"",
-	"spouseInsuranceCover":"",
-	"children":"",
-	"childName":"",
-	"childName2":"",
-	"childName3":"",
-	"childName4":"",
-	"childName5":"",
-	"childName6":"",
-	"no_of_children":"",
-	"parents":"",
-	"savingChild":"",
-	"savingRetire":""
-		}
-	x = y;
-	$m.juci.dataset("fhsform",x);
-	$m.juci.dataset("fhsresult",false);
-	$m.juci.dataset("fhs1",true);
-	$m.juci.dataset("fhs2",false);
-	$m.juci.dataset("fhs3",false);
-	$m.juci.dataset("fhs4",false);
-	$m.juci.dataset("fhs5",false);
-	
+function resetfhs() {
+    var x = $m.juci.dataset("fhsform");
+    var y = {
+        "gender": "",
+        "name": "",
+        "mobile": "",
+        "dob": "",
+        "spousefhs": "",
+        "spouseDob": "",
+        "annualIncome": "",
+        "spouseAL": "",
+        "savingInves": "",
+        "monthlyexpense": "",
+        "totalsavings": "",
+        "totaloutstandingloan": "",
+        "insuranceCover": "",
+        "spouseInsuranceCover": "",
+        "children": "",
+        "childName": "",
+        "childName2": "",
+        "childName3": "",
+        "childName4": "",
+        "childName5": "",
+        "childName6": "",
+        "no_of_children": "",
+        "parents": "",
+        "savingChild": "",
+        "savingRetire": ""
+    }
+    x = y;
+    $m.juci.dataset("fhsform", x);
+    $m.juci.dataset("fhsresult", false);
+    $m.juci.dataset("fhs1", true);
+    $m.juci.dataset("fhs2", false);
+    $m.juci.dataset("fhs3", false);
+    $m.juci.dataset("fhs4", false);
+    $m.juci.dataset("fhs5", false);
+
 }
 
 
 
 
 function formatValue1(value) {
-	return formatMoney1(value);
+    return formatMoney1(value);
 }
 
 function formatMoney1(num) {
-	if (num == "") {
-		return "";
-	} else {
-		var n1, n2;
-		if (typeof num == 'string')
-			num = num.replace(/,/g, "");
-		num = (Math.round(num * 100) / 100) + '' || '';
-		// works for integer and floating as well
-		n1 = num.split('.');
-		n2 = n1[1];
-		n1 = n1[0].replace(/(\d)(?=(\d\d)+\d$)/g, "$1,");
-		num = n2 ? n1 + '.' + n2 : n1;
-		num = num;
-		return num;
-	}
+    if (num == "") {
+        return "";
+    } else {
+        var n1, n2;
+        if (typeof num == 'string')
+            num = num.replace(/,/g, "");
+        num = (Math.round(num * 100) / 100) + '' || '';
+        // works for integer and floating as well
+        n1 = num.split('.');
+        n2 = n1[1];
+        n1 = n1[0].replace(/(\d)(?=(\d\d)+\d$)/g, "$1,");
+        num = n2 ? n1 + '.' + n2 : n1;
+        num = num;
+        return num;
+    }
 }
 
 
@@ -1551,6 +1551,6 @@ function resetchild() {
     };
     childCount = child;
     juci.dataset("childcalculate", childCount);
-	juci.dataset("child_result",false);
-	document.getElementById('number').value = "1";
+    juci.dataset("child_result", false);
+    document.getElementById('number').value = "1";
 }
